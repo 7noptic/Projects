@@ -1,22 +1,30 @@
-.company{
-    &-block{
+.company {
+  &-block {
+    padding-bottom: 110px;
+  }
 
+  &-item {
+    display: flex;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    transition: $transition3;
+    &:hover{
+      transform: translateY(-20px);
     }
-    &-item{
-        display: flex;
-        padding: 30px;
-        background: #FFFFFF;
-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
-border-radius: 20px;
-        &__img{
-            width: 40%;
-            padding-right: 30px;
-        }
-        &__text{
-            width: 60%;
-            font-weight: 300;
-font-size: 14px;
-line-height: 17px;
-        }
+
+    &__img {
+      width: 40%;
+      padding-right: 30px;
     }
+
+    &__text {
+      width: 60%;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
 }
