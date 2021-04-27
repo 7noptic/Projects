@@ -34,10 +34,9 @@ html, body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   overflow-x: hidden;
   background-color: #FBFBFB;
-  color: $brown;
   &.lock {
     overflow: hidden;
   }
@@ -49,7 +48,7 @@ ol[class] {
 }
 
 a {
-  color: $brown;
+  color: #000;
   text-decoration: none;
   transition: $transition2;
 

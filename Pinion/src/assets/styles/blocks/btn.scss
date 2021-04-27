@@ -3,60 +3,30 @@
   justify-content: center;
   align-items: center;
   background: $blue;
+  background: linear-gradient(323.56deg, #0B0175 -4.25%, #0063F8 91.89%);
   color: #fff;
   border-radius: $radiusBtn;
-  font-size: 14px;
-  line-height: 22px;
+  font-weight: 800;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
   //transition: none;
   cursor: pointer;
   transition: $transition3;
   &:hover,&.active{
     background: #001F8B;
+    background: linear-gradient(323.56deg, #1200E2 -4.25%, #3EAEFF 91.89%);
     color: #fff;
   }
   &:active{
     transform: translateY(5px);
   }
 
-  &-brown{
-    background: #9A7F5F;
-    background: $brownGr;
-  }
-  &-brownborder{
-    background: transparent;
-    border: 2px solid #C9BBAE;
-    color: $brown;
-    &:hover,&.active{
-      background: #C9BBAE;
-      color: #fff;
-    }
-  }
-  &-blueborder{
-    background: transparent;
-    border: 2px solid $blue;
-    color: $blue;
-    font-weight: 600;
-font-size: 14px;
-line-height: 17px;
-    &:hover,&.active{
-      background: $blue;
-      border: 2px solid $blue;
-      color: #fff;
-    }
-  }
-  &-transparent{
-    background: #FBFBFB;
-    color: $brown;
-    
-    &:hover,&.active{
-      background: $blue;
-      color: #fff;
-    }
-  }
+
+ &-border{
+  background: transparent;
+  color: $blue;
+  border-bottom: 1px solid $blue;
+ }
 }
 
-@media screen and (max-width:767px){
-  .btn{
-    font-size: 13px;
-  }
-}
