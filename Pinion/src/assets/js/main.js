@@ -8,7 +8,9 @@ Swiper.use([Navigation, Pagination, Autoplay,Thumbs]);
 
 window.addEventListener('DOMContentLoaded', () => {
     /* HAMBURGER MENU IN HEADER*/
-    let header = document.querySelector('.header'),
+    let html = document.querySelector('html'),
+        body = document.querySelector('body'),
+     header = document.querySelector('.header'),
     main = document.querySelector('main'),
     footer = document.querySelector('.footer'),
     searchForm = header.querySelector('.form-wrapper-header'),
@@ -21,7 +23,7 @@ header.addEventListener('click', (e) => {
         hamburgerMenu.classList.toggle('active');
         hamburgerBtn.classList.toggle('active');
     }
-    if (e.target && e.target.classList.contains('js-search')) {
+    if (e.target && (e.target.classList.contains('js-search') || e.target.classList.contains('modal-search__exit') || e.target.classList.contains('form-wrapper-header__exit'))) {
         searchForm.classList.toggle('active');
     }
 });
@@ -59,9 +61,7 @@ header.addEventListener('click', (e) => {
       if (target && (target.classList.contains('js-reviews') || target.classList.contains('modal-reviews__exit'))) {
         openCloseModal(e, modalReviews);
     }
-    if (target && (target.classList.contains('js-basket') || target.classList.contains('modal-basket__exit'))) {
-        openCloseModal(e, modalBasket);
-    }
+    
       if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
           openCloseModal(e, burgerMenu);
       }
@@ -69,27 +69,19 @@ header.addEventListener('click', (e) => {
           openCloseModal(e, modalOneClick);
       }
     
-      if (target && (target.classList.contains('js-job') || target.classList.contains('modal-job__exit'))) {
-          openCloseModal(e, modalJob);
-      }
+ 
       if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
           openCloseModal(e, modalSubscribe);
       }
-      if (target && (target.classList.contains('js-assortment') || target.classList.contains('modal-assortment__exit'))) {
-          openCloseModal(e, modalAssortment);
-      }
+    
       if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
           openCloseModal(e, modalRegion);
       }
-      if (target && (target.classList.contains('js-quest') || target.classList.contains('modal-quest__exit'))) {
-          openCloseModal(e, modalQuest);
-      }
+     
       if (target && (target.classList.contains('js-personal-data') || target.classList.contains('modal-personal__exit'))) {
           openCloseModal(e, modalPersonal);
       }
-      if (target && (target.classList.contains('js-reset-pass') || target.classList.contains('modal-reset-pass__exit'))) {
-          openCloseModal(e, modalResetPass);
-      }
+    
       if (target.classList.contains('modal-region__link')) {
           for (let i = 0; i < regionSelect.length; i++) {
               if (regionSelect[i] == target) {
@@ -105,17 +97,7 @@ header.addEventListener('click', (e) => {
 
               }
           }
-          /*
-          regionSelect.forEach(item => {
-              if (item == target) {
-                  let citiValue = item.innerHTML;
-                  localStorage.setItem('city', citiValue)
-                  let testValue = localStorage.getItem('city')
-                  regionBtn.innerHTML = testValue.innerHTML;
-                  regionBtn.innerHTML = testValue;
-              }
-          });
-          */
+
           openCloseModal(e, modalRegion);
       } else if (target.classList.contains('js-region-close')) {
           let city = document.querySelector('.js-select-city');
@@ -139,20 +121,15 @@ header.addEventListener('click', (e) => {
           header.classList.toggle('blur');
           main.classList.toggle('blur');
           footer.classList.toggle('blur');
-          /*
-          allModal.forEach(item => {
-              if (item.classList.toggle('active')) {
-                  item.classList.remove('active');
-              }
-          });*/
+
       }
 
   });
 
   function openCloseModal(e, modal) {
       e.preventDefault();
-      //html.classList.toggle('lock');
-      //body.classList.toggle('lock');
+      html.classList.toggle('lock');
+      body.classList.toggle('lock');
       modalBlock.classList.toggle('sidebar-bg');
       modal.classList.toggle('active');
       header.classList.toggle('blur');
@@ -162,6 +139,17 @@ header.addEventListener('click', (e) => {
     /* TABS */
     
 
+
+    let regionParent = document.querySelector('.region'),
+        regionLink = document.querySelectorAll('.js-region-link'),
+        regionTabs = document.querySelectorAll('.js-region-tabs'),
+        regionSubLinks = document.querySelectorAll('.js-subregion-link'),
+        regionSubTabs = document.querySelectorAll('.subregion__content');
+
+
+    if (regionParent && regionLink.length > 0) {
+        toggleTabs(regionLink, regionTabs, regionParent, 'js-region-link', true, '.js-subregion-link', '.subregion__content');
+    }
 
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
@@ -200,7 +188,7 @@ header.addEventListener('click', (e) => {
             }
             let subLinks = tabs[subIndex].querySelectorAll(subLink),
                 subTabs = tabs[subIndex].querySelectorAll(subContent);
-            if (e.target && e.target.classList.contains('js-store-sublink')) {
+            if (e.target && e.target.classList.contains('js-subregion-link')) {
                 e.preventDefault();
                 for (let i = 0; i < subLinks.length; i++) {
                     if (subLinks[i] === e.target) {
@@ -228,7 +216,12 @@ header.addEventListener('click', (e) => {
 
 
     /* SHOW HIDE CONTENT */
+    let faqLink = document.querySelectorAll('.faq-item__header'),
+        faqContent = document.querySelectorAll('.faq-item__content');
 
+    if(faqLink.length > 0 && faqLink.length == faqContent.length){
+        toggleContent(faqLink, faqContent, 'faq-item__header');
+    }
     
 
     function toggleContent(link, content, linkClass) {
@@ -263,30 +256,81 @@ header.addEventListener('click', (e) => {
             clickable: true,
         },
     });
+
+     let SwiperCard = new Swiper('.swiper-card', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        autoplay: {
+            delay: 5000,
+        },
+        
+        navigation: {
+            nextEl: '.card__next',
+            prevEl: '.card__prev'
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            767: {
+                slidesPerView: 2,
+            },
+
+            1199: {
+                slidesPerView: 3,
+            },
+            1920: {
+                slidesPerView: 4,
+            },
+        }
+    });
   
-    let sliderTags = new Swiper('.swiper-container-tags', {
-        slidesPerView: 'auto',
+    let sliderTags = new Swiper('.swiper-tags', {
+        slidesPerView: "auto",
         spaceBetween: 20,
         observeParents: true,
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
         navigation: {
+            prevEl: '.tags__prev',
             nextEl: '.tags__next',
-            prevEl: '.tags__prev'
+        },
+        
+
+    });
+    let sliderRegion = new Swiper('.swiper-region', {
+        slidesPerView: 2,
+        spaceBetween: 100,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        navigation: {
+            prevEl: '.region__prev',
+            nextEl: '.region__next',
         },
         breakpoints: {
-            0:{
-                spaceBetween: 10,
-            },
-            767:{
-                spaceBetween: 15,
-            },
-            991:{
+            0: {
+                slidesPerView: 1,
                 spaceBetween: 20,
-            }
+            },
+            767: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+
+            
+            1920: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+            },
         }
+
     });
     
     let ratingItem = document.querySelectorAll('.rating-item');
@@ -351,7 +395,7 @@ header.addEventListener('click', (e) => {
     }
 
   
-    /* RATING */
+    /* RATING 
     let ratingParent = document.querySelector('.js-rating'),
         ratingInput = document.querySelector('#js-rating'),
         ratingStar = document.querySelectorAll('.js-rating > li');
@@ -377,8 +421,8 @@ header.addEventListener('click', (e) => {
 
         });
     }
-
-    let modalRatingParent = document.querySelector('.modal-reviews'),
+*/
+    let modalRatingParent = document.querySelector('.modal-reviews .rating-star'),
         modalRatingInput = document.querySelector('#js-rating-modal'),
         modalRatingStar = document.querySelectorAll('.js-rating-modal > li');
 
@@ -386,6 +430,7 @@ header.addEventListener('click', (e) => {
         modalRatingParent.addEventListener('click', (event) => {
             event.preventDefault();
             const target = event.target;
+            modalRatingInput.value = 0;
             if (target && target.tagName == 'LI') {
                 for (let i = 0; i < modalRatingStar.length; i++) {
                     modalRatingStar[i].classList.remove('active')

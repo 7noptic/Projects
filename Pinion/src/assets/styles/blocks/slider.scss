@@ -1,0 +1,38 @@
+.slider{
+ margin-bottom: 150px;
+    &__wrapper{
+        background-image: url('../img/bg.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        padding: 90px 90px 110px;
+    }
+}
+@media (max-width:1919px){
+    .slider{
+        margin-bottom: 130px;
+           &__wrapper{
+               background-image: none;
+               background-repeat: no-repeat;
+               background-position: center center;
+               background-size: contain;
+               padding: 60px 40px;
+               background: linear-gradient(169.32deg, #0B0175 -9.88%, #0063F8 92.07%);
+               border-radius: 200px;
+           }
+       }   
+}
+@media (max-width:1199px){
+    .slider{
+         margin-bottom: 80px;
+       }   
+}
+@media (max-width:575px){
+    .slider{
+         margin-bottom: 50px;
+         &__wrapper{
+             padding: 30px 0;
+             border-radius: 100px;
+         }
+       }   
+}

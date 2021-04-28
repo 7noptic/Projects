@@ -3,18 +3,24 @@
 @import "default";
 @import "animation";
 @import "blocks/title";
+
+@import "blocks/tab";
 /* А */
 /* В */
 @import "blocks/btn";
 @import "blocks/banner";
 /* C */
 @import "blocks/container";
+@import "blocks/card";
 @import "blocks/company";
 /* D */
 
 /* E */
 
 /* F */
+@import "blocks/faq";
+@import "blocks/footer";
+@import "blocks/form";
 /* G */
 
 /* H */
@@ -35,10 +41,16 @@
 
 /* R */
 @import "blocks/rating";
+@import "blocks/rating-star";
+@import "blocks/reviews";
+@import "blocks/region";
 /* S */
 @import "blocks/swiper";
+@import "blocks/slider";
+@import "blocks/subregion";
 /* T */
-@import "blocks/tab";
+
+@import "blocks/tags";
 /* U */
 
 /* V */

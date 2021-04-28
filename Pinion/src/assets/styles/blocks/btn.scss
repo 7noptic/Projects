@@ -28,5 +28,17 @@ text-align: center;
   color: $blue;
   border-bottom: 1px solid $blue;
  }
+ &-transparent{
+  background: #EBEBEB;
+  color: #000;
+  &:hover,&.active{
+    background: #001F8B;
+    background: linear-gradient(323.56deg, #1200E2 -4.25%, #3EAEFF 91.89%);
+    color: #fff;
+  }
+  &:active{
+    transform: translateY(5px);
+  }
+ }
 }
 

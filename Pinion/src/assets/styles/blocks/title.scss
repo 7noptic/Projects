@@ -4,18 +4,30 @@
   line-height: 44px;
   text-align: center;
   padding-bottom: 40px;
+  &-white{
+    color: #fff;
+    padding-bottom: 60px;
+  }
+}
+@media screen and (max-width:1919px){
+  .title{
+    font-size: 34px;
+    line-height: 40px;
+    &-white{
+      padding-bottom: 40px;
+    }
+  }
 }
 @media screen and (max-width:1439px){
   .title{
-    font-size: 26px;
+    font-size: 30px;
     line-height: 34px;
   }
 }
 @media screen and (max-width:1199px){
   .title{
-    font-size: 20px;
+    font-size: 26px;
     line-height: 28px;
-    min-width: 200px;
     padding-bottom: 25px;
     &-center{
       padding-bottom: 0;
