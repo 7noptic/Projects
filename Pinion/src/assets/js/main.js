@@ -7,6 +7,11 @@ Swiper.use([Navigation, Pagination, Autoplay,Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+    });
     /* HAMBURGER MENU IN HEADER*/
     let html = document.querySelector('html'),
         body = document.querySelector('body'),
@@ -144,11 +149,23 @@ header.addEventListener('click', (e) => {
         regionLink = document.querySelectorAll('.js-region-link'),
         regionTabs = document.querySelectorAll('.js-region-tabs'),
         regionSubLinks = document.querySelectorAll('.js-subregion-link'),
-        regionSubTabs = document.querySelectorAll('.subregion__content');
+        regionSubTabs = document.querySelectorAll('.subregion__content'),
+        reviewsCompanyParent = document.querySelector('.reviews-company'),
+        reviewsCompanyLink = document.querySelectorAll('.js-reviews-company-link'),
+        reviewsCompanyTabs = document.querySelectorAll('.js-reviews-company-tab'),
+        faqTabParent = document.querySelector('.faq'),
+        faqTabLink = document.querySelectorAll('.js-faq-link'),
+        faqTabTabs = document.querySelectorAll('.js-faq-content');
 
 
     if (regionParent && regionLink.length > 0) {
         toggleTabs(regionLink, regionTabs, regionParent, 'js-region-link', true, '.js-subregion-link', '.subregion__content');
+    }
+    if (reviewsCompanyParent && reviewsCompanyLink.length > 0 && reviewsCompanyLink.length == reviewsCompanyTabs.length ) {
+        toggleTabs(reviewsCompanyLink, reviewsCompanyTabs, reviewsCompanyParent, 'js-reviews-company-link');
+    }
+    if (faqTabParent && faqTabLink.length > 0 && faqTabLink.length == faqTabTabs.length ) {
+        toggleTabs(faqTabLink, faqTabTabs, faqTabParent, 'js-faq-link');
     }
 
 
@@ -217,12 +234,19 @@ header.addEventListener('click', (e) => {
 
     /* SHOW HIDE CONTENT */
     let faqLink = document.querySelectorAll('.faq-item__header'),
-        faqContent = document.querySelectorAll('.faq-item__content');
+    faqContent = document.querySelectorAll('.faq-item__content'),
+        reviewsMoreLink = document.querySelector('.reviews__more'),
+        reviewsMoreContent = document.querySelectorAll('.reviews-card.hidden');
 
     if(faqLink.length > 0 && faqLink.length == faqContent.length){
         toggleContent(faqLink, faqContent, 'faq-item__header');
     }
+    if(reviewsMoreContent.length > 0){
+        toggleMoreBtn(reviewsMoreLink, reviewsMoreContent, 'reviews__more');
+        
+    }
     
+
 
     function toggleContent(link, content, linkClass) {
 
@@ -236,6 +260,20 @@ header.addEventListener('click', (e) => {
                         content[i].classList.toggle('active');
                     }
                 }
+            }
+        });
+    }
+    /* more btn */
+
+    function toggleMoreBtn(link, content, linkClass){
+
+        document.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(e.target && e.target.classList.contains(linkClass)){
+                for(let i = 0; i < content.length; i++){
+                    content[i].classList.toggle('active');
+                }
+            link.innerHTML=="ПОКАЗАТЬ ЕЩЁ" ? link.innerHTML="СКРЫТЬ" : link.innerHTML="ПОКАЗАТЬ ЕЩЁ";
             }
         });
     }
