@@ -1,0 +1,21 @@
+.modal-one-click{
+    &__item{
+        margin-bottom: 40px;
+    }
+    &__name{
+        margin-bottom: 20px;
+        font-size: 13px;
+line-height: 17px;
+font-weight: 700;
+display: block;
+    }
+    &__img{
+        img{
+            border-radius: 18px;
+
+        }
+    }
+    &__text{
+        font-size: 12px;
+    }
+}

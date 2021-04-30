@@ -1,0 +1,21 @@
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid $orange;
+  color: $orange;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: $transition3;
+  &:hover,&.active{
+    background: $orange;
+    color: #fff;
+  }
+  &:active{
+    transform: translateY(5px);
+  }
+
+
+}
