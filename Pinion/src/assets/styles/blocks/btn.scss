@@ -26,7 +26,9 @@ text-align: center;
  &-border{
   background: transparent;
   color: $blue;
-  border-bottom: 1px solid $blue;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
+-moz-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
+box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
  }
  &-transparent{
   background: #EBEBEB;

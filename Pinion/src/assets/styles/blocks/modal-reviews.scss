@@ -12,7 +12,8 @@
   }
   &__wrapper{
     display: block;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
   }
   &__row{

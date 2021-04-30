@@ -116,7 +116,8 @@ header.addEventListener('click', (e) => {
       /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
       if (target && target.classList.contains('sidebar-bg')) {
           e.preventDefault();
-          //html.classList.toggle('lock');
+          html.classList.toggle('lock');
+      body.classList.toggle('lock');
           modalBlock.classList.toggle('sidebar-bg');
           for (let i = 0; i < allModal.length; i++) {
               if (allModal[i].classList.toggle('active')) {
@@ -268,8 +269,9 @@ header.addEventListener('click', (e) => {
     function toggleMoreBtn(link, content, linkClass){
 
         document.addEventListener('click', (e) => {
-            e.preventDefault();
             if(e.target && e.target.classList.contains(linkClass)){
+            e.preventDefault();
+
                 for(let i = 0; i < content.length; i++){
                     content[i].classList.toggle('active');
                 }
@@ -417,11 +419,11 @@ header.addEventListener('click', (e) => {
                 if(ratingLike){
                     ratingLike.onclick = function(x) {
                         return function() {
-                            if(trigger && +ratingLikeCount.innerHTML > 0){
-                                ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML - 1;
+                            if(trigger && +ratingLikeCount.innerHTML >= 0){
+                                ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML + 1;
                                 trigger = false;
                             }else if(trigger == false && +ratingLikeCount.innerHTML >= 0){
-                                ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML + 1;
+                                ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML - 1;
                                 trigger = true;
                             }
                             
