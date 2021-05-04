@@ -1,0 +1,51 @@
+.banner{
+    margin-bottom: 80px;
+    &__slider{
+        position: relative;
+    }
+    &__slide{
+        padding: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #fff;
+height: 100%;
+width: 100%;
+    }
+    &__title{
+        font-weight: bold;
+font-size: 80px;
+line-height: 80px;
+padding-bottom: 50px;
+max-width: 420px;
+    }
+    &__subtitle{
+        max-width: 420px;
+        font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+margin-bottom: 60px;
+    }
+    &__btn{
+        padding: 20px 30px;
+       
+    }
+    &-nav{
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+    }
+   &-ava{
+       display: flex;
+       margin-top: 20px;
+       &__item{
+           border-left: 5px solid $orange;
+           padding-left: 20px;
+           font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+width: 30%;
+       }
+   }
+    
+}

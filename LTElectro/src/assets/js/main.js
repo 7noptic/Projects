@@ -240,7 +240,24 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* SWIPER */
+    let sliderBanner = new Swiper('.swiper-banner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        autoplay:{
+            delay: 4000,
+        },
+        pagination:{
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    
 
+
+    });
 
     let sliderTags = new Swiper('.swiper-container-tags', {
         slidesPerView: 'auto',

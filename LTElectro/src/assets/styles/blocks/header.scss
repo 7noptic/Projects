@@ -1,6 +1,24 @@
 .header {
-  margin: 25px 0;
+  margin: 25px 0 0;
+  &-basket{
+    display: flex;
+    align-items: center;
+    &__item{
+      display: flex;
+    align-items: center;
+    font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+    span{
+      
+margin-right: 45px;
+    }
+    }
 
+    &__img{
+      margin-right: 15px;
+    }
+  }
   &__left {
     width: 160px;
     padding-right: 30px;
@@ -10,8 +28,11 @@
   &__right {
     width: calc(100% - 160px);
 
-    &-top, &-bot {
+    &-top {
       margin-bottom: 25px;
+      justify-content: space-between;
+    }
+    &-bot{
       justify-content: space-between;
     }
   }
@@ -78,12 +99,12 @@
   &-category {
     &__list {
       display: flex;
-
-
+background-color: #fff;
+z-index: 100;
       & > li {
 
         position: relative;
-        z-index: 1;
+        z-index: 10;
 
         &:last-of-type {
           padding-right: 0;
@@ -98,7 +119,7 @@
           font-weight: bold;
           font-size: 14px;
           line-height: 17px;
-          z-index: 2;
+          z-index: 22;
 
           span {
             padding-left: 25px;
@@ -209,26 +230,39 @@
 
   &-catalog {
     &__list {
+      
+      display: flex;
       & > li {
         position: relative;
         padding: 25px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        svg{
+          margin-right: 22px;
+        }
 
         & > a {
           font-weight: bold;
           font-size: 14px;
           line-height: 17px;
+          display: flex;
+        align-items: center;
         }
 
         &:hover {
           background-color: $orange;
-
+          svg{
+            path{
+              fill: #fff;
+            }
+          }
           & > a{
             color: #fff;
           }
 
           .header-catalog__nav {
-            z-index: 1;
+            z-index: 100;
             transform: scale(1);
             opacity: 1;
           }
@@ -237,15 +271,16 @@
     }
 
     &__nav {
-      //z-index: -1;
-      //transform: scale(0);
-      //opacity: 0;
+      z-index: -1;
+      transform: scale(0);
+      opacity: 0;
       position: absolute;
       top: 71px;
       left: 0;
       background-color: #fff;
       display: flex;
       flex-direction: column;
+      outline: 1px solid $grayLight;
 
       & > li {
         padding: 16px 23px;
@@ -264,7 +299,27 @@
             z-index: 10;
             transform: scale(1);
             opacity: 1;
+            
             & > li{
+              
+              &:hover{
+                & img{
+                  display: block;
+                }
+                .submenu{
+                  z-index: 12;
+            transform: scale(1);
+            opacity: 1;
+            left: 431px;
+            & > li{
+              width: 300px;
+            }
+            & img{
+              display: block;
+              
+            }
+                }
+              }
 
             }
           }
@@ -276,31 +331,62 @@
 }
 
 .submenu {
+  background-color: #fff;
   z-index: -1;
   transform: scale(0);
   opacity: 0;
-
+  outline: 1px solid $grayLight;
   position: absolute;
-  left: 300px;
+  left: 301px;
   top: 0;
   & > li{
     opacity: 0.5;
     width: 430px;
     padding: 16px 20px;
+    span{
+      display: none;
+      position: relative;
+      height: 100%;
+      width: 1px;
+      &::after{
+        content: url('../img/trr.svg');
+        position: absolute;
+        top: 0;
+        right: -10px;
+        
+      }
+    }
+  
+
     & > a{
       font-weight: bold;
       font-size: 14px;
-      line-height: 17px;
+      line-height: 21px;
+      display: flex;
+      justify-content: space-between;
+      &:hover{
+        color: #000;
+      }
     }
     &:hover{
       background: #F4F4F4;
       color: #000;
       opacity: 1;
+      span{
+        display: block;
+
+      }
     }
     & img{
       display: none;
+      position: absolute;
+      outline: 1px solid $grayLight;
+              left: 728px;
+              top: 0;
+              z-index: 20;
     }
   }
+ 
 }
 
 

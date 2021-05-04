@@ -12,9 +12,14 @@
   &:hover,&.active{
     background: $orange;
     color: #fff;
+    border: 5px solid $orange;
   }
   &:active{
     transform: translateY(5px);
+  }
+  &-white{
+    color: #fff;
+    border: 5px solid #fff;
   }
 
 

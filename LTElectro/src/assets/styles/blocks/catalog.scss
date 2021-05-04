@@ -1,0 +1,53 @@
+.catalog{
+    margin-bottom: 100px;
+    &-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        transition: $transition3;
+        
+        
+        &__name{
+            font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: $orange;
+        transform: scale(0);
+        transition: $transition3;
+    }
+        }
+        &__img{
+            min-height: 188px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover{
+            .catalog-item__name{
+                &::before{
+                    transform: scale(-1, 1);
+                }
+            }
+    }
+    }
+    &__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        .catalog-item{
+            width: 20%;
+            padding: 0 15px;
+        }
+    }
+}

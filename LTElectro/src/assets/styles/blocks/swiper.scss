@@ -1,4 +1,4 @@
-.swiper-container, .swiper-banner, .swiper-container-tags,.swiper-container-tags-2,.swiper-container-tags-3, .swiper-news, .selection-help-swiper {
+.swiper-container, .swiper-banner, .swiper-container-tags,.swiper-container-tags-2,.swiper-container-tags-3 {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -10,41 +10,23 @@
   height: 100%;
 }
 
-.selection-help-swiper {
-  width: 90%;
-}
+
 
 .swiper-banner {
-  margin: 18px auto;
-
-  height: 576px;
-}
-
-@media screen and (max-width: 1439px) {
-  .swiper-banner {
-    height: 480px;
+  height: 512px;
+  .swiper-slide-active{
+    .banner__title{
+      animation: top-to-bot .4s ease-in-out;
+    }
+    .banner__subtitle{
+      animation: l-to-r .4s ease-in-out;
+    }
+    .banner__btn{
+      animation: bot-to-top .4s ease-in-out;
+    }
   }
 }
 
-@media screen and (max-width: 1199px) {
-  .swiper-banner {
-    height: 410px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .swiper-banner {
-    height: 500px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .swiper-banner {
-    width: calc(100% + 30px);
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-}
 
 .gallery-top {
   height: 520px;
@@ -175,15 +157,16 @@
 }
 
 .swiper-pagination-bullet {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 2px;
+  background-color: #fff;
   display: inline-block;
-  border-radius: 50%;
-  background: #C4C4C4;
+  border-radius: none;
+  border-radius: 0;
   z-index: 25;
   transition: $transition3;
   margin-right: 15px !important;
-  border: 3px solid #fff;
+
 
   &:last-child, &:last-of-type {
     margin-right: 0 !important;
@@ -194,20 +177,17 @@
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   transition: $transition3;
   background: $orange;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
+  transform: scaleX(2) scaleY(3) ;
   opacity: 1;
-  border: none;
+  border-radius: none;
+  border-radius: 0;
 }
 
 .news__pagination {
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
     transition: $transition3;
     background: $orange;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+    transform: scaleX(2) scaleY(3) ;
     opacity: 1;
     border: none;
   }
