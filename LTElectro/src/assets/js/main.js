@@ -155,6 +155,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* TABS */
+    let storeParent = document.querySelector('.store'),
+        storeLink = document.querySelectorAll('.js-store-link'),
+        storeTab = document.querySelectorAll('.js-store-tab');
+    if (storeParent && storeLink.length > 0) {
+        toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
+    }
 
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
@@ -259,7 +265,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    let sliderTags = new Swiper('.swiper-container-tags', {
+    let sliderTags = new Swiper('.swiper-tags', {
         slidesPerView: 'auto',
         spaceBetween: 20,
         observeParents: true,

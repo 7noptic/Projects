@@ -25,9 +25,31 @@
       line-height: 30px;
       padding-right: 100px;
       display: block;
+      position: relative;
+      opacity: 0.5;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        display: block;
+        height: 5px;
+        width: 100%;
+        max-width: 100px;
+        background-color: $orange;
+        transform: scale(0);
+        transition: $transition2;
+      }
 
       &.active {
-        font-weight: 600;
+        font-weight: bold;
+        opacity: 1;
+
+        &::before {
+          transform: scale(1);
+
+        }
       }
     }
 
@@ -35,7 +57,8 @@
 
   &-subnav {
     display: flex;
-    padding-bottom: 30px;
+    margin-bottom: 50px;
+    position: relative;
 
     &__link {
       font-size: 14px;
@@ -169,12 +192,14 @@
       flex-wrap: wrap;
       display: flex;
       padding-bottom: 0;
+
       &__link {
         font-size: 9px;
         line-height: 15px;
         padding: 3px 5px;
         margin-right: 10px;
         margin-bottom: 20px;
+
         &:last-of-type, &:last-child {
           margin-right: 0;
         }

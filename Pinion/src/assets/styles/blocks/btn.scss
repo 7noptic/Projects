@@ -1,4 +1,4 @@
-.btn{
+.btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -7,40 +7,49 @@
   color: #fff;
   border-radius: $radiusBtn;
   font-weight: 800;
-font-size: 12px;
-line-height: 15px;
-text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
   //transition: none;
   cursor: pointer;
   transition: $transition3;
-  &:hover,&.active{
+
+  &:hover, &.active {
     background: #001F8B;
     background: linear-gradient(323.56deg, #1200E2 -4.25%, #3EAEFF 91.89%);
     color: #fff;
   }
-  &:active{
+
+  &:active {
     transform: translateY(5px);
   }
 
 
- &-border{
-  background: transparent;
-  color: $blue;
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
--moz-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
- }
- &-transparent{
-  background: #EBEBEB;
-  color: #000;
-  &:hover,&.active{
-    background: #001F8B;
-    background: linear-gradient(323.56deg, #1200E2 -4.25%, #3EAEFF 91.89%);
-    color: #fff;
+  &-border {
+    background: transparent;
+    color: $blue;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
+    box-shadow: 0px 0px 0px 1px rgba(0, 99, 248, 1);
   }
-  &:active{
-    transform: translateY(5px);
+
+  &-transparent {
+    background: #EBEBEB;
+    color: #000;
+
+    &:hover {
+      background: #001F8B;
+      background: linear-gradient(323.56deg, #1200E2 -4.25%, #3EAEFF 91.89%);
+      color: #fff;
+    }
+    &.active {
+      background: $blue;
+      background: linear-gradient(323.56deg, #0B0175 -4.25%, #0063F8 91.89%);
+      color: #fff;
+    }
+    &:active {
+      transform: translateY(5px);
+    }
   }
- }
 }
 
