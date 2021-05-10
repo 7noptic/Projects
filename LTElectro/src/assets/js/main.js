@@ -244,7 +244,34 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+/* MORE BTN */
+let brandsLink = document.querySelector('.js-brands-more'),
+brandsItems = document.querySelectorAll('.brands-item.hidden'),
+trigger = true;
 
+if (brandsItems.length > 0) {
+showMore(brandsItems, brandsLink, 'js-brands-more');
+}
+
+function showMore(items, link, linkClass, text) {
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.classList.contains(linkClass)) {
+        e.preventDefault();
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.toggle('active');
+            items[i].classList.toggle('animation-r-to-l');
+            if (trigger) {
+                link.innerHTML = 'Скрыть';
+                trigger = false;
+            } else {
+                link.innerHTML = 'Показать ещё';
+                trigger = true;
+            }
+        }
+    }
+});
+}
     /* SWIPER */
     let sliderBanner = new Swiper('.swiper-banner', {
         slidesPerView: 1,

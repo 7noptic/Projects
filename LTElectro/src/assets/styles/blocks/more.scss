@@ -1,0 +1,13 @@
+.more{
+    font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+position: relative;
+&::before{
+    content: url('../img/rrr.svg');
+    display: block;
+    position: absolute;
+    top: -2;
+    right: -15px;
+}
+}
