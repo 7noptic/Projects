@@ -157,10 +157,23 @@ window.addEventListener('DOMContentLoaded', () => {
     /* TABS */
     let storeParent = document.querySelector('.store'),
         storeLink = document.querySelectorAll('.js-store-link'),
-        storeTab = document.querySelectorAll('.js-store-tab');
-    if (storeParent && storeLink.length > 0) {
-        toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
-    }
+        storeTab = document.querySelectorAll('.js-store-tab'),
+        reviewParent = document.querySelector('.review-block'),
+        reviewLink = document.querySelectorAll('.js-review-link'),
+        reviewTab = document.querySelectorAll('.js-review-tab'),
+        articleParent = document.querySelector('.article-block'),
+        articleLink = document.querySelectorAll('.js-article-link'),
+        articleTab = document.querySelectorAll('.js-article-tab');
+
+        if (storeParent && storeLink.length > 0) {
+            toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
+        }
+        if (reviewParent && reviewLink.length > 0) {
+            toggleTabs(reviewLink, reviewTab, reviewParent, 'js-review-link');
+        }
+        if (articleParent && articleLink.length > 0) {
+            toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
+        }
 
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
@@ -285,6 +298,36 @@ document.addEventListener('click', (e) => {
         },
         pagination:{
             el: '.swiper-pagination',
+            clickable: true,
+        },
+    
+
+
+    });
+    let sliderArticle = new Swiper('.swiper-article', {
+        slidesPerView: 2,
+        spaceBetween: 120,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        pagination:{
+            el: '.article-nav',
+            clickable: true,
+        },
+    
+
+
+    });
+    let sliderNews = new Swiper('.swiper-news', {
+        slidesPerView: 2,
+        spaceBetween: 120,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        pagination:{
+            el: '.article-nav-news',
             clickable: true,
         },
     

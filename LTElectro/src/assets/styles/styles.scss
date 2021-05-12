@@ -4,10 +4,17 @@
 @import "animation";
 @import "mixin";
 @import "blocks/title";
-/* А */
-/* В */
-@import "blocks/btn";
+@import "blocks/subtitle";
+@import "blocks/tab";
+@import "blocks/board-video";
 @import "blocks/banner";
+@import "blocks/swiper";
+@import "blocks/btn";
+
+/* А */
+@import "blocks/article";
+/* В */
+
 @import "blocks/brands";
 /* C */
 @import "blocks/container";
@@ -19,12 +26,14 @@
 
 /* F */
 @import "blocks/form";
+@import "blocks/footer";
 /* G */
 
 /* H */
 @import "blocks/header";
 @import "blocks/headcrumbs";
 /* I */
+@import "blocks/info-text";
 /* J */
 /* K */
 
@@ -45,12 +54,11 @@
 
 /* R */
 @import "blocks/rating-star";
+@import "blocks/review";
 /* S */
-@import "blocks/swiper";
 @import "blocks/store";
 @import "blocks/sitemap";
 /* T */
-@import "blocks/tab";
 @import "blocks/tags";
 @import "blocks/tooltip";
 /* U */
