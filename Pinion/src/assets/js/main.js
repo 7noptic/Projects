@@ -1,9 +1,9 @@
 'use script';
-import Swiper, {Autoplay, Navigation, Pagination,Thumbs} from 'swiper';
+import Swiper, {Autoplay, Navigation, Pagination, Thumbs} from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
 
-Swiper.use([Navigation, Pagination, Autoplay,Thumbs]);
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,138 +12,205 @@ window.addEventListener('DOMContentLoaded', () => {
         loop: true,
         autoplayVideos: true
     });
+    /* rating */
+    let ratingOnPage = document.querySelector('.reviews-company__rating b'),
+        ratingOnPageStar = document.querySelectorAll('.reviews-company__data .reviews-company__rating .rating-star li'),
+        reviewOnPage = document.querySelectorAll('.reviews-card');
+
+    if (ratingOnPage) {
+        let rating = ratingOnPage.innerHTML;
+        rating = Math.round(rating / 2);
+
+        for (let i = 0; i < ratingOnPageStar.length; i++) {
+            ratingOnPageStar[i].classList.remove('active');
+        }
+        for (let i = 0; i <= rating; i++) {
+            if (rating == 1) {
+                ratingOnPageStar[i].classList.add('active');
+                break;
+            } else if (i == 4) {
+                ratingOnPageStar[i].classList.add('active');
+                break;
+            } else {
+                console.log(ratingOnPageStar[i])
+                ratingOnPageStar[i].classList.add('active');
+            }
+        }
+        if (reviewOnPage) {
+            for (let i = 0; i < reviewOnPage.length; i++) {
+                let ratingValue = reviewOnPage[i].querySelector('.reviews-card__rating input'),
+                    ratingReview = reviewOnPage[i].querySelectorAll('.reviews-card__rating ul li');
+
+                for (let i = 0; i < ratingReview.length; i++) {
+                    ratingReview[i].classList.remove('active');
+                }
+                if (ratingValue) {
+                    ratingValue = ratingValue.value;
+                    for (let i = 0; i < ratingValue; i++) {
+                        ratingReview[i].classList.add('active');
+                    }
+                }
+            }
+        }
+    }
+
+    /* more in header */
+    let ratingBlockParent = document.querySelector('.rating-block');
+    if (ratingBlockParent) {
+        let ratingBlockItem = ratingBlockParent.querySelectorAll('.col-12 .rating-item'),
+            ratingBlockMore = ratingBlockParent.querySelector('.rating-block__btn');
+        if (ratingBlockItem) {
+            for (let i = 0; i < ratingBlockItem.length; i++) {
+                if (i < 4) {
+                    ratingBlockItem[i].classList.add('active');
+                }
+            }
+            ratingBlockMore.addEventListener('click', (e) => {
+                e.preventDefault();
+                for (let i = 0; i < ratingBlockItem.length; i++) {
+
+                    ratingBlockItem[i].classList.add('active');
+
+                }
+
+            });
+
+        }
+    }
+
+
     /* HAMBURGER MENU IN HEADER*/
     let html = document.querySelector('html'),
         body = document.querySelector('body'),
-     header = document.querySelector('.header'),
-    main = document.querySelector('main'),
-    footer = document.querySelector('.footer'),
-    searchForm = header.querySelector('.form-wrapper-header'),
-    hamburgerBtn = header.querySelector('.js-burger'),
-    hamburgerMenu = header.querySelector('.hamburger-menu');
+        header = document.querySelector('.header'),
+        main = document.querySelector('main'),
+        footer = document.querySelector('.footer'),
+        searchForm = header.querySelector('.form-wrapper-header'),
+        hamburgerBtn = header.querySelector('.js-burger'),
+        hamburgerMenu = header.querySelector('.hamburger-menu');
 
 
-header.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains('js-burger')) {
-        hamburgerMenu.classList.toggle('active');
-        hamburgerBtn.classList.toggle('active');
+    header.addEventListener('click', (e) => {
+        if (e.target && e.target.classList.contains('js-burger')) {
+            hamburgerMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        }
+        if (e.target && (e.target.classList.contains('js-search') || e.target.classList.contains('modal-search__exit') || e.target.classList.contains('form-wrapper-header__exit'))) {
+            searchForm.classList.toggle('active');
+        }
+    });
+
+    /* MODAL */
+    let modalBlock = document.querySelector('.js-sidebars'),
+        allModal = document.querySelectorAll('.js-sidebars > section'),
+        modalCall = document.querySelector('.modal-call'),
+        modalQuest = document.querySelector('.modal-quest'),
+        modalRegion = document.querySelector('.modal-region'),
+        modalOneClick = document.querySelector('.modal-one-click'),
+        modalAssortment = document.querySelector('.modal-assortment'),
+        modalJob = document.querySelector('.modal-job'),
+        modalPersonal = document.querySelector('.modal-personal'),
+        modalResetPass = document.querySelector('.modal-reset-pass'),
+        modalSubscribe = document.querySelector('.modal-subscribe'),
+        modalReviews = document.querySelector('.modal-reviews'),
+        modalBasket = document.querySelector('.modal-basket'),
+        regionSelect = document.querySelectorAll('.modal-region__link'),
+        regionBtn = document.querySelector('.js-region-city'),
+        burgerMenu = document.querySelector('.adaptive-menu');
+
+    if (localStorage.getItem('city') != null) {
+        regionBtn.innerHTML = localStorage.getItem('city');
+    } else {
+        regionBtn.innerHTML = 'Москва';
     }
-    if (e.target && (e.target.classList.contains('js-search') || e.target.classList.contains('modal-search__exit') || e.target.classList.contains('form-wrapper-header__exit'))) {
-        searchForm.classList.toggle('active');
+    document.addEventListener('click', e => {
+
+        let target = e.target;
+
+        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
+            openCloseModal(e, modalCall);
+        }
+        if (target && (target.classList.contains('js-reviews') || target.classList.contains('modal-reviews__exit'))) {
+            openCloseModal(e, modalReviews);
+        }
+
+        if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
+            openCloseModal(e, burgerMenu);
+        }
+        if (target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit') || target.classList.contains('js-product-one-click'))) {
+            openCloseModal(e, modalOneClick);
+        }
+
+
+        if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
+            openCloseModal(e, modalSubscribe);
+        }
+
+        if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
+            openCloseModal(e, modalRegion);
+        }
+
+        if (target && (target.classList.contains('js-personal-data') || target.classList.contains('modal-personal__exit'))) {
+            openCloseModal(e, modalPersonal);
+        }
+
+        if (target.classList.contains('modal-region__link')) {
+            for (let i = 0; i < regionSelect.length; i++) {
+                if (regionSelect[i] == target) {
+                    let citiValue = regionSelect[i].innerHTML;
+                    localStorage.setItem('city', citiValue)
+                    let testValue = localStorage.getItem('city')
+                    if (testValue == 'undifiend') {
+                        regionBtn.innerHTML = 'Москва';
+                    } else {
+                        regionBtn.innerHTML = testValue.innerHTML;
+                        regionBtn.innerHTML = testValue;
+                    }
+
+                }
+            }
+
+            openCloseModal(e, modalRegion);
+        } else if (target.classList.contains('js-region-close')) {
+            let city = document.querySelector('.js-select-city');
+            localStorage.setItem('city', city.innerHTML);
+            let testValue = localStorage.getItem('city');
+            regionBtn.innerHTML = testValue;
+            openCloseModal(e, modalRegion);
+        }
+
+
+        /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
+        if (target && target.classList.contains('sidebar-bg')) {
+            e.preventDefault();
+            html.classList.toggle('lock');
+            body.classList.toggle('lock');
+            modalBlock.classList.toggle('sidebar-bg');
+            for (let i = 0; i < allModal.length; i++) {
+                if (allModal[i].classList.toggle('active')) {
+                    allModal[i].classList.remove('active');
+                }
+            }
+            header.classList.toggle('blur');
+            main.classList.toggle('blur');
+            footer.classList.toggle('blur');
+
+        }
+
+    });
+
+    function openCloseModal(e, modal) {
+        e.preventDefault();
+        html.classList.toggle('lock');
+        body.classList.toggle('lock');
+        modalBlock.classList.toggle('sidebar-bg');
+        modal.classList.toggle('active');
+        header.classList.toggle('blur');
+        main.classList.toggle('blur');
+        footer.classList.toggle('blur');
     }
-});
 
-      /* MODAL */
-      let modalBlock = document.querySelector('.js-sidebars'),
-      allModal = document.querySelectorAll('.js-sidebars > section'),
-      modalCall = document.querySelector('.modal-call'),
-      modalQuest = document.querySelector('.modal-quest'),
-      modalRegion = document.querySelector('.modal-region'),
-      modalOneClick = document.querySelector('.modal-one-click'),
-      modalAssortment = document.querySelector('.modal-assortment'),
-      modalJob = document.querySelector('.modal-job'),
-      modalPersonal = document.querySelector('.modal-personal'),
-      modalResetPass = document.querySelector('.modal-reset-pass'),
-      modalSubscribe = document.querySelector('.modal-subscribe'),
-      modalReviews = document.querySelector('.modal-reviews'),
-      modalBasket = document.querySelector('.modal-basket'),
-      regionSelect = document.querySelectorAll('.modal-region__link'),
-      regionBtn = document.querySelector('.js-region-city'),
-      burgerMenu = document.querySelector('.adaptive-menu');
-
-  if (localStorage.getItem('city') != null) {
-      regionBtn.innerHTML = localStorage.getItem('city');
-  } else {
-      regionBtn.innerHTML = 'Москва';
-  }
-  document.addEventListener('click', e => {
-
-      let target = e.target;
-
-      if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
-          openCloseModal(e, modalCall);
-      }
-      if (target && (target.classList.contains('js-reviews') || target.classList.contains('modal-reviews__exit'))) {
-        openCloseModal(e, modalReviews);
-    }
-    
-      if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
-          openCloseModal(e, burgerMenu);
-      }
-      if (target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit') || target.classList.contains('js-product-one-click'))) {
-          openCloseModal(e, modalOneClick);
-      }
-    
- 
-      if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
-          openCloseModal(e, modalSubscribe);
-      }
-    
-      if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
-          openCloseModal(e, modalRegion);
-      }
-     
-      if (target && (target.classList.contains('js-personal-data') || target.classList.contains('modal-personal__exit'))) {
-          openCloseModal(e, modalPersonal);
-      }
-    
-      if (target.classList.contains('modal-region__link')) {
-          for (let i = 0; i < regionSelect.length; i++) {
-              if (regionSelect[i] == target) {
-                  let citiValue = regionSelect[i].innerHTML;
-                  localStorage.setItem('city', citiValue)
-                  let testValue = localStorage.getItem('city')
-                  if (testValue == 'undifiend') {
-                      regionBtn.innerHTML = 'Москва';
-                  } else {
-                      regionBtn.innerHTML = testValue.innerHTML;
-                      regionBtn.innerHTML = testValue;
-                  }
-
-              }
-          }
-
-          openCloseModal(e, modalRegion);
-      } else if (target.classList.contains('js-region-close')) {
-          let city = document.querySelector('.js-select-city');
-          localStorage.setItem('city', city.innerHTML);
-          let testValue = localStorage.getItem('city');
-          regionBtn.innerHTML = testValue;
-          openCloseModal(e, modalRegion);
-      }
-
-
-      /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
-      if (target && target.classList.contains('sidebar-bg')) {
-          e.preventDefault();
-          html.classList.toggle('lock');
-      body.classList.toggle('lock');
-          modalBlock.classList.toggle('sidebar-bg');
-          for (let i = 0; i < allModal.length; i++) {
-              if (allModal[i].classList.toggle('active')) {
-                  allModal[i].classList.remove('active');
-              }
-          }
-          header.classList.toggle('blur');
-          main.classList.toggle('blur');
-          footer.classList.toggle('blur');
-
-      }
-
-  });
-
-  function openCloseModal(e, modal) {
-      e.preventDefault();
-      html.classList.toggle('lock');
-      body.classList.toggle('lock');
-      modalBlock.classList.toggle('sidebar-bg');
-      modal.classList.toggle('active');
-      header.classList.toggle('blur');
-      main.classList.toggle('blur');
-      footer.classList.toggle('blur');
-  }
     /* TABS */
-    
 
 
     let regionParent = document.querySelector('.region'),
@@ -162,10 +229,10 @@ header.addEventListener('click', (e) => {
     if (regionParent && regionLink.length > 0) {
         toggleTabs(regionLink, regionTabs, regionParent, 'js-region-link', true, '.js-subregion-link', '.subregion__content');
     }
-    if (reviewsCompanyParent && reviewsCompanyLink.length > 0 && reviewsCompanyLink.length == reviewsCompanyTabs.length ) {
+    if (reviewsCompanyParent && reviewsCompanyLink.length > 0 && reviewsCompanyLink.length == reviewsCompanyTabs.length) {
         toggleTabs(reviewsCompanyLink, reviewsCompanyTabs, reviewsCompanyParent, 'js-reviews-company-link');
     }
-    if (faqTabParent && faqTabLink.length > 0 && faqTabLink.length == faqTabTabs.length ) {
+    if (faqTabParent && faqTabLink.length > 0 && faqTabLink.length == faqTabTabs.length) {
         toggleTabs(faqTabLink, faqTabTabs, faqTabParent, 'js-faq-link');
     }
 
@@ -186,7 +253,7 @@ header.addEventListener('click', (e) => {
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
-                if(trigger){
+                if (trigger) {
                     subTabs = true;
                 }
 
@@ -235,18 +302,17 @@ header.addEventListener('click', (e) => {
 
     /* SHOW HIDE CONTENT */
     let faqLink = document.querySelectorAll('.faq-item__header'),
-    faqContent = document.querySelectorAll('.faq-item__content'),
+        faqContent = document.querySelectorAll('.faq-item__content'),
         reviewsMoreLink = document.querySelector('.reviews__more'),
         reviewsMoreContent = document.querySelectorAll('.reviews-card.hidden');
 
-    if(faqLink.length > 0 && faqLink.length == faqContent.length){
+    if (faqLink.length > 0 && faqLink.length == faqContent.length) {
         toggleContent(faqLink, faqContent, 'faq-item__header');
     }
-    if(reviewsMoreContent.length > 0){
+    if (reviewsMoreContent.length > 0) {
         toggleMoreBtn(reviewsMoreLink, reviewsMoreContent, 'reviews__more');
-        
+
     }
-    
 
 
     function toggleContent(link, content, linkClass) {
@@ -264,18 +330,19 @@ header.addEventListener('click', (e) => {
             }
         });
     }
+
     /* more btn */
 
-    function toggleMoreBtn(link, content, linkClass){
+    function toggleMoreBtn(link, content, linkClass) {
 
         document.addEventListener('click', (e) => {
-            if(e.target && e.target.classList.contains(linkClass)){
-            e.preventDefault();
+            if (e.target && e.target.classList.contains(linkClass)) {
+                e.preventDefault();
 
-                for(let i = 0; i < content.length; i++){
+                for (let i = 0; i < content.length; i++) {
                     content[i].classList.toggle('active');
                 }
-            link.innerHTML=="ПОКАЗАТЬ ЕЩЁ" ? link.innerHTML="СКРЫТЬ" : link.innerHTML="ПОКАЗАТЬ ЕЩЁ";
+                link.innerHTML == "ПОКАЗАТЬ ЕЩЁ" ? link.innerHTML = "СКРЫТЬ" : link.innerHTML = "ПОКАЗАТЬ ЕЩЁ";
             }
         });
     }
@@ -297,7 +364,7 @@ header.addEventListener('click', (e) => {
         },
     });
 
-     let SwiperCard = new Swiper('.swiper-card', {
+    let SwiperCard = new Swiper('.swiper-card', {
         slidesPerView: 4,
         spaceBetween: 10,
         observeParents: true,
@@ -307,7 +374,7 @@ header.addEventListener('click', (e) => {
         autoplay: {
             delay: 5000,
         },
-        
+
         navigation: {
             nextEl: '.card__next',
             prevEl: '.card__prev'
@@ -328,7 +395,7 @@ header.addEventListener('click', (e) => {
             },
         }
     });
-  
+
     let sliderTags = new Swiper('.swiper-tags', {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -340,7 +407,7 @@ header.addEventListener('click', (e) => {
             prevEl: '.tags__prev',
             nextEl: '.tags__next',
         },
-        
+
 
     });
     let sliderRegion = new Swiper('.swiper-region', {
@@ -364,7 +431,7 @@ header.addEventListener('click', (e) => {
                 slidesPerView: 2,
             },
 
-            
+
             1920: {
                 spaceBetween: 30,
                 slidesPerView: 3,
@@ -372,61 +439,63 @@ header.addEventListener('click', (e) => {
         }
 
     });
-    
+
     let ratingItem = document.querySelectorAll('.rating-item');
 
     document.addEventListener('click', (e) => {
-        if(e.target && e.target.classList.contains('rating-item__plus')){
+        if (e.target && e.target.classList.contains('rating-item__plus')) {
             e.preventDefault();
         }
     })
-    if(ratingItem){
-        
-        for(let i = 0; i < ratingItem.length; i++){
+    if (ratingItem) {
+
+        for (let i = 0; i < ratingItem.length; i++) {
             let num = ratingItem[i].querySelector('.rating-item__num');
-            num.innerHTML = i+1;
+            num.innerHTML = i + 1;
         }
         ratingLike();
         ratingDisLike();
-        function ratingLike(){
-            for(let i = 0; i < ratingItem.length; i++){
+
+        function ratingLike() {
+            for (let i = 0; i < ratingItem.length; i++) {
                 let trigger = true;
                 let ratingLike = ratingItem[i].querySelector('.rating-item__plus'),
-                ratingLikeCount = ratingLike.querySelector('span');
+                    ratingLikeCount = ratingLike.querySelector('span');
 
-                if(ratingLike){
-                    ratingLike.onclick = function(x) {
-                        return function() {
-                            if(trigger){
+                if (ratingLike) {
+                    ratingLike.onclick = function (x) {
+                        return function () {
+                            if (trigger) {
                                 ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML + 1;
                                 trigger = false;
-                            }else{
+                            } else {
                                 ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML - 1;
                                 trigger = true;
                             }
-                            
+
                         }
                     }(i)
                 }
             }
         }
-        function ratingDisLike(){
-            for(let i = 0; i < ratingItem.length; i++){
+
+        function ratingDisLike() {
+            for (let i = 0; i < ratingItem.length; i++) {
                 let trigger = true;
                 let ratingLike = ratingItem[i].querySelector('.rating-item__minus'),
-                ratingLikeCount = ratingLike.querySelector('span');
+                    ratingLikeCount = ratingLike.querySelector('span');
 
-                if(ratingLike){
-                    ratingLike.onclick = function(x) {
-                        return function() {
-                            if(trigger && +ratingLikeCount.innerHTML >= 0){
+                if (ratingLike) {
+                    ratingLike.onclick = function (x) {
+                        return function () {
+                            if (trigger && +ratingLikeCount.innerHTML >= 0) {
                                 ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML + 1;
                                 trigger = false;
-                            }else if(trigger == false && +ratingLikeCount.innerHTML >= 0){
+                            } else if (trigger == false && +ratingLikeCount.innerHTML >= 0) {
                                 ratingLikeCount.innerHTML = +ratingLikeCount.innerHTML - 1;
                                 trigger = true;
                             }
-                            
+
                         }
                     }(i)
                 }
@@ -434,7 +503,7 @@ header.addEventListener('click', (e) => {
         }
     }
 
-  
+
     /* RATING 
     let ratingParent = document.querySelector('.js-rating'),
         ratingInput = document.querySelector('#js-rating'),

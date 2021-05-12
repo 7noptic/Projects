@@ -12,7 +12,6 @@
   &-item {
     margin-bottom: 30px;
     position: relative;
-    display: flex;
     padding: 30px;
     background: #FFFFFF;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
@@ -20,6 +19,11 @@
     align-items: center;
     border: 12px solid transparent;
     transition: $transition3;
+    display: none;
+    &.active{
+      display: flex;
+
+    }
 
     &:hover {
       border: 12px solid #F9F9F9;
@@ -52,6 +56,10 @@
       width: 12%;
       display: flex;
       flex-wrap: wrap;
+      p{
+        font-size: 18px;
+        padding-bottom: 10px;
+      }
 
       span {
         display: block;
