@@ -10058,148 +10058,7 @@
       </div>
     </section>
 
-    <section class="modal modal-call">
-      <div class="modal__wrapper modal-call__wrapper">
 
-
-        <h3 class="modal__title modal-call__title">
-          Заказать звонок
-        </h3>
-        <h4 class="modal__subtitle">
-          Заполните форму и мы Вам перезвоним
-        </h4>
-        <div class="modal-form">
-          <form action="POST">
-            <div class="modal-form__wrapper">
-              <span>
-                <input type="text" class="form-control form__input" placeholder="Имя">
-              </span>
-              <span>
-                <input type="tel" class="form-control form__input" placeholder="Телефон">
-              </span>
-              <span>
-                <button type="submit" class="btn modal-form__btn">заказать звонок</button>
-              </span>
-            </div>
-
-            <div class="modal-form__agreement">
-              Я согласен условиями предоставления
-              услуг и обработкой моих персональных
-              данных при нажатии “Заказать звонок”
-            </div>
-
-          </form>
-        </div>
-        <a href="#" class="modal__exit">
-          <img src="img/mex.svg" alt="" class="modal-call__exit">
-        </a>
-      </div>
-    </section>
-    <!-- 
-    <section class="modal modal-one-click">
-        <div class="modal__wrapper modal-one-click__wrapper">
-            <a href="#" class="modal__exit">
-                <img src="img/mex.svg" alt="" class="modal-one-click__exit">
-            </a>
-            <h3 class="modal__title modal-one-click__title">
-                Купить в 1 клик
-            </h3>
-            <h4 class="modal__subtitle">
-                Заполните форму и мы Вам перезвоним
-            </h4>
-            <div class="modal-one-click__item">
-                <div class="row">
-
-                    <div class="col-4">
-                        <div class="modal-one-click__img">
-                            <img src="img/ic1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-8">
-                        <a href="#" class="modal-one-click__name">
-                            Семга свежемороженая
-                            Премиум чилийская
-                        </a>
-                        <div class="row">
-
-
-                            <div class="col-5">
-                                <div class="modal-one-click__text">
-                                    Цена
-                                </div>
-                            </div>
-
-                            <div class="col-7">
-
-                                <p class="modal-one-click__price">
-                                    1050 ₽
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="modal-form">
-                <form action="POST">
-                    <div class="modal-form__wrapper">
-
-                        <span>
-                            <input type="tel" class="form-control form__input" placeholder="Телефон">
-                        </span>
-                        <span>
-                            <button type="submit" class="btn modal-form__btn">КУПИТЬ</button>
-                        </span>
-                    </div>
-                    <div class="modal-form__agreement">
-                        Я согласен условиями предоставления
-                        услуг и обработкой моих персональных
-                        данных при нажатии “Заказать звонок”
-                    </div>
-                    <input type="hidden" id="js-modal-one-click-name" value="">
-                    <input type="hidden" id="js-modal-one-click-price" value="">
-                    <input type="hidden" id="js-modal-one-click-url" value="">
-
-                </form>
-            </div>
-        </div>
-    </section>
-     -->
-    <section class="modal modal-subscribe">
-      <div class="modal__wrapper modal-subscribe__wrapper">
-        <a href="#" class="modal__exit">
-          <img src="img/mex.svg" alt="" class="modal-subscribe__exit">
-        </a>
-        <h3 class="modal__title modal-subscribe__title">
-          Подпишись на свежие <br>
-          статьи и новости
-        </h3>
-        <div class="modal-form">
-          <form action="POST">
-            <div class="modal-form__wrapper">
-              <span>
-                <input type="text" class="form-control form__input" placeholder="Имя">
-              </span>
-              <span>
-                <input type="tel" class="form-control form__input" placeholder="Email">
-              </span>
-              <span>
-                <button type="submit" class="btn modal-form__btn">подписаться</button>
-              </span>
-            </div>
-            <div class="modal-form__agreement">
-              Я согласен условиями предоставления
-              услуг и обработкой моих персональных
-              данных при нажатии “Подписаться”
-            </div>
-
-          </form>
-        </div>
-      </div>
-    </section>
 
     <section class="modal modal-reviews">
       <div class="modal__wrapper modal-reviews__wrapper">
@@ -10248,7 +10107,7 @@
                 <input type="hidden" class="form-control" value="0" name="rating" id="js-rating-modal">
               </div>
               <span>
-                <button type="submit" class="btn modal-form__btn">ОТПРАВИТЬ</button>
+                <button type="submit" class="btn modal-form__btn js-push">ОТПРАВИТЬ</button>
               </span>
             </div>
             <div class="modal-form__agreement">
@@ -10301,7 +10160,7 @@
 
 
               <span>
-                <button type="submit" class="btn modal-form__btn">ОТПРАВИТЬ</button>
+                <button type="submit" class="btn modal-form__btn js-push">ОТПРАВИТЬ</button>
               </span>
               <div class="modal-form__agreement">
                 Я согласен условиями предоставления
@@ -10317,6 +10176,11 @@
     </section>
 
 
+  </aside>
+  <aside class="push">
+    <div class="push-item">
+      Ваша заявка успешна принята и находится в обработке!
+    </div>
   </aside>
   <!-- !MODAL -->
   <script src="vendors~main.js"></script>

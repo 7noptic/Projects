@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
         loop: true,
         autoplayVideos: true
     });
+
+
     /* rating */
     let ratingOnPage = document.querySelector('.reviews-company__rating b'),
         ratingOnPageStar = document.querySelectorAll('.reviews-company__data .reviews-company__rating .rating-star li'),
@@ -36,19 +38,37 @@ window.addEventListener('DOMContentLoaded', () => {
                 ratingOnPageStar[i].classList.add('active');
             }
         }
-        if (reviewOnPage) {
-            for (let i = 0; i < reviewOnPage.length; i++) {
-                let ratingValue = reviewOnPage[i].querySelector('.reviews-card__rating input'),
-                    ratingReview = reviewOnPage[i].querySelectorAll('.reviews-card__rating ul li');
 
-                for (let i = 0; i < ratingReview.length; i++) {
-                    ratingReview[i].classList.remove('active');
+    }
+    if (reviewOnPage) {
+        for (let i = 0; i < reviewOnPage.length; i++) {
+            let ratingValue = reviewOnPage[i].querySelector('.reviews-card__rating input'),
+                ratingReview = reviewOnPage[i].querySelectorAll('.reviews-card__rating ul li');
+
+            for (let i = 0; i < ratingReview.length; i++) {
+                ratingReview[i].classList.remove('active');
+            }
+            if (ratingValue) {
+                ratingValue = ratingValue.value;
+                for (let i = 0; i < ratingValue; i++) {
+                    ratingReview[i].classList.add('active');
                 }
-                if (ratingValue) {
-                    ratingValue = ratingValue.value;
-                    for (let i = 0; i < ratingValue; i++) {
-                        ratingReview[i].classList.add('active');
-                    }
+            }
+        }
+    }
+    let reviewOnSlider = document.querySelectorAll('.card ');
+    if (reviewOnSlider) {
+        for (let i = 0; i < reviewOnSlider.length; i++) {
+            let ratingValue = reviewOnSlider[i].querySelector('.card__rating input'),
+                ratingReview = reviewOnSlider[i].querySelectorAll('.card__rating ul li');
+
+            for (let i = 0; i < ratingReview.length; i++) {
+                ratingReview[i].classList.remove('active');
+            }
+            if (ratingValue) {
+                ratingValue = ratingValue.value;
+                for (let i = 0; i < ratingValue; i++) {
+                    ratingReview[i].classList.add('active');
                 }
             }
         }
@@ -56,9 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* more in header */
     let ratingBlockParent = document.querySelector('.rating-block');
+    let ratingBlockItem = document.querySelectorAll('.col-12 .rating-item'),
+        ratingBlockMore = document.querySelector('.rating-block__btn');
     if (ratingBlockParent) {
-        let ratingBlockItem = ratingBlockParent.querySelectorAll('.col-12 .rating-item'),
-            ratingBlockMore = ratingBlockParent.querySelector('.rating-block__btn');
+
         if (ratingBlockItem) {
             for (let i = 0; i < ratingBlockItem.length; i++) {
                 if (i < 4) {
@@ -76,6 +97,14 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
         }
+    }else{
+        if (ratingBlockItem) {
+            for (let i = 0; i < ratingBlockItem.length; i++) {
+                    ratingBlockItem[i].classList.add('active');
+            }
+
+
+        }
     }
 
 
@@ -88,7 +117,6 @@ window.addEventListener('DOMContentLoaded', () => {
         searchForm = header.querySelector('.form-wrapper-header'),
         hamburgerBtn = header.querySelector('.js-burger'),
         hamburgerMenu = header.querySelector('.hamburger-menu');
-
 
     header.addEventListener('click', (e) => {
         if (e.target && e.target.classList.contains('js-burger')) {
@@ -103,17 +131,9 @@ window.addEventListener('DOMContentLoaded', () => {
     /* MODAL */
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
-        modalCall = document.querySelector('.modal-call'),
-        modalQuest = document.querySelector('.modal-quest'),
         modalRegion = document.querySelector('.modal-region'),
-        modalOneClick = document.querySelector('.modal-one-click'),
-        modalAssortment = document.querySelector('.modal-assortment'),
-        modalJob = document.querySelector('.modal-job'),
         modalPersonal = document.querySelector('.modal-personal'),
-        modalResetPass = document.querySelector('.modal-reset-pass'),
-        modalSubscribe = document.querySelector('.modal-subscribe'),
         modalReviews = document.querySelector('.modal-reviews'),
-        modalBasket = document.querySelector('.modal-basket'),
         regionSelect = document.querySelectorAll('.modal-region__link'),
         regionBtn = document.querySelector('.js-region-city'),
         burgerMenu = document.querySelector('.adaptive-menu');
@@ -127,9 +147,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let target = e.target;
 
-        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
-            openCloseModal(e, modalCall);
-        }
         if (target && (target.classList.contains('js-reviews') || target.classList.contains('modal-reviews__exit'))) {
             openCloseModal(e, modalReviews);
         }
@@ -137,14 +154,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
             openCloseModal(e, burgerMenu);
         }
-        if (target && (target.classList.contains('js-one-click') || target.classList.contains('modal-one-click__exit') || target.classList.contains('js-product-one-click'))) {
-            openCloseModal(e, modalOneClick);
-        }
 
 
-        if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
-            openCloseModal(e, modalSubscribe);
-        }
 
         if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
             openCloseModal(e, modalRegion);
@@ -181,21 +192,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
-        if (target && target.classList.contains('sidebar-bg')) {
-            e.preventDefault();
-            html.classList.toggle('lock');
-            body.classList.toggle('lock');
-            modalBlock.classList.toggle('sidebar-bg');
-            for (let i = 0; i < allModal.length; i++) {
-                if (allModal[i].classList.toggle('active')) {
-                    allModal[i].classList.remove('active');
+        function closeAllModal(){
+            if (target && target.classList.contains('sidebar-bg')) {
+                e.preventDefault();
+                html.classList.toggle('lock');
+                body.classList.toggle('lock');
+                modalBlock.classList.toggle('sidebar-bg');
+                for (let i = 0; i < allModal.length; i++) {
+                    if (allModal[i].classList.toggle('active')) {
+                        allModal[i].classList.remove('active');
+                    }
                 }
-            }
-            header.classList.toggle('blur');
-            main.classList.toggle('blur');
-            footer.classList.toggle('blur');
+                header.classList.toggle('blur');
+                main.classList.toggle('blur');
+                footer.classList.toggle('blur');
 
+            }
         }
+        closeAllModal();
 
     });
 
@@ -209,7 +223,31 @@ window.addEventListener('DOMContentLoaded', () => {
         main.classList.toggle('blur');
         footer.classList.toggle('blur');
     }
+    /* fix modal */
+    let push = document.querySelector('.push-item');
+    document.addEventListener('click', (e) => {
 
+        if(e.target && e.target.classList.contains('js-push')){
+            e.preventDefault();
+            push.classList.add('active');
+            html.classList.toggle('lock');
+            body.classList.toggle('lock');
+            modalBlock.classList.toggle('sidebar-bg');
+            for (let i = 0; i < allModal.length; i++) {
+                if (allModal[i].classList.toggle('active')) {
+                    allModal[i].classList.remove('active');
+                }
+            }
+            header.classList.toggle('blur');
+            main.classList.toggle('blur');
+            footer.classList.toggle('blur');
+            function showPush() {
+                push.classList.remove('active');
+            }
+
+            setTimeout(showPush, 5000); // Привет, Джон
+        }
+    })
     /* TABS */
 
 
