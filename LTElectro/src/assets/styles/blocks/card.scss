@@ -1,24 +1,28 @@
-.card{
+.card {
   padding: 15px 20px;
   margin-bottom: 40px;
   transition: $transition3;
-  &__line{
+
+  &__line {
     background: $grayLight;
     width: 100%;
     height: 1px;
     margin-bottom: 40px;
   }
-  &:hover{
+
+  &:hover {
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
   }
-  &__img{
+
+  &__img {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
   }
-  &__tag{
+
+  &__tag {
     position: absolute;
     top: 15px;
     right: 10px;
@@ -27,17 +31,20 @@
     line-height: 15px;
     color: #0051EE;
   }
-  &__heart{
+
+  &__heart {
     transition: $transition2;
     position: absolute;
     left: 10px;
     top: 10px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       transform: scale(1.1);
     }
   }
-  &__feedback{
+
+  &__feedback {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +53,8 @@
     line-height: 17px;
     margin-bottom: 12px;
   }
-  &__name{
+
+  &__name {
     margin-bottom: 3px;
     font-size: 15px;
     line-height: 20px;
@@ -62,19 +70,22 @@
     box-orient: vertical;
     height: 40px;
   }
-  &__art{
+
+  &__art {
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
     opacity: 0.5;
     margin-bottom: 15px;
   }
-  &-price{
+
+  &-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    &__old{
+
+    &__old {
       font-size: 18px;
       line-height: 22px;
       text-decoration: line-through;
@@ -82,35 +93,41 @@
       color: #000000;
       opacity: 0.4;
     }
-    &__new{
+
+    &__new {
       font-weight: bold;
       font-size: 24px;
       line-height: 29px;
     }
-    &__discount{
+
+    &__discount {
       font-weight: bold;
       font-size: 24px;
       line-height: 29px;
       color: $orange;
     }
   }
-  &__btn{
+
+  &__btn {
     width: 100%;
     display: flex;
     padding: 20px;
     margin-bottom: 10px;
   }
-  &-footer{
+
+  &-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__left{
+
+    &__left {
       font-weight: bold;
       font-size: 12px;
       line-height: 15px;
       padding-left: 20px;
       position: relative;
-      &::before{
+
+      &::before {
         content: url("../img/gal.svg");
         position: absolute;
         top: 0;
@@ -118,26 +135,31 @@
         display: block;
       }
     }
-    &__link{
+
+    &__link {
       font-weight: bold;
       font-size: 14px;
       line-height: 17px;
     }
   }
-  &-img{
+
+  &-img {
     margin-bottom: 110px;
-    &__item{
+
+    &__item {
       margin-bottom: 40px;
       position: relative;
       z-index: 1;
       overflow: hidden;
       display: block;
-      img{
+
+      img {
         width: 100%;
         height: 100%;
         transition: $transition4;
       }
-      &::before{
+
+      &::before {
         content: '';
         position: absolute;
         display: flex;
@@ -146,30 +168,86 @@
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.25);
       }
-      &:hover{
-        img{
+
+      &:hover {
+        img {
           transform: scale(1.15);
         }
       }
     }
-    &__text{
+
+    &__text {
       position: absolute;
       top: 25px;
       left: 30px;
       display: flex;
       flex-direction: column;
       font-weight: bold;
-font-size: 20px;
-line-height: 24px;
-color: #fff;
-z-index: 11;
-span{
-  padding-top: 15px;
-  font-weight: normal;
-font-size: 32px;
-line-height: 24px;
-}
+      font-size: 20px;
+      line-height: 24px;
+      color: #fff;
+      z-index: 11;
+
+      span {
+        padding-top: 15px;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 24px;
+      }
     }
 
+  }
+}
+
+@media (max-width: 1399px) {
+  .card{
+    &-price{
+      &__old{
+        font-size: 16px;
+      }
+      &__new{
+        font-size: 22px;
+      }
+      &__discount{
+        font-size: 22px;
+      }
+    }
+    &-img{
+      &__text{
+        font-size: 18px;
+        line-height: 22px;
+        span{
+          font-size: 28px;
+
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .card{
+    &__line{
+      display: none;
+    }
+    &-img{
+      &__text{
+        top: 20px;
+        left: 20px;
+        font-size: 16px;
+        line-height: 20px;
+        span{
+          font-size: 24px;
+
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .card{
+    margin-bottom: 15px;
+    &-img{
+      margin-bottom: 60px;
+    }
   }
 }

@@ -17,7 +17,29 @@ window.addEventListener('DOMContentLoaded', () => {
     /* rating */
     let ratingOnPage = document.querySelector('.reviews-company__rating b'),
         ratingOnPageStar = document.querySelectorAll('.reviews-company__data .reviews-company__rating .rating-star li'),
-        reviewOnPage = document.querySelectorAll('.reviews-card');
+        reviewOnPage = document.querySelectorAll('.reviews-card'),
+        reviewMoreParent = document.querySelector('.js-all-company'),
+        reviewMoreItem = document.querySelectorAll('.js-all-company .reviews-card'),
+        reviewMoreItemActive = document.getElementsByClassName('.js-all-company .reviews-card.active');
+
+    if(reviewMoreParent){
+        for(let i = 0; i < reviewMoreItem.length; i++){
+            if(i > 9){
+                reviewMoreItem[i].classList.add('hidden');
+            }
+        }
+        document.querySelector('.reviews__more').addEventListener('click', (e) => {
+            let trigger = 1;
+            for(let i = 0; i < reviewMoreItem.length; i++){
+
+                if(reviewMoreItem[i].classList.contains('hidden') && trigger < 10){
+                    reviewMoreItem[i].classList.remove('hidden');
+                    trigger++;
+                }
+            }
+        })
+
+    }
 
     if (ratingOnPage) {
         let rating = ratingOnPage.innerHTML;
@@ -340,17 +362,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* SHOW HIDE CONTENT */
     let faqLink = document.querySelectorAll('.faq-item__header'),
-        faqContent = document.querySelectorAll('.faq-item__content'),
-        reviewsMoreLink = document.querySelector('.reviews__more'),
-        reviewsMoreContent = document.querySelectorAll('.reviews-card.hidden');
+        faqContent = document.querySelectorAll('.faq-item__content');
 
     if (faqLink.length > 0 && faqLink.length == faqContent.length) {
         toggleContent(faqLink, faqContent, 'faq-item__header');
     }
-    if (reviewsMoreContent.length > 0) {
-        toggleMoreBtn(reviewsMoreLink, reviewsMoreContent, 'reviews__more');
 
-    }
 
 
     function toggleContent(link, content, linkClass) {

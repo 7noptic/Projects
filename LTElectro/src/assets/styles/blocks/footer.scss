@@ -1,132 +1,174 @@
-.footer{
-    &__title{
-        font-weight: bold;
-font-size: 14px;
-line-height: 17px;
-padding-bottom: 20px;
-    }
-    &__subtitle{
-        font-weight: bold;
-font-size: 12px;
-line-height: 15px;
-padding-bottom: 5px;
-    }
-    &__menu{
-        li{
-            a{
-                font-size: 12px;
-line-height: 28px;
-            }
-        }
-    }
-    &__text{
+.footer {
+  &__title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 5px;
+  }
+
+  &__menu {
+    li {
+      a {
         font-size: 12px;
-line-height: 28px;
-&-b{
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 28px;
+
+    &-b {
+      display: block;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__block {
+    padding-bottom: 33px;
+  }
+
+  &__pay {
+    display: flex;
+
+    img {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+
+
+    color: #FF5219;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__mail {
     display: block;
     font-weight: bold;
-font-size: 20px;
-line-height: 24px;
-}
-    }
-    &__block{
-        padding-bottom: 33px;
-    }
-    &__pay{
-        display: flex;
-        img{
-            margin-right: 20px;
-        }
-    }
-    &__link{
-        font-weight: 800;
-font-size: 12px;
-line-height: 15px;
-text-transform: uppercase;
+    font-size: 14px;
+    line-height: 17px;
+  }
 
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 230px;
 
-color: #FF5219;
-&:hover{
-    color: #000;
+    a {
+      transition: $transition3;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__row {
+    padding-bottom: 60px;
+
+    &-border {
+      border-top: 1px solid $grayLight;
+      padding: 30px 0;
+    }
+  }
+
+  &__oparin {
+    display: flex;
+    align-items: center;
+    transition: $transition3;
+
+    path {
+      transition: $transition3;
+    }
+
+    &:hover {
+      path {
+        fill: $orange;
+      }
+    }
+  }
+
+  &-subscribe {
+    &__text {
+      display: flex;
+      font-size: 14px;
+      line-height: 17px;
+      align-items: center;
+      margin-bottom: 20px;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__input {
+      width: 60%;
+      padding: 19px;
+      border-radius: 0;
+      height: 60px;
+      justify-content: flex-start;
+
+      &::placeholder {
+        text-align: left;
+      }
+    }
+
+    &__btn {
+      height: 60px;
+      padding: 20px 12px;
+      margin-right: 15px;
+    }
+
+    &__check {
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+    }
+
+    &__agreement {
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
 }
+@media (max-width: 1199px) {
+    .footer{
+      &__menu{
+        margin-bottom: 40px!important;
+      }
     }
-    &__mail{
-        display: block;
-        font-weight: bold;
-font-size: 14px;
-line-height: 17px;
+}
+@media (max-width: 991px) {
+  .footer{
+    .logo{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
     }
-    &-social{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 230px;
-        a{
-            transition: $transition3;
-            &:hover{
-                transform: scale(1.2);
-            }
-        }
-    }
-    &__row{
-        padding-bottom: 60px;
-        &-border{
-            border-top: 1px solid $grayLight;
-            padding: 30px 0;
-        }
-    }
-    &__oparin{
-        display: flex;
-        align-items: center;
-        transition: $transition3;
-        path{
-            transition: $transition3;
-        }
-        &:hover{
-            path{
-                fill: $orange;
-            }
-        }
-    }
-    &-subscribe{
-        &__text{
-            display: flex;
-            font-size: 14px;
-line-height: 17px;
-align-items: center;
-margin-bottom: 20px;
-            img{
-                margin-right: 10px;
-            }
-        }
-        &__wrapper{
-        display: flex;
-            align-items: center;
-        }
-        &__input{
-            width: 60%;
-            padding: 19px ;
-            border-radius: 0;
-            height: 60px;
-            justify-content: flex-start;
-            &::placeholder {
-                text-align: left;
-              }
-        }
-        &__btn{
-            height: 60px;
-            padding: 20px 12px;
-            margin-right: 15px;
-        }
-        &__check{
-            width: 20px;
-            height: 20px;
-            margin-right: 15px;
-        }
-        &__agreement{
-            font-weight: normal;
-font-size: 10px;
-line-height: 12px;
-        }
-    }
+  }
 }

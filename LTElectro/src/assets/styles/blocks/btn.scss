@@ -31,6 +31,13 @@
       border: 5px solid $orange;
     }
   }
+  &-bgorange{
+    background: $orange;
+    &:hover{
+      background: $red;
+      border: 5px solid $red;
+    }
+  }
 
 
 }

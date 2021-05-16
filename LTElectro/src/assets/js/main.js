@@ -7,6 +7,11 @@ Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+    });
     /* HAMBURGER MENU IN HEADER*/
     let header = document.querySelector('.header'),
         html = document.querySelector('html'),
@@ -165,15 +170,15 @@ window.addEventListener('DOMContentLoaded', () => {
         articleLink = document.querySelectorAll('.js-article-link'),
         articleTab = document.querySelectorAll('.js-article-tab');
 
-        if (storeParent && storeLink.length > 0) {
-            toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
-        }
-        if (reviewParent && reviewLink.length > 0) {
-            toggleTabs(reviewLink, reviewTab, reviewParent, 'js-review-link');
-        }
-        if (articleParent && articleLink.length > 0) {
-            toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
-        }
+    if (storeParent && storeLink.length > 0) {
+        toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
+    }
+    if (reviewParent && reviewLink.length > 0) {
+        toggleTabs(reviewLink, reviewTab, reviewParent, 'js-review-link');
+    }
+    if (articleParent && articleLink.length > 0) {
+        toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
+    }
 
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
@@ -257,34 +262,36 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-/* MORE BTN */
-let brandsLink = document.querySelector('.js-brands-more'),
-brandsItems = document.querySelectorAll('.brands-item.hidden'),
-trigger = true;
 
-if (brandsItems.length > 0) {
-showMore(brandsItems, brandsLink, 'js-brands-more');
-}
+    /* MORE BTN */
+    let brandsLink = document.querySelector('.js-brands-more'),
+        brandsItems = document.querySelectorAll('.brands-item.hidden'),
+        trigger = true;
 
-function showMore(items, link, linkClass, text) {
-
-document.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains(linkClass)) {
-        e.preventDefault();
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.toggle('active');
-            items[i].classList.toggle('animation-r-to-l');
-            if (trigger) {
-                link.innerHTML = 'Скрыть';
-                trigger = false;
-            } else {
-                link.innerHTML = 'Показать ещё';
-                trigger = true;
-            }
-        }
+    if (brandsItems.length > 0) {
+        showMore(brandsItems, brandsLink, 'js-brands-more');
     }
-});
-}
+
+    function showMore(items, link, linkClass, text) {
+
+        document.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains(linkClass)) {
+                e.preventDefault();
+                for (let i = 0; i < items.length; i++) {
+                    items[i].classList.toggle('active');
+                    items[i].classList.toggle('animation-r-to-l');
+                    if (trigger) {
+                        link.innerHTML = 'Скрыть';
+                        trigger = false;
+                    } else {
+                        link.innerHTML = 'Показать ещё';
+                        trigger = true;
+                    }
+                }
+            }
+        });
+    }
+
     /* SWIPER */
     let sliderBanner = new Swiper('.swiper-banner', {
         slidesPerView: 1,
@@ -293,14 +300,13 @@ document.addEventListener('click', (e) => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        autoplay:{
+        autoplay: {
             delay: 4000,
         },
-        pagination:{
+        pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-    
 
 
     });
@@ -311,11 +317,21 @@ document.addEventListener('click', (e) => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        pagination:{
+        pagination: {
             el: '.article-nav',
             clickable: true,
         },
-    
+        breakpoints:{
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 120,
+            },
+
+        }
 
 
     });
@@ -326,11 +342,10 @@ document.addEventListener('click', (e) => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        pagination:{
+        pagination: {
             el: '.article-nav-news',
             clickable: true,
         },
-    
 
 
     });
