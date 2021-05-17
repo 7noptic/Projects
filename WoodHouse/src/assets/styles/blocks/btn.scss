@@ -1,0 +1,39 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: $transition3;
+  background: $greenL;
+  background: $greenGr;
+
+  &:hover, &.active {
+    background: $greenB;
+    color: #FFFFFF;
+  }
+
+  &:active {
+    transform: translateY(5px);
+  }
+  &-brown{
+    background: $brownL;
+    background: $brownGrL;
+    &:hover, &.active {
+      background: $brownB;
+      background: $brownGrB;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .btn {
+    font-size: 11px;
+  }
+}
