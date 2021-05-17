@@ -28,7 +28,19 @@
     }
 }
 @media (max-width: 991px) {
-    .banner{
+    .brands{
         margin-bottom: 80px;
+    }
+}
+@media (max-width: 575px) {
+    .brands{
+        margin-bottom: 50px;
+        &__wrapper{
+
+        }
+        &-item{
+            width: 50%;
+            margin-bottom: 20px;
+        }
     }
 }

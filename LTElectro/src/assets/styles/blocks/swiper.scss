@@ -28,7 +28,21 @@
     }
   }
 }
-
+@media (max-width: 767px) {
+  .swiper-banner{
+    height: 450px;
+  }
+  .swiper-tags{
+    width: 85%;
+  }
+}
+@media (max-width: 575px) {
+  .swiper-banner{
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+  }
+}
 
 .gallery-top {
   height: 520px;

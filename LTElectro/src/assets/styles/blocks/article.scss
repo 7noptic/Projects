@@ -66,3 +66,18 @@
     }
   }
 }
+@media (max-width: 575px) {
+  .article{
+    &-block{
+      padding-bottom: 50px;
+    }
+    &__title{
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &__pre{
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}

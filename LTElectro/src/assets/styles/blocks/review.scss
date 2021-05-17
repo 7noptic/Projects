@@ -105,3 +105,24 @@
     }
   }
 }
+@media (max-width: 575px){
+  .review{
+    flex-direction: column;
+    &-img,&__content{
+      width: 100%;
+    }
+    &-img{
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    &-block{
+      &__text{
+        font-size: 12px;
+        line-height: 17px;
+        padding-bottom: 25px;
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 .header {
   margin: 25px 0 0;
-
+&__burger{
+  display: none;
+}
   &-basket {
     display: flex;
     align-items: center;
@@ -806,6 +808,74 @@
           }
         }
 
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header{
+    margin: 15px 0;
+    &__left{
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo{
+      width: auto;
+      height: auto;
+    }
+    &__burger{
+      display: block;
+    }
+    &-basket{
+      &__item{
+        span{
+          margin-right: 0;
+        }
+      }
+    }
+    &-catalog{
+      &__list{
+        flex-direction: column;
+        align-items: center;
+        margin: 35px 0 0!important;
+        & > li{
+          text-align: center;
+          padding: 5px;
+          &:hover{
+            background: transparent;
+            & > a{
+              color: $orange;
+
+            }
+          }
+          & > a{
+            text-align: center;
+          }
+          ul{
+            display: none;
+          }
+        }
+      }
+    }
+    &__menu{
+      flex-direction: column;
+      align-items: center;
+      & > li{
+        margin-right: 0;
+
+        padding: 5px;
+
+        & > a {
+          font-size: 10px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        &:last-of-type{
+          margin-right: 0;
+        }
       }
     }
   }

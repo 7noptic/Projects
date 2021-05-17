@@ -16,7 +16,20 @@
   &.modal-call{
     background-color: #fff;
   }
-
+  &.adaptive-menu{
+    padding: 40px 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    & > a{
+      order: 1;
+    }
+    & > nav{
+      order: 3;
+    }
+    & > nav.header-catalog{
+      order: 2;
+    }
+  }
 
   &.active {
     right: 0;

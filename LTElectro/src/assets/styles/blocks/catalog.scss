@@ -66,5 +66,30 @@
         width: 25%;
       }
     }
+    &-item{
+      margin-bottom: 40px;
+    }
+  }
+}
+@media (max-width: 767px){
+  .catalog{
+    margin-bottom: 40px;
+    &__wrapper{
+      .catalog-item {
+        width: 33.3333%;
+      }
+    }
+  }
+}
+@media (max-width: 575px){
+  .catalog{
+    &-item{
+      margin-bottom: 30px;
+    }
+    &__wrapper{
+      .catalog-item {
+        width: 50%;
+      }
+    }
   }
 }
