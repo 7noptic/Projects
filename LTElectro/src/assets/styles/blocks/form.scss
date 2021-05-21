@@ -1,12 +1,9 @@
 .form {
   &__input {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 13px;
     border: 1px solid #C9BBAE;
-    border-radius: 8px;
-    text-align: center;
     transition: $transition3;
     width: 100%;
     background: #fff;
@@ -14,7 +11,7 @@
     &::placeholder {
       font-size: 14px;
       line-height: 24px;
-      text-align: center;
+      color: #929292;
     }
 
     &:hover {
@@ -25,7 +22,9 @@
       border: 1px solid #CBCBCB;
     }
   }
-
+&__textarea{
+  height: 120px;
+}
   &__sign {
     padding-bottom: 250px;
   }

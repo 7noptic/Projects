@@ -9,6 +9,7 @@
   line-height: 20px;
   cursor: pointer;
   transition: $transition3;
+  text-transform: uppercase;
   &:hover,&.active{
     background: $orange;
     color: #fff;
@@ -33,7 +34,9 @@
   }
   &-bgorange{
     background: $orange;
+    color: #fff;
     &:hover{
+      color: #fff;
       background: $red;
       border: 5px solid $red;
     }

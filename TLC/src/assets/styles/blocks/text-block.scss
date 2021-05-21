@@ -1,0 +1,25 @@
+.text-block{
+  padding-bottom: 90px;
+  &__text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    p,div,ul,ol{
+      padding: 0 0 20px 0!important;
+    }
+  }
+}
+@media(max-width: 1199px){
+  .text-block{
+    &__text{
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+}
+@media(max-width: 767px){
+  .text-block{
+    padding-bottom: 30px;
+  }
+}

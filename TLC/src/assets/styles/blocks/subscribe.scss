@@ -1,0 +1,162 @@
+.subscribe {
+  padding-bottom: 100px;
+
+  &__wrapper {
+    border: 2px solid rgba($gray, .5);
+    padding: 30px 40px 40px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 40px;
+    text-transform: uppercase;
+    width: 32%;
+  }
+
+  &__img {
+    width: 68%;
+    margin-left: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-form {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > * {
+        width: 23%;
+      }
+
+      button {
+        display: flex;
+        min-height: 49px;
+      }
+    }
+
+    &__agreement {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media (max-width: 1399px) {
+  .subscribe {
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .subscribe {
+    &__img {
+      width: 60%;
+
+      svg {
+        display: none;
+      }
+    }
+
+    &__title {
+      width: 40%;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &-form {
+      &__wrapper {
+        button {
+          min-width: 39px;
+        }
+
+      }
+
+      &__agreement {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .subscribe {
+    &__wrapper {
+      padding: 30px 40px 25px;
+    }
+
+    &__img {
+      display: none;
+    }
+
+    &__title {
+      width: 100%;
+      text-align: center;
+    }
+
+    &-form {
+      &__wrapper {
+        flex-wrap: wrap;
+
+        button {
+          min-width: 39px;
+        }
+
+        & > * {
+          width: 48%;
+          margin-bottom: 15px;
+        }
+
+      }
+
+      &__agreement {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .subscribe {
+    padding-bottom: 50px;
+    &__wrapper {
+      padding: 25px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .subscribe {
+    &__wrapper {
+      padding: 20px;
+    }
+    &-form {
+      &__wrapper {
+
+        button {
+          min-width: 39px;
+        }
+
+        & > * {
+          width: 100%;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+      }
+
+    }
+  }
+}

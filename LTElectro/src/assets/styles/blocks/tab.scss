@@ -60,7 +60,7 @@
 
   &-subnav {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     position: relative;
 
     &__link {
@@ -140,7 +140,7 @@
     }
 
     &-subnav {
-
+      margin-bottom: 30px;
       &__link {
         font-size: 11px;
         line-height: 17px;
@@ -164,7 +164,7 @@
     }
 
     &-subnav {
-
+      margin-bottom: 25px;
       &__link {
         font-size: 10px;
         line-height: 15px;
@@ -197,7 +197,7 @@
     &-subnav {
       flex-wrap: wrap;
       display: flex;
-
+      margin-bottom: 20px;
       &__link {
         font-size: 9px;
         line-height: 15px;

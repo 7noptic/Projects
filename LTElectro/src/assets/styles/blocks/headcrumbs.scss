@@ -1,10 +1,46 @@
 .headcrumbs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+    transition: $transition3;
+    padding-right: 30px;
+    position: relative;
+
+    &::after {
+      content: url('../img/hc.svg');
+      display: inline-block;
+      position: absolute;
+      top: -1px;
+
+      right: 12px;
+    }
+
+    &:last-of-type, &:last-child {
+      opacity: .5;
+
+      &::after {
+        content: none;
+
+      }
+    }
+  }
+}
+
+.kama_breadcrumbs {
+  padding: 15px 0 30px !important;
+
+  .container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-  
-  
-    &__link {
+
+    & > span {
       display: inline-block;
       font-size: 12px;
       font-weight: 500;
@@ -12,59 +48,33 @@
       transition: $transition3;
       padding-right: 30px;
       position: relative;
-  
-      &::after {
-        //content: url('../img/hc.svg');
-        display: inline-block;
-        position: absolute;
-        top: -1px;
-  
-        right: 12px;
+
+      &.kb_title {
+        opacity: .4;
+        padding-right: 0;
+        font-weight: bold;
       }
-  
-      &:last-of-type, &:last-child {
-        opacity: .5;
-  
-        &::after {
-          content: none;
-  
-        }
-      }
-    }
-  }
-  .kama_breadcrumbs{
-      padding: 30px 0 35px!important;
-    .container{
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      & > span{
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 500;
-        opacity: 1;
-        transition: $transition3;
-        padding-right: 30px;
+
+      &.kb_sep {
         position: relative;
-        &.kb_title{
-          opacity: .4;
-          padding-right: 0;
-          font-weight: bold;
-        }
-        &.kb_sep{
-          position: relative;
-          padding-right: 0;
-  
-          &::after {
-            //content: url('../img/hc.svg');
-            display: inline-block;
-            position: absolute;
-            top: -1px;
-  
-            right: 12px;
-          }
+        padding-right: 0;
+
+        &::after {
+          content: url('../img/hc.svg');
+          display: inline-block;
+          position: absolute;
+          top: -1px;
+
+          right: 12px;
         }
       }
     }
-  
   }
+
+}
+
+@media (max-width: 767px) {
+  .kama_breadcrumbs {
+    padding: 10px 0 15px !important;
+  }
+}

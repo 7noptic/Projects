@@ -201,15 +201,16 @@
 
 @media (max-width: 1399px) {
   .card{
+    margin-bottom: 35px;
     &-price{
       &__old{
-        font-size: 16px;
+        font-size: 14px;
       }
       &__new{
-        font-size: 22px;
+        font-size: 20px;
       }
       &__discount{
-        font-size: 22px;
+        font-size: 20px;
       }
     }
     &-img{
@@ -220,6 +221,11 @@
           font-size: 28px;
 
         }
+      }
+    }
+    &-footer{
+      &__link{
+        font-size: 12px;
       }
     }
   }

@@ -43,6 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
         modalCall = document.querySelector('.modal-call'),
+        modalFaq = document.querySelector('.modal-faq'),
         modalQuest = document.querySelector('.modal-quest'),
         modalRegion = document.querySelector('.modal-region'),
         modalOneClick = document.querySelector('.modal-one-click'),
@@ -69,11 +70,16 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
         }
+        if (target && (target.classList.contains('js-faq') || target.classList.contains('modal-faq__exit'))) {
+            openCloseModal(e, modalFaq);
+        }
         if (target && (target.classList.contains('js-reviews') || target.classList.contains('modal-reviews__exit'))) {
             openCloseModal(e, modalReviews);
         }
         if (target && (target.classList.contains('js-basket') || target.classList.contains('modal-basket__exit'))) {
             openCloseModal(e, modalBasket);
+
+
         }
         if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
             openCloseModal(e, burgerMenu);
@@ -246,6 +252,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* SHOW HIDE CONTENT */
 
+    let filterItem = document.querySelectorAll('.category-filter'),
+        filterLink = document.querySelectorAll('.category-filter__header'),
+        filterContent = document.querySelectorAll('.category-filter__content'),
+        categoryBtn = document.querySelectorAll('.category-filter__btn'),
+        categoryContent = document.querySelectorAll('.category-filter__wrapper');
+    if (filterLink.length > 0) {
+
+        toggleContent(filterLink, filterContent, 'category-filter__header');
+    }
+
+    if (categoryBtn.length > 0) {
+        toggleContent(categoryBtn, categoryContent, 'category-filter__btn');
+    }
 
     function toggleContent(link, content, linkClass) {
 
@@ -310,6 +329,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     });
+
     let sliderArticle = new Swiper('.swiper-article', {
         slidesPerView: 2,
         spaceBetween: 120,
@@ -321,7 +341,7 @@ window.addEventListener('DOMContentLoaded', () => {
             el: '.article-nav',
             clickable: true,
         },
-        breakpoints:{
+        breakpoints: {
             0: {
                 slidesPerView: 1,
                 spaceBetween: 40,
@@ -332,9 +352,40 @@ window.addEventListener('DOMContentLoaded', () => {
             },
 
         }
-
-
     });
+    let sliderCategoryType = new Swiper('.swiper-category-type', {
+        slidesPerView: 8,
+        spaceBetween: 40,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        navigation: {
+            nextEl: '.category-type__next',
+            prevEl: '.category-type__prev'
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+            },
+            480: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 5,
+            },
+            992: {
+                slidesPerView: 6,
+            },
+            1200: {
+                slidesPerView: 7,
+            },
+            1400: {
+                slidesPerView: 8,
+            },
+        }
+    });
+
     let sliderNews = new Swiper('.swiper-news', {
         slidesPerView: 2,
         spaceBetween: 120,
@@ -373,8 +424,54 @@ window.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 20,
             }
         }
+    });
+    let sliderTags2 = new Swiper('.swiper-tags-2', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
 
+        navigation: {
+            nextEl: '.tags__next-2',
+            prevEl: '.tags__prev-2'
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 10,
+            },
+            767: {
+                spaceBetween: 15,
+            },
+            991: {
+                spaceBetween: 20,
+            }
+        }
+    });
+    let sliderTags3 = new Swiper('.swiper-tags-3', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
 
+        navigation: {
+            nextEl: '.tags__next-3',
+            prevEl: '.tags__prev-3'
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 10,
+            },
+            767: {
+                spaceBetween: 15,
+            },
+            991: {
+                spaceBetween: 20,
+            }
+        }
     });
 
 
@@ -444,6 +541,37 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     }
+    /*modal basket */
+    if (modalBasket) {
+        let modalBasketItem = modalBasket.querySelectorAll('.modal-one-click__item');
+        if (modalBasketItem) {
+            changeCountBasket(modalBasketItem);
+        }
+
+        function changeCountBasket(item) {
+            for (let i = 0; i < item.length; i++) {
+                let plus = item[i].querySelector('.js-basket-count-plus'),
+                    number = item[i].querySelector('.js-basket-count-num'),
+                    minus = item[i].querySelector('.js-basket-count-minus');
+                if (plus) {
+                    plus.onclick = function (x) {
+                        return function () {
+                            number.value = +number.value + 1;
+                        }
+                    }(i)
+                }
+                if (minus) {
+                    minus.onclick = function (x) {
+                        return function () {
+                            if (number.value > 0) {
+                                number.value = +number.value - 1;
+                            }
+                        }
+                    }(i)
+                }
+            }
+        }
+    }
     /* modal one click */
     let card = document.querySelectorAll('.card'),
         cardPrice = document.querySelectorAll('.card-price__new'),
@@ -452,8 +580,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         modalOneClickImg = document.querySelector('.modal-one-click__img img'),
         modalOneClickName = document.querySelector('.modal-one-click__name'),
-        modalOneClickPrice = document.querySelector('.modal-one-click__price'),
+        modalOneClickPrice = document.querySelector('.js-modal-one-click__price'),
         modalOneClickBtn = document.querySelectorAll('.js-one-click'),
+        modalOneClickCount = document.querySelector('.js-modal-one-click__num'),
 
         modalInputName = document.querySelector('#js-modal-one-click-name'),
         modalInputPrice = document.querySelector('#js-modal-one-click-price'),
@@ -466,6 +595,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (card || oneCardParent) {
         getCardInfoToModalOneClick(card);
+        document.addEventListener('click', (e) => {
+
+            if (e.target && e.target.classList.contains('js-modal-one-click__minus')) {
+                e.preventDefault();
+                if (modalOneClickCount.value > 0) {
+                    console.log()
+                    modalOneClickCount.value = +modalOneClickCount.value - 1;
+                }
+            }
+            if (e.target && e.target.classList.contains('js-modal-one-click__plus')) {
+                e.preventDefault();
+                modalOneClickCount.value = +modalOneClickCount.value + 1;
+            }
+        })
+
     }
     if (oneCardParent) {
         oneCardParent.addEventListener('click', (e) => {
@@ -558,6 +702,130 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 */
+    /* reset filter */
+    let btnFilterReset = document.querySelector('.js-filter-reset');
+    let allLinkFilter = document.querySelectorAll('.category-filter__link'),
+        btnFilterHidden = document.querySelector('.js-filer-hidden');
+
+    if (btnFilterReset) {
+        btnFilterReset.addEventListener('click', () => {
+
+            if (allLinkFilter) {
+                for (let i = 0; i < allLinkFilter.length; i++) {
+                    if (allLinkFilter[i].classList.contains('active')) {
+                        allLinkFilter[i].classList.remove('active');
+                    }
+                }
+            }
+        });
+    }
+    if (btnFilterHidden) {
+        btnFilterHidden.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (filterContent) {
+                for (let i = 0; i < filterContent.length; i++) {
+                    let trigger = true;
+
+                    let link = filterContent[i].querySelectorAll('.category-filter__link');
+                        for (let j = 0; j < link.length; j++) {
+                            if (link[j].classList.contains('active')) {
+                                trigger = false;
+                            }
+                        }
+                    if (trigger) {
+                        filterItem[i].style.display = 'none';
+                    }
+                }
+            }
+        });
+    }
+
+
+    /* sort in category */
+
+    function setCookie(cname, cvalue) {
+        let d = new Date();
+        d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    let sortBtn = document.querySelectorAll('.category-pagecount a'),
+        sortSelect = document.querySelector('.select.wppp-select'),
+        categorySortLink = document.querySelectorAll('.category-sort a');
+
+    if (categorySortLink) {
+        if (getCookie('woocommerce_products_sort') == 'По возрастанию цены') {
+            fixcategory(categorySortLink[0]);
+        } else if (getCookie('woocommerce_products_sort') == 'По убыванию популярности') {
+            fixcategory(categorySortLink[1]);
+        }
+
+        if (categorySortLink[0]) {
+            categorySortLink[0].addEventListener('click', (e) => {
+                addCookiesSort('По возрастанию цены');
+            });
+        }
+        if (categorySortLink[1]) {
+            categorySortLink[1].addEventListener('click', (e) => {
+                addCookiesSort('По убыванию популярности');
+            });
+        }
+
+
+        function addCookiesSort(value) {
+            setCookie('woocommerce_products_sort', value)
+        }
+    }
+
+    function fixcategory(item) {
+        for (let i = 0; i < categorySortLink.length; i++) {
+            categorySortLink[i].classList.remove('active');
+            if (categorySortLink[i] == item) {
+                item.classList.add('active');
+            }
+        }
+    }
+
+    if (sortBtn && sortSelect) {
+        if (getCookie('woocommerce_products_per_page') == '') {
+            setCookie('woocommerce_products_per_page', 48);
+            fixSort(sortBtn[1], 48)
+        } else if (getCookie('woocommerce_products_per_page') == 24) {
+            fixSort(sortBtn[0], 24)
+        } else if (getCookie('woocommerce_products_per_page') == 48) {
+            fixSort(sortBtn[1], 48)
+        } else {
+            fixSort(sortBtn[2], 96)
+        }
+
+        function fixSort(item, value) {
+            for (let i = 0; i <= sortBtn.length; i++) {
+                sortBtn[i].classList.remove('active');
+                if (i = sortBtn.length) {
+                    item.classList.add('active');
+                    sortSelect.value = value;
+                    break;
+                }
+            }
+        }
+    }
 
     /* VIDEO */
     function findVideos() {

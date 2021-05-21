@@ -156,7 +156,13 @@
     }
   }
 }
-
+@media (max-width: 1399px){
+  .footer{
+    &__link{
+      font-size: 11px;
+    }
+  }
+}
 @media (max-width: 1199px) {
   .footer {
     &__menu {

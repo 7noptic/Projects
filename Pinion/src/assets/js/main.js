@@ -267,7 +267,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 push.classList.remove('active');
             }
 
-            setTimeout(showPush, 5000); // Привет, Джон
+            setTimeout(showPush, 5000);
         }
     })
     /* TABS */
