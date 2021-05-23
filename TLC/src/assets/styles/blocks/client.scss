@@ -1,0 +1,39 @@
+.client{
+  margin-bottom: 200px;
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+  &-nav{
+    width: 400px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+  }
+  &-next, &-prev {
+    position: absolute;
+    top: calc(50% - 16px);
+    z-index: 1000;
+  }
+
+  &-next {
+    right: 60px;
+  }
+
+  &-prev {
+    left: 60px;
+    transform: rotate(180deg);
+  }
+  &-slider{
+    position: relative;
+  }
+  &__img{
+    padding: 20px;
+    display: block;
+    &:hover{
+      transform: scale(1.1);
+    }
+
+  }
+}

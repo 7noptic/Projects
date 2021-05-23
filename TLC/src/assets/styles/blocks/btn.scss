@@ -6,41 +6,34 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  transition: $transition2;
   cursor: pointer;
-  transition: none;
-  background: $greenL;
-  background: $greenGr;
+  background: $red;
 
   &:hover, &.active {
-    background: $greenB;
+    background: $redLight;
     color: #FFFFFF;
+    box-shadow: 0px 6px 20px rgba(255, 92, 92, 0.7);
   }
 
 
-  &-brown{
-    background: $brownL;
-    background: $brownGrL;
-    &:hover, &.active {
-      background: $brownB;
-      background: $brownGrB;
+  &-border-white{
+    background: transparent;
+    border: 3px solid #fff;
+    &:hover,&.active{
+      border: 3px solid $redLight;
     }
   }
-  &-transparent{
-    background: #fff;
-    color: #000;
-  }
-  &-border{
-    background: #fff;
-    border: 2px solid $greenB;
-    color: #000;
+  &-border-red{
+    background: transparent;
+    border: 3px solid $red;
+    color: $red;
+    &:hover,&.active{
+      border: 3px solid $redLight;
+    }
   }
 }
 
-@media (max-width: 767px) {
-  .btn {
-    font-size: 11px;
-  }
-}

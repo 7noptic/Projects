@@ -12,22 +12,20 @@
 @import "blocks/form";
 
 /* А */
-@import "blocks/article";
-@import "blocks/advantage";
 /* В */
 @import "blocks/banner";
+@import "blocks/banner-delivery";
 /* C */
 @import "blocks/container";
 @import "blocks/catalog";
-@import "blocks/card";
-@import "blocks/call";
+@import "blocks/client";
+@import "blocks/company";
 /* D */
 
 /* E */
 
 /* F */
 @import "blocks/faq";
-@import "blocks/footer";
 /* G */
 
 /* H */
@@ -38,7 +36,7 @@
 /* K */
 
 /* L */
-
+@import "blocks/letter";
 /* M */
 @import "blocks/modal";
 @import "blocks/modal-basket";
@@ -49,28 +47,22 @@
 /* O */
 /* P */
 @import "blocks/pagination";
+@import "blocks/project";
 @import "blocks/page404";
 /* Q */
 
 /* R */
 @import "blocks/rating-star";
-@import "blocks/review";
 /* S */
 @import "blocks/sitemap";
-@import "blocks/store";
-@import "blocks/select";
-@import "blocks/subscribe";
-@import "blocks/social";
 /* T */
 @import "blocks/tags";
 @import "blocks/tooltip";
-@import "blocks/text-block";
 /* U */
 
 /* V */
 
 /* W */
-@import "blocks/work";
 /* X */
 
 /* Z */

@@ -34,7 +34,7 @@ html, body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   overflow-x: hidden;
   background-color: #FFFFFF;
   color: #000;
@@ -57,12 +57,22 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $greenB;
+    color: $red;
   }
 }
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+main, .header, .footer {
+  margin: 0 auto;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
 }
 
 img {

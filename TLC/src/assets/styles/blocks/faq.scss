@@ -1,93 +1,119 @@
 .faq {
-  padding-bottom: 100px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 60px;
+
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 20px 42px;
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    width: 70%;
+  }
+
+  &-img {
+    height: 550px;
+    width: 30%;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      &:nth-of-type(1){
+        right: 0;
+        bottom: 0;
+        animation: shake-hard 120s infinite ease-in-out;
+      }
+      &:nth-of-type(2){
+        left: 80px;
+        bottom: 40px;
+        animation: shake-hard 160s infinite ease-in-out;
+      }
+      &:nth-of-type(3){
+        left: 130px;
+        top: 0;
+        animation: shake-hard 180s infinite ease-in-out;
+      }
+
+      &:nth-of-type(4){
+        top: 0;
+        right: 20%;
+        animation: shake-hard 150s infinite ease-in-out;
+      }
+      &:nth-of-type(5){
+        left: 35%;
+        bottom: 40%;
+        animation: shake-hard 170s infinite ease-in-out;
+      }
+      &:nth-of-type(6){
+        right: 25%;
+        bottom: 10%;
+        animation: shake-hard 190s infinite ease-in-out;
+      }
+      &:nth-of-type(7){
+        top: 30%;
+        left: 15%;
+        animation: shake-hard 210s infinite ease-in-out;
+      }
+      &:nth-of-type(8){
+        top: 25%;
+        left: 60%;
+        animation: shake-hard 230s infinite ease-in-out;
+      }
+      &:nth-of-type(9){
+        right: 25%;
+        bottom: 30%;
+        animation: shake-hard 260s infinite ease-in-out;
+      }
+      &:nth-of-type(10){
+        bottom: 10%;
+        right: 40%;
+        animation: shake-hard 300s infinite ease-in-out;
+      }
+
+    }
+  }
 
   &-item {
-    border-top: 1px solid $gray;
-    -webkit-box-shadow: 0px 1px 0px 0px rgba(180, 180, 180, 1);
-    -moz-box-shadow: 0px 1px 0px 0px rgba(180, 180, 180, 1);
-    box-shadow: 0px 1px 0px 0px rgba(180, 180, 180, 1);
+    border-bottom: 1px solid $gray;
 
     &__header {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 20px 20px 20px 0;
 
-      cursor: pointer;
-      position: relative;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 27px;
+      letter-spacing: -0.01em;
+      margin: 25px 20px 25px -20px;
+      padding-left: 20px;
+      border-left: 3px solid transparent;
       transition: $transition3;
-
-      &::before {
-        content: url("../img/arb.svg");
-        position: absolute;
-        top: calc(50% - 13px);
-        right: 0;
-        transition: $transition3;
-      }
+      cursor: pointer;
 
       &:hover {
-        color: $greenL;
-
-        &::before {
-          transform: rotate(-90deg);
-        }
+        color: $red;
       }
-
-      &.active {
-        &::before {
-          transform: rotate(-180deg);
-          filter: contrast(0);
-        }
-
+      &.active{
+        border-left: 3px solid $red;
+        transform: translateX(20px);
       }
     }
 
     &__content {
-      padding-bottom: 20px;
-      flex-direction: column;
-    }
-
-    &__title {
-      font-weight: 500;
+      margin-bottom: 30px;
+      padding-left:20px;
+      font-weight: 300;
       font-size: 16px;
       line-height: 20px;
-      margin-bottom: 10px;
     }
+  }
 
-    &__text {
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-}
-@media (max-width: 1199px) {
-  .faq{
-    &-item{
-      &__header{
-        font-size: 14px;
-        padding: 15px 15px 15px 0;
-      }
-    }
-  }
-}
 
-@media (max-width: 767px) {
-  .faq{
-    padding-bottom: 50px;
-    &-item{
-      &__header{
-        font-size: 12px;
-        padding: 10px 10px 10px 0;
-      }
-      &__title{
-        font-size: 14px;
-        line-height: 17px;
-      }
-      &__text{
-        font-size: 12px;
-        line-height: 15px;
-      }
-    }
-  }
 }
