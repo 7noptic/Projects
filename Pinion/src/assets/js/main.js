@@ -12,6 +12,23 @@ window.addEventListener('DOMContentLoaded', () => {
         loop: true,
         autoplayVideos: true
     });
+    /* fix company tabs */
+
+    let tablink = document.querySelectorAll('.reviews-company .tab-nav .js-reviews-company-link');
+
+    if(tablink){
+        let tabContent = document.querySelectorAll('.reviews-company .js-reviews-company-tab');
+
+        for(let i = 0; i < tablink.length; i++){
+            let item = tabContent[i].querySelector('.reviews-card');
+            if(item){
+                console.log(item);
+            }else {
+                tablink[i].remove();
+                tabContent[i].remove();
+            }
+        }
+    }
 
 
     /* rating */
@@ -42,25 +59,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (ratingOnPage) {
-        let rating = ratingOnPage.innerHTML;
-        rating = Math.round(rating / 2);
+        let rating = Math.round(ratingOnPage.innerHTML);
 
         for (let i = 0; i < ratingOnPageStar.length; i++) {
             ratingOnPageStar[i].classList.remove('active');
         }
-        for (let i = 0; i <= rating; i++) {
-            if (rating == 1) {
-                ratingOnPageStar[i].classList.add('active');
+        for (let i = 0; i < rating; i++) {
+            if(rating == 0){
                 break;
-            } else if (i == 4) {
-                ratingOnPageStar[i].classList.add('active');
-                break;
-            } else {
-                console.log(ratingOnPageStar[i])
-                ratingOnPageStar[i].classList.add('active');
             }
+            ratingOnPageStar[i].classList.add('active');
         }
-
     }
     if (reviewOnPage) {
         for (let i = 0; i < reviewOnPage.length; i++) {
@@ -88,7 +97,27 @@ window.addEventListener('DOMContentLoaded', () => {
                 ratingReview[i].classList.remove('active');
             }
             if (ratingValue) {
-                ratingValue = ratingValue.value;
+                ratingValue = Math.round(ratingValue.value);
+                for (let i = 0; i < ratingValue; i++) {
+                    ratingReview[i].classList.add('active');
+                }
+            }
+        }
+    }
+
+    let reviewOnMore = document.querySelectorAll('.more-block__item');
+    if (reviewOnMore) {
+        for (let i = 0; i < reviewOnMore.length; i++) {
+            let ratingValue = reviewOnMore[i].querySelector('input'),
+                ratingReview = reviewOnMore[i].querySelectorAll('ul.rating-star li');
+
+            for (let i = 0; i < ratingReview.length; i++) {
+                console.log(ratingReview);
+                ratingReview[i].classList.remove('active');
+            }
+            if (ratingValue) {
+                ratingValue = Math.round(ratingValue.value);
+                console.log(ratingValue);
                 for (let i = 0; i < ratingValue; i++) {
                     ratingReview[i].classList.add('active');
                 }

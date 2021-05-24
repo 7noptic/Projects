@@ -28,6 +28,17 @@
       font-weight: 300;
       font-size: 14px;
       line-height: 17px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-line-clamp: 7;
+      line-clamp: 7;
+      height: 117px;
     }
   }
 }

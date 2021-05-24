@@ -1,9 +1,137 @@
-.footer{
+.footer {
   background: #202020;
   display: flex;
   justify-content: center;
-  &__content{
+  flex-wrap: wrap;
+  color: #fff;
+
+  &__content {
+    width: 100%;
     max-width: 1920px;
-    padding: 80px 80px 30px;
+    padding: 80px 80px 0;
+  }
+
+  &__top, &__center, &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 30px;
+    }
+  }
+
+  &__top {
+    align-items: center;
+    margin-bottom: 90px;
+  }
+
+  &__btn {
+    padding: 27px 50px;
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+
+    &__link {
+      margin-left: 60px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-menu {
+    width: 25%;
+    & > ul {
+      margin: 0 !important;
+      padding: 0 !important;
+
+      & > li {
+        list-style: none;
+        margin-bottom: 15px;
+        & > a {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 17px;
+          color: #fff;
+          &:hover{
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  &__center {
+    margin-bottom: 60px;
+  }
+
+  &__bottom {
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+    max-width: 1920px;
+    padding: 30px 80px ;
+    border-top: 1px solid $gray;
+  }
+
+  &__copy {
+    width: 50%;
+  }
+
+  &-submenu {
+    display: flex;
+    align-items: center;
+
+    & > li {
+      & > a {
+        color: #fff;
+        display: block;
+        margin-right: 20px;
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+
+  }
+
+  &-submenu, &__oparin {
+    width: 25%;
+  }
+
+  &__oparin {
+    svg{
+      path{
+        transition: $transition3;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $red;
+        }
+      }
+    }
   }
 }

@@ -147,4 +147,87 @@
     }
   }
 
+  &-submenu {
+    & > li {
+      position: relative;
+
+      &:hover {
+        &>div{
+          z-index: 1000;
+          transform: scale(1);
+          opacity: 1;
+        }
+
+      }
+
+      & > div {
+        width: 1344px;
+        background-color: #fff;
+        position: absolute;
+        top: 21px;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        transition: $transition2;
+        z-index: -1;
+        transform: scale(0);
+        opacity: 0;
+
+        & > div {
+          & > img {
+            object-fit: cover;
+          }
+
+          height: 100%;
+          width: 450px;
+
+        }
+
+        & > ul {
+          padding: 30px !important;
+          margin: 0 !important;
+          columns: 2 200px;
+
+          width: calc(100% - 450px);
+
+          & > li {
+            list-style: none;
+
+            & > a {
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 18px;
+              margin-bottom: 15px;
+              display: flex;
+              align-items: center;
+              padding-left: 20px;
+              margin-left: -20px;
+              position: relative;
+
+              &::before {
+                content: url("../img/mar.svg");
+                display: block;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                opacity: 0;
+                transition: $transition2;
+              }
+
+              &:hover {
+                transform: translateX(20px);
+
+                &::before {
+
+                  opacity: 1;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

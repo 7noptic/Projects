@@ -1,6 +1,22 @@
 .reviews {
   padding-bottom: 100px;
 
+  .reviews-card {
+    .reviews-card__text {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-line-clamp: 7;
+      line-clamp: 7;
+      height: 117px;
+    }
+  }
+
   &__more {
     padding: 17px 42px;
   }
@@ -143,7 +159,7 @@
     }
 
     &__text {
-      padding-top: 20px;
+      margin-top: 20px;
       font-weight: 300;
       font-size: 14px;
       line-height: 17px;
@@ -175,6 +191,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 510px;
+
 
     &__btn {
       width: 48%;
@@ -383,6 +401,13 @@
 @media (max-width: 575px) {
   .reviews {
     padding-bottom: 30px;
+
+    .reviews-card {
+      .reviews-card__text {
+
+        height: 106px;
+      }
+    }
 
     &-card {
       margin-bottom: 30px;
