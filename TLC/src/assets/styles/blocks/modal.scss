@@ -2,31 +2,36 @@
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 480px;
+  max-width: 400px;
   right: -200%;
   height: 100%;
   z-index: 1000;
-  background-color: rgba(#fff, .65);
+  background-color: #fff;
   visibility: hidden;
   opacity: 0;
   -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.22);
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.22);
   transition: $transition3;
-  &.modal-call{
+
+  &.modal-call {
     background-color: #fff;
   }
-  &.adaptive-menu{
+
+  &.adaptive-menu {
     padding: 40px 15px;
     overflow-x: hidden;
     overflow-y: scroll;
-    & > a{
+
+    & > a {
       order: 1;
     }
-    & > nav{
+
+    & > nav {
       order: 3;
     }
-    & > nav.header-catalog{
+
+    & > nav.header-catalog {
       order: 2;
     }
   }
@@ -49,11 +54,13 @@
     align-items: center;
     width: 100%;
     height: 100%;
+
     &::-webkit-scrollbar {
       width: 0;
     }
   }
-  &__exit{
+
+  &__exit {
     position: fixed;
     top: 50px;
     right: 5px;
@@ -61,7 +68,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &-2{
+
+    &-2 {
       position: relative;
       display: block;
       transition: $transition3;
@@ -69,17 +77,20 @@
       justify-content: center;
       align-items: center;
       z-index: 10;
-      &:hover{
+
+      &:hover {
         transform: rotate(-180deg);
         transform-origin: center;
       }
     }
-    &:hover{
+
+    &:hover {
       transform: rotate(-180deg);
       transform-origin: center;
     }
   }
-  &__title{
+
+  &__title {
     font-size: 24px;
     line-height: 30px;
     display: flex;
@@ -87,24 +98,27 @@
     text-align: center;
     margin-bottom: 25px;
   }
-  &__subtitle{
+
+  &__subtitle {
     font-weight: 300;
     font-size: 14px;
     line-height: 20px;
     text-align: center;
     margin-bottom: 30px;
   }
-  &-form{
+
+  &-form {
     width: 100%;
 
-    &__wrapper{
+    &__wrapper {
 
 
-      span{
+      span {
         width: 100%;
         margin-bottom: 30px;
         display: block;
-        label{
+
+        label {
           width: 100%;
           display: flex;
           justify-content: center;
@@ -115,12 +129,14 @@
           line-height: 20px;
           margin-bottom: -15px;
         }
-        input{
+
+        input {
           width: 100%;
         }
       }
     }
-    &__btn{
+
+    &__btn {
       display: flex;
       width: 100%;
       justify-content: center;
@@ -128,7 +144,8 @@
       text-align: center;
       padding: 22px;
     }
-    &__agreement{
+
+    &__agreement {
       max-width: 320px;
       margin: 0 auto;
       text-align: center;
@@ -136,21 +153,25 @@
       font-size: 14px;
       line-height: 20px;
     }
-    &__btns{
+
+    &__btns {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      button{
+
+      button {
         width: 48%;
       }
     }
-    &__star{
+
+    &__star {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
-      ul{
-        li{
+
+      ul {
+        li {
           cursor: pointer;
 
         }
@@ -158,20 +179,23 @@
     }
   }
 }
-.adaptive-menu{
+
+.adaptive-menu {
   right: auto;
   left: -200%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  &.active{
+
+  &.active {
     right: auto;
     left: 0;
   }
 }
-@media screen and (max-width:575px){
-  .modal{
-    &__title{
+
+@media screen and (max-width: 575px) {
+  .modal {
+    &__title {
       font-size: 18px;
       line-height: 24px;
       margin-bottom: 20px;

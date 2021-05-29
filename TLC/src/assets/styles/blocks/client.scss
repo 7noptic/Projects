@@ -1,9 +1,13 @@
 .client{
   margin-bottom: 200px;
+  &-mbfix{
+    margin-bottom: 130px;
+  }
   &-header{
     display: flex;
     justify-content: space-between;
     padding: 0 60px;
+    align-items: center;
   }
   &-nav{
     width: 400px;
@@ -34,6 +38,39 @@
     &:hover{
       transform: scale(1.1);
     }
+  }
+}
+@media (max-width: 1399px){
+  .client{
+    margin-bottom: 150px;
+    &-header{
+      padding: 0 15px;
+      flex-wrap: wrap;
+    }
+    &-prev{
+      left: 15px;
+    }
+    &-next{
+      right: 15px;
+    }
+    &-mbfix{
+      margin-bottom: 70px;
+    }
+  }
+}
+@media (max-width: 991px){
+  .client{
+    &-mbfix{
+      margin-bottom: 50px;
+    }
+    margin-bottom: 100px;
 
+    &__img{
+      padding-right: 10px;
+    }
+
+    &-nav{
+      width: auto;
+    }
   }
 }

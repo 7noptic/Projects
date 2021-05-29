@@ -3,6 +3,17 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 60px;
+  &-form{
+    width: 30%;
+    .faq-img{
+      width: 100%;
+    }
+    form{
+      padding-left: 100px;
+      margin-bottom: 50px;
+      padding-right: 50px;
+    }
+  }
 
   &-header {
     width: 100%;
@@ -114,6 +125,132 @@
       line-height: 20px;
     }
   }
-
-
+}
+@media(max-width: 1599px){
+  .faq{
+    &-item{
+      &__header{
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    &-form{
+      width: 30%;
+      .faq-img{
+        width: 100%;
+      }
+      form{
+        padding-left: 55px;
+        margin-bottom: 50px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+@media(max-width: 1399px){
+  .faq{
+    padding: 0 15px;
+    margin-bottom: 150px;
+    &-item{
+      &__header{
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    &-form{
+      width: 30%;
+      .faq-img{
+        width: 100%;
+      }
+      form{
+        padding-left: 30px;
+        margin-bottom: 50px;
+        padding-right: 0px;
+      }
+    }
+    &__content{
+      width: 65%;
+    }
+    &-img{
+      width: 35%;
+    }
+  }
+}
+@media(max-width: 1199px){
+  .faq{
+    margin-bottom: 100px;
+    &-item{
+      &__header{
+        font-size: 16px;
+        line-height: 20px;
+        margin: 15px 15px 15px -20px;
+      }
+      &__content{
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 20px;
+      }
+    }
+    &-form{
+      width: 40%;
+      .faq-img{
+        width: 100%;
+      }
+      form{
+        margin-bottom: 50px;
+      }
+    }
+    &__content{
+      width: 60%;
+    }
+    &-img{
+      width: 40%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .faq{
+    &-img{
+      display: none;
+    }
+    &-header{
+      flex-wrap: wrap;
+      align-items: center;
+      .title{
+        margin-right: 15px;
+      }
+    }
+    &-nav{
+      width: 100%;
+    }
+    &__content{
+      width: 100%;
+    }
+    &-form{
+      margin-top: 50px;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .faq-img{
+        display: none;
+      }
+      form{
+        padding: 0 ;
+        max-width: 400px;
+        margin-bottom: 0px;
+      }
+    }
+    &__btn{
+      padding: 15px;
+      margin-bottom: 40px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .faq{
+    &__btn{
+      margin-bottom: 30px;
+    }
+  }
 }

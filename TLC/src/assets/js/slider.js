@@ -11,6 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
+        autoplay:{
+            delay:4000,
+        },
 
         pagination: {
             el: '.banner-pagination',
@@ -35,6 +38,58 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.project-next',
             prevEl: '.project-prev',
         },
+        breakpoints:{
+            0:{
+                slidesPerView: 1,
+            },
+            768:{
+                slidesPerView: 1.5,
+            },
+            992:{
+                slidesPerView: 1.6,
+            },
+            1400:{
+                slidesPerView: 1.7,
+            },
+            1600:{
+                slidesPerView: 2,
+            }
+        }
+
+    });
+    let sliderProcess = new Swiper('.swiper-process', {
+        slidesPerView: 4,
+        loop: true,
+        spaceBetween: 30,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.process-next',
+            prevEl: '.process-prev',
+        },
+        breakpoints:{
+            0:{
+                slidesPerView: 1,
+                centeredSlides:true,
+
+            },
+            480:{
+                centeredSlides:false,
+                slidesPerView: 1.5,
+            },
+            768:{
+                slidesPerView: 2,
+            },
+            992:{
+                slidesPerView: 3
+            },
+            1600:{
+                slidesPerView: 4,
+            }
+        }
 
     });
     let sliderLetter = new Swiper('.swiper-letter', {
@@ -55,6 +110,23 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.letter-next',
             prevEl: '.letter-prev',
         },
+        breakpoints:{
+            0:{
+                slidesPerView: 1,
+            },
+            768:{
+                slidesPerView: 1.5,
+            },
+            992:{
+                slidesPerView: 1.6,
+            },
+            1400:{
+                slidesPerView: 1.7,
+            },
+            1600:{
+                slidesPerView: 2,
+            }
+        }
 
     });
     let sliderClient = new Swiper('.swiper-client', {
@@ -74,30 +146,23 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.client-next',
             prevEl: '.client-prev',
         },
-
-    });
-    let sliderArticles = new Swiper('.swiper-article-articles', {
-        slidesPerView: 2,
-        spaceBetween: 35,
-        observeParents: true,
-        observer: true,
-        allowSlidePrev: true,
-        allowSlideNext: true,
-        pagination: {
-            el: '.article-nav-1',
-            clickable: true,
-        },
-        breakpoints: {
-            0: {
+        breakpoints:{
+            0:{
                 slidesPerView: 1,
             },
-            992: {
+            480:{
                 slidesPerView: 2,
             },
+            767:{
+                slidesPerView: 3,
+            },
 
-
+            1199:{
+                slidesPerView: 4,
+            }
         }
     });
+
     let sliderNews = new Swiper('.swiper-article-news', {
         slidesPerView: 2,
         spaceBetween: 120,

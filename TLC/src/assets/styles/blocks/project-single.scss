@@ -1,0 +1,36 @@
+.project-single{
+  display: flex;
+  padding: 0 55px;
+  margin-bottom: 200px;
+  &__content{
+    width: 60%;
+    padding-right: 10%;
+    border-right: 1px solid $grayLight;
+  }
+  &__nav{
+    width: 40%;
+  }
+}
+@media (max-width: 1399px){
+  .project-single{
+    padding: 0 15px;
+    margin-bottom: 150px;
+    &__content{
+      width: 60%;
+      padding-right: 5%;
+    }
+  }
+}
+@media (max-width: 991px){
+  .project-single{
+    margin-bottom: 100px;
+    &__content{
+      border-right: none;
+      width: 100%;
+      padding-right: 0;
+    }
+    &__nav{
+      width: 100%;
+    }
+  }
+}

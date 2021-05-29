@@ -91,30 +91,35 @@
                                             <div class="swiper-region">
                                                 <div class="swiper-wrapper">
                                                 
-                                                    <?php if( $post_objects ): ?>
-                                                            <?php foreach( $post_objects as $post): // Переменная должна быть названа обязательно $post (IMPORTANT) ?>
-                                                                <?php setup_postdata($post); ?>
-                                                                
+                                                   
+                                                                <?php if (have_rows('product-post')): ?>
+
+                                                                <?php while (have_rows('product-post')): the_row();
+
+                                                                    // переменные
+                                                                    $text = get_sub_field('product-post-text');
+                                                                    $link = get_sub_field('product-post-link');
+                                                                    $price = get_sub_field('product-post-price');
+                                                                ?>
                                                                 <div class="swiper-slide">
                                                                     <div class="region-card">
                                                                         <div class="region-card__img">
                                                                             <img src="<?php echo DOMEO_DIR_IMG ?>/rci.svg" alt="">
                                                                         </div>
                                                                         <div class="region-card__name">
-                                                                            Ремонт квартир
-                                                                            от <?php the_title(); ?> в <?php echo $content; ?>
+                                                                            <?php echo $text; ?>
                                                                         </div>
                                                                         <div class="region-card__price">
-                                                                            от 2500 ₽/м2
+                                                                            от <?php echo $price; ?> ₽/м2
                                                                         </div>
-                                                                        <a href="<?php the_permalink(); ?>" class="region-card__link">ПОДРОБНЕЕ</a>
+                                                                        <a href="<?php echo $link; ?>" class="region-card__link">ПОДРОБНЕЕ</a>
 
                                                                     </div>
                                                                 </div>
 
-                                                            <?php endforeach; ?>
+                                                            <?php endwhile; ?>
+                                                            <?php endif; ?>
                                                         <?php wp_reset_postdata(); // ВАЖНО - сбросьте значение $post object чтобы избежать ошибок в дальнейшем коде ?>
-                                                    <?php endif;?>
 
                                                 </div>
                                             </div>

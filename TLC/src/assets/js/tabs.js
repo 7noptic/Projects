@@ -1,29 +1,11 @@
 window.addEventListener('DOMContentLoaded', () => {
     /* TABS */
-    let storeParent = document.querySelector('.store'),
-        storeLink = document.querySelectorAll('.js-store-link'),
-        storeTab = document.querySelectorAll('.js-store-tab'),
-        workParent = document.querySelector('.work'),
-        workLink = document.querySelectorAll('.js-work-link'),
-        workTab = document.querySelectorAll('.js-work-tab'),
-        reviewParent = document.querySelector('.review-block'),
-        reviewLink = document.querySelectorAll('.js-review-link'),
-        reviewTab = document.querySelectorAll('.js-review-tab'),
-        articleParent = document.querySelector('.article-block'),
-        articleLink = document.querySelectorAll('.js-article-link'),
-        articleTab = document.querySelectorAll('.js-article-tab');
+    let serviceParent = document.querySelector('.service-tab'),
+        serviceLink = document.querySelectorAll('.js-service-link'),
+        serviceTab = document.querySelectorAll('.js-service-tab');
 
-    if (storeParent && storeLink.length > 0) {
-        toggleTabs(storeLink, storeTab, storeParent, 'js-store-link');
-    }
-    if (workParent && workLink.length > 0) {
-        toggleTabs(workLink, workTab, workParent, 'js-work-link');
-    }
-    if (reviewParent && reviewLink.length > 0) {
-        toggleTabs(reviewLink, reviewTab, reviewParent, 'js-review-link');
-    }
-    if (articleParent && articleLink.length > 0) {
-        toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
+    if (serviceParent && serviceLink.length > 0) {
+        toggleTabs(serviceLink, serviceTab, serviceParent, 'js-service-link', true, 'js-service-nav__sublink', 'js-service-subtab');
     }
 
 
@@ -34,12 +16,14 @@ window.addEventListener('DOMContentLoaded', () => {
         let subIndex = 0;
         let trigger = false;
         if (subTabs) {
-            let subLinks = tabs[subIndex].querySelectorAll(subLink),
-                subTabs = tabs[subIndex].querySelectorAll(subContent);
+            let subLinks = tabs[subIndex].querySelectorAll(`.${subLink}`),
+                subTabs = tabs[subIndex].querySelectorAll(`.${subContent}`);
             hideTabs(subLinks, subTabs);
             showTabs(0, subLinks, subTabs);
             trigger = true;
         }
+        ;
+
         parent.addEventListener('click', (e) => {
 
             if (e.target && e.target.classList.contains(classContains)) {
@@ -53,8 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
                         hideTabs(link, tabs);
                         showTabs(i, link, tabs);
                         if (subTabs) {
-                            let subLinks = tabs[i].querySelectorAll(subLink),
-                                subTabs = tabs[i].querySelectorAll(subContent);
+                            let subLinks = tabs[i].querySelectorAll(`.${subLink}`),
+                                subTabs = tabs[i].querySelectorAll(`.${subContent}`);
                             hideTabs(subLinks, subTabs);
                             showTabs(0, subLinks, subTabs);
                             subIndex = i;
@@ -62,9 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-            let subLinks = tabs[subIndex].querySelectorAll(subLink),
-                subTabs = tabs[subIndex].querySelectorAll(subContent);
-            if (e.target && e.target.classList.contains('js-store-sublink')) {
+            let subLinks = tabs[subIndex].querySelectorAll(`.${subLink}`),
+                subTabs = tabs[subIndex].querySelectorAll(`.${subContent}`);
+            if (e.target && e.target.classList.contains(subLink)) {
                 e.preventDefault();
                 for (let i = 0; i < subLinks.length; i++) {
                     if (subLinks[i] === e.target) {

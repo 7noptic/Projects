@@ -13,7 +13,14 @@
       box-orient: vertical;
       -webkit-line-clamp: 7;
       line-clamp: 7;
+      min-height: 117px;
+
       height: 117px;
+      &:hover{
+        height: 100%;
+        -webkit-line-clamp: inherit;
+        line-clamp: inherit;
+      }
     }
   }
 

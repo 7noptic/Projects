@@ -22,6 +22,7 @@
     line-height: 34px;
     display: flex;
     align-items: center;
+    padding: 0 10px;
 
     img {
       margin-right: 30px;
@@ -52,6 +53,8 @@
 
   &-menu {
     width: 25%;
+    padding-right: 15px;
+
     & > ul {
       margin: 0 !important;
       padding: 0 !important;
@@ -59,12 +62,14 @@
       & > li {
         list-style: none;
         margin-bottom: 15px;
+
         & > a {
           font-weight: 300;
           font-size: 14px;
           line-height: 17px;
           color: #fff;
-          &:hover{
+
+          &:hover {
             color: $red;
           }
         }
@@ -91,7 +96,7 @@
     line-height: 17px;
     width: 100%;
     max-width: 1920px;
-    padding: 30px 80px ;
+    padding: 30px 80px;
     border-top: 1px solid $gray;
   }
 
@@ -108,7 +113,8 @@
         color: #fff;
         display: block;
         margin-right: 20px;
-        &:hover{
+
+        &:hover {
           color: $red;
         }
       }
@@ -121,11 +127,15 @@
   }
 
   &__oparin {
-    svg{
-      path{
+    display: flex;
+    align-items: center;
+
+    svg {
+      path {
         transition: $transition3;
       }
     }
+
     &:hover {
       svg {
         path {
@@ -133,5 +143,230 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1799px) {
+  .footer {
+    &__text {
+      font-size: 26px;
+      line-height: 30px;
+
+      img {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1599px) {
+  .footer {
+    &__content {
+      padding: 60px 40px;
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &__btn {
+      padding: 20px 35px;
+    }
+
+    &-social {
+      &__link {
+        margin-left: 30px;
+      }
+    }
+
+    &__bottom {
+      padding: 30px 40px;
+    }
+
+    &-menu {
+      & > ul {
+        & > li {
+          & > a {
+            font-size: 13px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+
+    &__text {
+      font-size: 22px;
+      line-height: 24px;
+
+      img {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1399px) {
+  .footer {
+    &__content {
+      padding: 50px 30px;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer {
+    &__text {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &-menu {
+      & > ul {
+        & > li {
+          margin-bottom: 10px;
+
+          & > a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    &__top {
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+
+      & > a {
+        width: 25%;
+      }
+
+    }
+
+    &-social {
+      display: none;
+    }
+
+    &-submenu, &__oparin, &__copy {
+      width: auto;
+    }
+
+    &__copy {
+      padding-right: 15px;
+    }
+
+    &-submenu {
+      padding-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    &__text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        display: none;
+      }
+    }
+
+    &__content {
+      padding: 35px 15px;
+
+    }
+
+    &__center {
+      margin-bottom: 30px;
+    }
+
+    &__bottom {
+      padding: 25px 15px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &-menu {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+
+    &__center {
+      flex-wrap: wrap;
+    }
+
+    &__bottom {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__copy {
+      width: 100%;
+      text-align: center;
+      order: 3;
+      margin-top: 20px;
+      padding-right: 0;
+    }
+  }
+
+}
+
+@media(max-width: 575px) {
+  .footer {
+    &-menu {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    &__top {
+      a {
+        width: 50%;
+
+        &.footer__text {
+          margin-top: 25px;
+          order: 3;
+        }
+      }
+    }
+&__center{
+  margin-bottom: 0;
+}
+    &-submenu {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      & > li {
+        & > a {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__oparin {
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
   }
 }

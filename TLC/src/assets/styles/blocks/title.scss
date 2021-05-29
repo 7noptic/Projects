@@ -1,22 +1,25 @@
-.title{
+.title {
   font-weight: 300;
   font-size: 40px;
   line-height: 49px;
   position: relative;
   margin-bottom: 55px;
-  &::before{
+
+  &::before {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 100px;
     height: 5px;
     background-color: $red;
   }
-  &-pl{
+
+  &-pl {
     margin-left: 55px;
   }
-  &-center{
+
+  &-center {
     text-align: center;
     display: flex;
     align-items: center;
@@ -25,33 +28,54 @@
   }
 }
 
-@media screen and (max-width:1199px){
-  .title{
+@media (max-width: 1599px) {
+  .title {
+    &-pl {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .title {
     font-size: 36px;
     line-height: 40px;
-    padding-bottom: 30px;
+    margin-bottom: 40px;
 
   }
 }
-@media screen and (max-width:991px){
-  .title{
+
+@media (max-width: 1199px) {
+  .title {
+    &-pl {
+      margin-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .title {
     font-size: 30px;
-    line-height: 36px;
+    line-height: 40px;
 
   }
 }
-@media screen and (max-width:767px){
-  .title{
+
+@media screen and (max-width: 767px) {
+  .title {
     font-size: 26px;
     line-height: 30px;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
 
+    &-pl {
+      margin-left: 15px;
+    }
   }
 }
-@media screen and (max-width: 575px){
-  .title{
+
+@media screen and (max-width: 575px) {
+  .title {
     font-size: 20px;
     line-height: 24px;
-    text-align: center;
   }
 }

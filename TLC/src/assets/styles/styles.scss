@@ -12,15 +12,22 @@
 @import "blocks/form";
 
 /* А */
+@import "blocks/argument";
 /* В */
 @import "blocks/banner";
+@import "blocks/blog";
 @import "blocks/banner-delivery";
+@import "blocks/banner-compare";
+@import "blocks/banner-faq";
 /* C */
 @import "blocks/container";
 @import "blocks/catalog";
 @import "blocks/client";
 @import "blocks/company";
+@import "blocks/contacts";
 /* D */
+@import "blocks/delivery";
+@import "blocks/description";
 
 /* E */
 
@@ -33,6 +40,7 @@
 @import "blocks/header";
 @import "blocks/headcrumbs";
 /* I */
+@import "blocks/info-block";
 /* J */
 /* K */
 
@@ -46,9 +54,12 @@
 @import "blocks/map";
 /* N */
 /* O */
+@import "blocks/order";
 /* P */
 @import "blocks/pagination";
 @import "blocks/project";
+@import "blocks/project-single";
+@import "blocks/process";
 @import "blocks/page404";
 /* Q */
 
@@ -56,6 +67,9 @@
 @import "blocks/rating-star";
 /* S */
 @import "blocks/sitemap";
+@import "blocks/service";
+@import "blocks/service-more";
+@import "blocks/service-tab";
 /* T */
 @import "blocks/tags";
 @import "blocks/tooltip";

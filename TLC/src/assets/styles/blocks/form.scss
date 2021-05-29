@@ -8,10 +8,12 @@
     font-size: 16px;
     line-height: 24px;
     cursor: pointer;
+
     &::placeholder {
       font-size: 16px;
       line-height: 24px;
     }
+
     &:hover {
       border-bottom: 1px solid $greenL;
     }
@@ -26,24 +28,25 @@
     justify-content: center;
     align-items: center;
     padding: 13px;
-    border: 1px solid #C9BBAE;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: $transition3;
     width: 100%;
     background: #fff;
 
     &::placeholder {
+      font-weight: 300;
       font-size: 14px;
       line-height: 24px;
       text-align: center;
     }
 
     &:hover {
-      border: 1px solid darken(#C9BBAE, 25%);
+      border: 1px solid rgba(0, 0, 0, 0.6);
     }
 
     &:active, &:focus {
-      border: 1px solid #CBCBCB;
+      border: 1px solid rgba(0, 0, 0, 1);
     }
   }
 

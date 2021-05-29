@@ -1,29 +1,87 @@
-.page404{
-    padding: 70px 0;
-    &__title{
-        font-size: 80px;
-line-height: 98px;
-padding-bottom: 10px;
-text-align: center;
+.page404 {
+  margin: 100px 55px 150px;
+  display: flex;
+
+  &-text {
+    width: 40%;
+
+    &__title {
+      font-weight: 300;
+      font-size: 120px;
+      line-height: 151px;
+      margin-bottom: 20px;
     }
-    &__subtitle{
-        font-size: 20px;
-line-height: 24px;
-text-align: center;
+
+    &__subtitle {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 50px;
     }
+
+    &__btn {
+      padding: 15px 20px;
+    }
+  }
+
+  &-img {
+    background-position: center center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 110px 80px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFF;
+
+    &__svg {
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 140px;
+      line-height: 171px;
+    }
+
+    &__subtitle {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      max-width: 250px;
+      text-align: center;
+    }
+  }
 }
-@media screen and(max-width:575px){
-    .page404{
-        padding: 40px 0;
-        &__title{
-            font-size: 50px;
-    line-height: 60px;
-    padding-bottom: 10px;
-    text-align: center;
-        }
-        &__subtitle{
-            font-size: 12px;
-    line-height: 20px;
-        }
+
+@media screen and(max-width: 991px) {
+  .page404 {
+    margin: 0;
+    padding: 50px 15px;
+
+    &-text {
+      width: 100%;
     }
+
+    &-img {
+      display: none;
+    }
+  }
+}
+@media (max-width: 575px){
+  .page404{
+    &-text{
+      &__title{
+        font-size: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+      &__subtitle{
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+  }
 }

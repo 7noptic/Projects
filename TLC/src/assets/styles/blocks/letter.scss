@@ -40,3 +40,37 @@
     }
   }
 }
+@media (max-width: 767px){
+  .letter{
+
+    &-prev, &-next {
+      top: auto;
+      bottom: -50px;
+    }
+    &-slider{
+      .swiper-slide{
+        filter: none;
+      }
+    }
+  }
+}
+@media (max-width: 575px){
+  .letter{
+
+    &__content{
+      width: 100%;
+      padding-right: 0;
+    }
+    &-slide{
+      flex-wrap: wrap;
+    }
+    &__img{
+      margin-top: 20px;
+      width: 100%;
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
