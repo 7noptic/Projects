@@ -4,11 +4,14 @@
   border: 1px solid #C9BBAE;
   padding: 3px 8px;
   cursor: pointer;
+  z-index: 10000;
 }
 [data-tooltip] {
   position: relative; /* Относительное позиционирование */
+  z-index: 10000;
 }
 [data-tooltip]::after {
+  display: block;
   content: attr(data-tooltip); /* Выводим текст */
   position: absolute; /* Абсолютное позиционирование */
   width: 320px; /* Ширина подсказки */
@@ -27,4 +30,10 @@
 [data-tooltip]:hover::after {
   opacity: 1; /* Показываем подсказку */
   top: 2em; /* Положение подсказки */
+  z-index: 10000;
+}
+@media(max-width: 575px){
+  [data-tooltip]::after {
+    width: auto;
+  }
 }

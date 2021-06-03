@@ -197,24 +197,28 @@ Template Name: Главная
                                 Отзывы о компаниях по ремонту квартир
                             </h2>
                         </div>
-                        <?php $loop = new WP_Query( array( 'category_name' => 'company', 'posts_per_page' => 3 ) ); ?>
-						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-            
-                        <?php 
-                            $reviews = get_field('reviews');
-                            $trigger = 1;
-                            if( is_array($reviews) || is_object($reviews)) : ?>
-                            <?php foreach($reviews as $review) : ?>
-                            <?php if($trigger > 3){
-                                break;
-                            }?>
-                            <?php if($review['reviews-trigger'] == 'ДА') : ?>
+                        
+                        <div class="col-12">
+                                    <div class="reviews-slider">
+                                        <div class="swiper-reviews">
+                                            <div class="swiper-wrapper">
+                        <?php if ( have_rows( 'main-review', get_queried_object() ) ): ?>
+								<?php while ( have_rows( 'main-review', get_queried_object() ) ): the_row();
 
-                                <div class="col-12 col-md-6 col-xl-4">
+									// переменные
+									$name    = get_sub_field( 'main-review-name' );
+									$num     = get_sub_field( 'main-review-num' );
+                                    $rating  = get_sub_field( 'main-review-rating' );
+                                    $text    = get_sub_field( 'main-review-text' );
+
+									?>
+
+                                            
+                                            <div class="swiper-slide">
                                             <div class="reviews-card">
                                                 <header class="reviews-card__header">
                                                     <div class="reviews-card__img">
-                                                    <?php  $image = $review['reviews-ava'];
+                                                    <?php  $image = get_sub_field( 'main-review-ava' );
                                                     $image_url = $image['sizes']['ava'];
 
                                                     if( !empty($image) ): ?>
@@ -225,14 +229,14 @@ Template Name: Главная
                                                     </div>
                                                     <div class="reviews-card__info">
                                                         <div class="reviews-card__name">
-                                                            <?= $review['reviews-name']; ?>
+                                                        <?= $name  ?>
                                                         </div>
                                                         <div class="reviews-card__num">
-                                                            Договор: <?= $review['reviews-contract-num']; ?>
+                                                            Договор: <?= $num  ?>
                                                         </div>
                                                         
                                                         <div class="reviews-card__rating">
-                                                        <input type='hidden' value='<?= $review['reviews-rating'] ?>'
+                                                        <input type='hidden' value='<?= $rating ?>'
                                                             class="reviews-card__rating-input">
                                                             <ul class="rating-star">
                                                                 <li class="active"></li>
@@ -246,18 +250,32 @@ Template Name: Главная
                                                     </div>
                                                 </header>
                                                 <div class="reviews-card__text">
-                                                    <?= $review['reviews-text'] ?>
+                                                <?= $text  ?>
                                                 </div>
                                             </div>
-                                        </div>
-                                <?php $trigger++; ?>
-                                <?php endif; ?>
-                                
-                            <?php endforeach; ?>
-                            <?php endif; ?>
-                            <?php endwhile; ?>
+                                            </div>                           
+                                     
+
+                       
                             <?php wp_reset_query(  );
                             wp_reset_postdata(  );?>
+								<?php endwhile; ?>
+							<?php endif; ?>
+
+
+                            </div>
+                                    </div>
+                                    <div class="reviews__prev">
+                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/arrright.svg"
+                                                     alt="">
+                                            </div>
+
+                                            <div class="reviews__next">
+                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/arrright.svg"
+                                                     alt="">
+                                            </div>
+                            </div>
+                            </div>
 					
 
 

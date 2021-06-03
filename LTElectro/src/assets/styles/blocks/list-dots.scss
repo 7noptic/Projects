@@ -1,0 +1,72 @@
+.list-dots {
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    flex-wrap: wrap;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+
+      width: 100%;
+      bottom: 6px;
+      right: 0;
+      overflow: hidden;
+      height: 14px;
+      border-bottom: 1px dotted #000
+    }
+
+    span {
+      display: flex;
+      background-color: #fff;
+
+      div {
+        padding-left: 10px;
+      }
+
+      &:first-of-type {
+        padding-right: 5px;
+        display: flex;
+        float: left;
+        z-index: 2;
+      }
+
+      &:last-of-type {
+        min-width: 33%;
+        padding-left: 5px;
+        display: block;
+        float: right;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .list-dots {
+    li {
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      position: relative;
+
+      &::after {
+        display: none;
+      }
+
+      span {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        background-color: transparent;
+
+        &:first-of-type {
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

@@ -19,11 +19,13 @@
     display: flex;
     padding-bottom: 15px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 
     &__link {
       font-size: 24px;
       line-height: 30px;
       margin-right: 100px;
+      margin-bottom: 15px;
       display: block;
       position: relative;
       opacity: 0.5;

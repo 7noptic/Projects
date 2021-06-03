@@ -16,6 +16,7 @@
 /* В */
 
 @import "blocks/brands";
+
 /* C */
 @import "blocks/container";
 @import "blocks/catalog";
@@ -39,7 +40,7 @@
 /* K */
 
 /* L */
-
+@import "blocks/list-dots";
 /* M */
 @import "blocks/modal";
 @import "blocks/modal-basket";
@@ -48,9 +49,11 @@
 @import "blocks/more";
 /* N */
 /* O */
+@import "blocks/order";
 /* P */
 @import "blocks/pagination";
 @import "blocks/page404";
+@import "blocks/product";
 /* Q */
 
 /* R */
@@ -74,6 +77,7 @@
 
 
 
+@import "blocks/basket";
 
 
 

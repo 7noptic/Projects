@@ -523,6 +523,35 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
+    let sliderReviews = new Swiper('.swiper-reviews', {
+        slidesPerView: 2,
+        spaceBetween: 100,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        navigation: {
+            prevEl: '.reviews__prev',
+            nextEl: '.reviews__next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            767: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+
+
+            1920: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+            },
+        }
+
+    });
 
     let ratingItem = document.querySelectorAll('.rating-item');
 

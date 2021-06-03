@@ -1,4 +1,4 @@
-.swiper-container, .swiper-banner, .swiper-card, .swiper-region, .swiper-tags,.swiper-container-tags-2,.swiper-container-tags-3, .swiper-news, .selection-help-swiper {
+.swiper-container, .swiper-banner,.swiper-reviews, .swiper-card, .swiper-region, .swiper-tags,.swiper-container-tags-2,.swiper-container-tags-3, .swiper-news, .selection-help-swiper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -12,7 +12,7 @@
 .swiper__wrapper{
   position: relative;
 }
-.swiper-card{
+.swiper-card,.swiper-reviews{
   width: 90%;
   .swiper-slide{
     padding: 25px;

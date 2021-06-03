@@ -169,6 +169,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let storeParent = document.querySelector('.store'),
         storeLink = document.querySelectorAll('.js-store-link'),
         storeTab = document.querySelectorAll('.js-store-tab'),
+        productParent = document.querySelector('.product-info'),
+        productLink = document.querySelectorAll('.js-product-link'),
+        productTab = document.querySelectorAll('.js-product-tab'),
         reviewParent = document.querySelector('.review-block'),
         reviewLink = document.querySelectorAll('.js-review-link'),
         reviewTab = document.querySelectorAll('.js-review-tab'),
@@ -178,6 +181,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (storeParent && storeLink.length > 0) {
         toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
+    }
+    if (productParent && productLink.length > 0) {
+        toggleTabs(productLink, productTab, productParent, 'js-product-link');
     }
     if (reviewParent && reviewLink.length > 0) {
         toggleTabs(reviewLink, reviewTab, reviewParent, 'js-review-link');
@@ -397,8 +403,6 @@ window.addEventListener('DOMContentLoaded', () => {
             el: '.article-nav-news',
             clickable: true,
         },
-
-
     });
 
     let sliderTags = new Swiper('.swiper-tags', {
@@ -488,6 +492,12 @@ window.addEventListener('DOMContentLoaded', () => {
             },
             575: {
                 slidesPerView: 4,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+            1400: {
+                slidesPerView: 6,
             }
         }
     });
@@ -727,15 +737,51 @@ window.addEventListener('DOMContentLoaded', () => {
                     let trigger = true;
 
                     let link = filterContent[i].querySelectorAll('.category-filter__link');
-                        for (let j = 0; j < link.length; j++) {
-                            if (link[j].classList.contains('active')) {
-                                trigger = false;
-                            }
+                    for (let j = 0; j < link.length; j++) {
+                        if (link[j].classList.contains('active')) {
+                            trigger = false;
                         }
+                    }
                     if (trigger) {
                         filterItem[i].style.display = 'none';
                     }
                 }
+            }
+        });
+    }
+    /* more char in product */
+
+    let productList = document.querySelector('.js-product-list'),
+        productItem = document.querySelectorAll('.js-product-list li'),
+        productCharBtn = document.querySelector('.js-product-list-btn');
+    if(productList && productItem && productCharBtn){
+        if(productItem.length < 7){
+            productCharBtn.style.display = 'none';
+        }
+        for(let i = 0; i < productItem.length; i++){
+            if(i > 6){
+                productItem[i].style.display = 'none';
+            }
+        }
+        productCharBtn.addEventListener('click', function(e)  {
+            e.preventDefault();
+            this.classList.toggle('active');
+
+            if(this.classList.contains('active')){
+
+                for(let i = 0; i < productItem.length; i++){
+                    productItem[i].style.display = 'flex';
+                }
+                this.innerHTML = 'Скрыть';
+
+            }else{
+                for(let i = 0; i < productItem.length; i++){
+                    if(i > 6){
+                        productItem[i].style.display = 'none';
+                    }
+                }
+                this.innerHTML = 'Все характеристики';
+
             }
         });
     }
