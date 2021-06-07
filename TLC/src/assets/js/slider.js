@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let sliderProject = new Swiper('.swiper-project', {
         slidesPerView: 2,
-        loop: true,
+        initialSlide: 1,
         centeredSlides: true,
         spaceBetween: 0,
         observeParents: true,
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let sliderProcess = new Swiper('.swiper-process', {
         slidesPerView: 4,
-        loop: true,
+        initialSlide: 1,
         spaceBetween: 30,
         observeParents: true,
         observer: true,
@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let sliderLetter = new Swiper('.swiper-letter', {
         slidesPerView: 2,
-        loop: true,
+        initialSlide: 1,
         centeredSlides: true,
         spaceBetween: 0,
         observeParents: true,
@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let sliderClient = new Swiper('.swiper-client', {
         slidesPerView: 4,
-        loop: true,
+        initialSlide: 1,
         spaceBetween: 40,
         observeParents: true,
         observer: true,

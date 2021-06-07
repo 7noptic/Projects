@@ -163,6 +163,7 @@
   &-submenu {
     & > li {
       position: relative;
+      
 
       &:hover {
         & > div {
@@ -174,7 +175,7 @@
       }
 
       & > div {
-        width: 1344px;
+        width: 400px;
         background-color: #fff;
         position: absolute;
         top: 21px;
@@ -185,6 +186,13 @@
         z-index: -1;
         transform: scale(0);
         opacity: 0;
+        &>ul{
+          &>li{
+            &>ul,&>div{
+              display: none;
+            }
+          }
+        }
 
         & > div {
           & > img {
@@ -197,14 +205,73 @@
         }
 
         & > ul {
-          padding: 30px !important;
+          padding: 30px 0 30px 30px !important;
           margin: 0 !important;
-          columns: 2 200px;
 
-          width: calc(100% - 450px);
+          width: 100%;
+          border: 1px solid #cbcbcb;
 
           & > li {
             list-style: none;
+            padding-right: 30px;
+            &>div{
+              position: absolute;
+              left: 799px;
+              top: 0;
+              width: 400px;
+              height: 100%;
+            }
+            &>ul{
+              border: 1px solid #cbcbcb;
+             
+              padding: 30px 0 30px 30px !important;
+          margin: 0 !important;
+              position: absolute;
+              top: 0;
+              left: 399px;
+              width: 400px;
+              background-color: #fff;
+              &>li{
+                list-style: none;
+                padding-right: 15px;
+                & > a {
+                  font-weight: 300;
+                  font-size: 14px;
+                  line-height: 20px;
+                  padding-bottom: 15px;
+                  display: flex;
+                  align-items: center;
+                  padding-left: 20px;
+                  margin-left: -20px;
+                  position: relative;
+    
+                  &::before {
+                    content: url("../img/mar.svg");
+                    display: block;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    opacity: 0;
+                    transition: $transition2;
+                  }
+    
+                  &:hover {
+                    transform: translateX(20px);
+    
+                    &::before {
+    
+                      opacity: 1;
+                    }
+                  }
+    
+                }
+              }
+            }
+            &:hover{
+              &>ul,&>div{
+                display: block;
+              }
+            }
 
             & > a {
               font-weight: 300;
@@ -302,15 +369,13 @@
     &-submenu {
       & > li {
         & > div {
-          width: 900px;
 
           & > ul {
             width: 100%;
+            
           }
 
-          & > div {
-            display: none;
-          }
+          
         }
       }
     }
@@ -325,6 +390,21 @@
 
     .logo {
       margin: 10px 15px;
+    }
+    &-submenu{
+      &>li{
+        &>div{
+          &>ul{
+            &>li{
+              &:hover{
+                &>div{
+display: none;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 &-menu{
   ul{
@@ -347,19 +427,25 @@
     }
 
     &-net {
+      margin-right: 15px;
+
       padding-right: 0;
-
+&__soc{
+  display: none;
+}
       &__block {
+        display: flex;
+        justify-content: center;
         &:first-child {
-          display: none;
-
+          //display: none;
         }
       }
 
       &__btn {
         margin-top: 0;
-        padding: 45px 15px;
-        white-space: normal;
+        font-size: 12px;
+        //padding: 45px 15px;
+       // white-space: normal;
       }
     }
   }
@@ -444,15 +530,15 @@
           transform: scale(1);
           opacity: 1;
           position: relative;
-          left: auto;
+          left: 0;
           top: auto;
           width: auto;
           z-index: 1000;
           padding: 0;
           background-color: transparent;
 
-          & > {
-            ul {
+          & > ul {
+            border: none;
               margin-top: 30px !important;
               display: flex;
               flex-direction: column;
@@ -460,11 +546,11 @@
               padding: 0 !important;
 
               & > li {
+                padding-right: 0;
                 & > a {
                   margin-bottom: 8px;
 
                 }
-              }
             }
           }
         }

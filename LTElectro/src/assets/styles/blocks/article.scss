@@ -1,5 +1,13 @@
 .article {
   margin-bottom: 35px;
+  &__text{
+    font-size: 14px;
+line-height: 17px;
+margin-bottom: 40px;
+P{
+  margin-bottom: 15px;
+}
+  }
 
   &-block {
     padding-bottom: 150px;
@@ -48,6 +56,14 @@
         background: $orange;
       }
     }
+  }
+  &-images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 }
 

@@ -2,11 +2,17 @@ window.addEventListener('DOMContentLoaded', () => {
     /* TABS */
     let serviceParent = document.querySelector('.service-tab'),
         serviceLink = document.querySelectorAll('.js-service-link'),
-        serviceTab = document.querySelectorAll('.js-service-tab');
+        serviceTab = document.querySelectorAll('.js-service-tab'),
+        serviceNavParent = document.querySelector('.service'),
+        serviceNavLink = document.querySelectorAll('.js-service-nav__link'),
+        serviceNavTab = document.querySelectorAll('.js-service-nav__tab');
 
-    if (serviceParent && serviceLink.length > 0) {
-        toggleTabs(serviceLink, serviceTab, serviceParent, 'js-service-link', true, 'js-service-nav__sublink', 'js-service-subtab');
-    }
+        if (serviceParent && serviceLink.length > 0) {
+            toggleTabs(serviceLink, serviceTab, serviceParent, 'js-service-link', true, 'js-service-nav__sublink', 'js-service-subtab');
+        }
+        if (serviceNavParent && serviceNavLink.length > 0) {
+            toggleTabs(serviceNavLink, serviceNavTab, serviceNavParent, 'js-service-nav__link');
+        }
 
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {

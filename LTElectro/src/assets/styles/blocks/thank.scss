@@ -1,0 +1,95 @@
+.thank{
+    margin-bottom: 200px;
+    &-item{
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 80px;
+        &__img{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        &__text{
+            text-align: center;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+    &-result{
+        &__item{
+            border-top: 1px solid #cbcbcb;
+            padding: 17px;
+            display: flex;
+            justify-content: space-between;
+            p,a{
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                line-height: 17px;
+                &.thank-result__text{
+                    font-size: 12px;
+                    line-height: 15px;
+                    margin-bottom: 15px;
+                    &-bold{
+                        font-size: 14px;
+                        line-height: 17px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                span{
+                    font-size: 14px;
+                line-height: 17px;
+                text-decoration: line-through;
+                color: #929292;
+                margin: 0 10px;
+                }
+            }
+            &:first-of-type{
+                margin-top: 50px;
+            }
+            &:last-of-type{
+                margin-bottom: 30px;
+                border-top: 1px solid #cbcbcb;
+            }
+            &-bold{
+                p{
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000000;
+                    text-transform: uppercase;
+                    
+                }
+            }
+        }
+    }
+
+    &__btn{
+        display: inline-block;
+        margin: 0 auto;
+        padding: 20px 50px;
+    }
+}
+@media (max-width: 575px){
+    .thank{
+        margin-bottom: 50px;
+        &-item{
+            margin-bottom: 30px;
+            padding: 0;
+        }
+    }
+}
+@media print{
+    .thank-item,.kama_breadcrumbs,.footer,.header{
+        display: none;
+    }
+    .title{
+        font-size: 24px;
+    }
+    html, body{
+        min-height: auto;
+    }
+}

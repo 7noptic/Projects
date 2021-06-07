@@ -1,0 +1,16 @@
+.contacts{
+    margin-bottom: 30px;
+    &__title{
+        display: block;
+        font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+margin-bottom: 10px;
+    }
+    &__text{
+        font-size: 14px;
+line-height: 17px;
+display: block;
+margin-bottom: 30px;
+}
+}

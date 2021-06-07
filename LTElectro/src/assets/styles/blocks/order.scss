@@ -1,4 +1,5 @@
 .order {
+  margin-bottom: 200px;
   form {
     display: flex;
     flex-direction: column;
@@ -10,6 +11,63 @@
       line-height: 15px;
       margin-top: 10px;
       margin-bottom: 50px;
+      &.order__agreement{
+        max-width: 320px;
+        text-align: center;
+      }
+    }
+    button{
+      font-weight: 800;
+font-size: 16px;
+line-height: 20px;
+padding: 20px 50px;
+margin-bottom: 20px;
+background: #fff;
+    }
+    .order-result{
+      width: 100%;
+      border: 3px solid #CBCBCB;
+      margin-bottom: 40px;
+      &__item{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        p{
+          width: auto;
+          font-size: 14px;
+          line-height: 17px;
+          margin: 0;
+          &:last-of-type{
+            span{
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 17px;
+
+              text-decoration: line-through;
+            }
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        &-bold{
+          outline: 3px solid #000000;
+          border: none;
+          p{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            &:last-of-type{
+              font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            }
+          }
+        }
+      }
     }
   }
   &-form{
@@ -29,6 +87,10 @@
     &__map{
       position: relative;
       width: 100%;
+      input{
+        text-align: left;
+        padding-left: 40px;
+      }
       &::before{
         z-index: 1000;
         content: url("../img/mapo.svg");
@@ -56,6 +118,13 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    &__pay{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
     &__check {
       min-width: 33.333%;
       display: flex;
@@ -63,10 +132,13 @@
       font-weight: normal;
       font-size: 14px;
       line-height: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
 
       label {
         cursor: pointer;
+        font-size: 14px;
+line-height: 17px;
+padding: 0 10px;
       }
 
       img {
@@ -107,5 +179,81 @@
         }
       }
     }
+  }
+  &__textarea{
+    height: 120px;
+    margin-bottom: 30px;
+  }
+  
+}
+@media (max-width: 1199px){
+  .order{
+    margin-bottom: 150px;
+    &-form{
+      &__map{
+        &::before{
+          top: 11px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px){
+  .order{
+    margin-bottom: 75px;
+    &-nav{
+      &__link{
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    &-block{
+      &__pay{
+        flex-wrap: wrap;
+      }
+      &__check{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px){
+  .order{
+    margin-bottom: 50px;
+    &-nav{
+      margin-bottom: 30px;
+      &__link{
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+    form{
+      .order-result{
+        &__item{
+          padding: 15px;
+          flex-wrap: wrap;
+          p{
+            width: 100%;
+            &:last-of-type{
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              span{
+                margin-right: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-form{
+      &__input{
+        &-50{
+          width: 100%;
+        }
+      }
+    }
+    
   }
 }

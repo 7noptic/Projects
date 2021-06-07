@@ -176,11 +176,22 @@ window.addEventListener('DOMContentLoaded', () => {
         reviewLink = document.querySelectorAll('.js-review-link'),
         reviewTab = document.querySelectorAll('.js-review-tab'),
         articleParent = document.querySelector('.article-block'),
+        articleParentTwo = document.querySelector('.blog'),
         articleLink = document.querySelectorAll('.js-article-link'),
-        articleTab = document.querySelectorAll('.js-article-tab');
+        articleTab = document.querySelectorAll('.js-article-tab'),
+        orderParent = document.querySelector('.order'),
+        orderLink = document.querySelectorAll('.js-order-link'),
+        orderTab = document.querySelectorAll('.js-order-tab'),
+        userParent = document.querySelector('.user'),
+        userLink = document.querySelectorAll('.js-user-link'),
+        userTab = document.querySelectorAll('.js-user-tab');
+
 
     if (storeParent && storeLink.length > 0) {
         toggleTabs(storeLink, storeTab, storeParent, 'js-store-link', true, '.js-store-sublink', '.js-store-subtab');
+    }
+    if (userParent && userLink.length > 0) {
+        toggleTabs(userLink, userTab, userParent, 'js-user-link');
     }
     if (productParent && productLink.length > 0) {
         toggleTabs(productLink, productTab, productParent, 'js-product-link');
@@ -190,6 +201,21 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if (articleParent && articleLink.length > 0) {
         toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
+    }
+    if (articleParentTwo && articleLink.length > 0) {
+        toggleTabs(articleLink, articleTab, articleParentTwo, 'js-article-link');
+        /* fix border */
+        for (let i = 0; i < articleTab.length; i++){
+            let items = articleTab[i].querySelectorAll('.blog-item');
+            items[items.length - 1].classList.add('blog-item__last');
+
+            if(items.length % 2 == 0){
+                items[items.length - 2].classList.add('blog-item__last');
+            }
+        }
+    }
+    if (orderParent && orderLink.length > 0) {
+        toggleTabs(orderLink, orderTab, orderParent, 'js-order-link');
     }
 
 
@@ -261,10 +287,21 @@ window.addEventListener('DOMContentLoaded', () => {
     let filterItem = document.querySelectorAll('.category-filter'),
         filterLink = document.querySelectorAll('.category-filter__header'),
         filterContent = document.querySelectorAll('.category-filter__content'),
+        faqLink = document.querySelectorAll('.faq-header'),
+        faqContent = document.querySelectorAll('.faq-content'),
+        jobLink = document.querySelectorAll('.job-item__header'),
+        jobContent = document.querySelectorAll('.job-item__content'),
         categoryBtn = document.querySelectorAll('.category-filter__btn'),
         categoryContent = document.querySelectorAll('.category-filter__wrapper');
-    if (filterLink.length > 0) {
 
+        if (faqLink.length > 0) {
+            toggleContent(faqLink, faqContent, 'faq-header');
+        }
+        if (jobLink.length > 0) {
+            toggleContent(jobLink, jobContent, 'job-item__header');
+        }
+
+    if (filterLink.length > 0) {
         toggleContent(filterLink, filterContent, 'category-filter__header');
     }
 
@@ -623,8 +660,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if (oneCardParent) {
         oneCardParent.addEventListener('click', (e) => {
-            e.preventDefault();
+            
             if (e.target && e.target.classList.contains('js-product-one-click')) {
+                e.preventDefault();
                 modalOneClickName.innerHTML = oneCardName.innerHTML;
                 modalInputName.value = oneCardName.innerHTML
 
@@ -649,8 +687,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     modalOneClickPrice.innerHTML = cardPrice[i].innerHTML;
                     modalInputPrice.value = cardPrice[i].innerHTML;
 
-                    console.log(cardImg[i]);
-                    console.log(cardImg[i].childNodes[1]);
                     modalOneClickImg.src = cardImg[i].src;
                     modalInputUrl.value = cardName[i].href;
                 }
@@ -658,7 +694,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /* RATING
     let ratingParent = document.querySelector('.js-rating'),
         ratingInput = document.querySelector('#js-rating'),
         ratingStar = document.querySelectorAll('.js-rating > li');
@@ -694,6 +729,7 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const target = event.target;
             if (target && target.tagName == 'LI') {
+
                 for (let i = 0; i < modalRatingStar.length; i++) {
                     modalRatingStar[i].classList.remove('active')
                 }
@@ -711,7 +747,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-*/
     /* reset filter */
     let btnFilterReset = document.querySelector('.js-filter-reset');
     let allLinkFilter = document.querySelectorAll('.category-filter__link'),
@@ -784,6 +819,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
             }
         });
+    }
+
+    /* fix border in review */
+
+    if(reviewParent){
+        let reviewItem = reviewParent.querySelectorAll('.review-item');
+        if(reviewItem){
+            reviewItem[reviewItem.length - 1].classList.add('noborder');
+
+        }
     }
 
 
@@ -873,6 +918,9 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    
+
+    
     /* VIDEO */
     function findVideos() {
         let videos = document.querySelectorAll('.video');
