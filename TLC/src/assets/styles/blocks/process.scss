@@ -2,6 +2,17 @@
   margin-bottom: 200px;
   padding: 0 55px;
 
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+  }
+
   &-slider {
     position: relative;
 
@@ -27,6 +38,12 @@
   .process {
     padding: 0 15px;
     margin-bottom: 150px;
+    &__text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      display: block;
+    }
   }
 }
 
@@ -39,6 +56,10 @@
 @media (max-width: 991px) {
   .process {
     margin-bottom: 75px;
+    &__text {
+      font-size: 16px;
+      line-height: 20px;
+    }
 
   }
 }
@@ -46,5 +67,9 @@
 @media (max-width: 767px) {
   .process {
     margin-bottom: 50px;
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }

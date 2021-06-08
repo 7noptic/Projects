@@ -141,7 +141,32 @@
     padding: 20px 44px;
     margin-left: 70px;
     white-space: nowrap;
-
+  }
+  &-single{
+    &__img{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      img{
+        object-fit: contain;
+        width: auto;
+        height: auto;
+      }
+    }
+    &__text{
+      h1,h2,h3,h4,h5,h6{
+        margin-bottom: 25px;
+      }
+      p{
+        margin-bottom: 20px;
+      }
+      img{
+        object-fit: contain;
+        margin-bottom: 30px;
+        width: auto;
+        height: auto;
+      }
+    }
   }
 }
 

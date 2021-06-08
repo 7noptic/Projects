@@ -35,6 +35,10 @@
   &__img{
     padding: 20px;
     display: block;
+    transition: $transition3;
+    img{
+      object-fit: contain;
+    }
     &:hover{
       transform: scale(1.1);
     }
