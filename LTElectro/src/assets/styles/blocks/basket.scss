@@ -56,7 +56,8 @@
       display: flex;
       align-items: center;
       height: 60px;
-      &-small{
+
+      &-small {
         font-weight: 600;
         font-size: 18px;
         line-height: 24px;
@@ -77,8 +78,10 @@
     &__ex {
       padding-left: 15px;
       height: 100%;
+      min-width: 35px;
     }
-    &__exit,&__star{
+
+    &__exit, &__star {
       cursor: pointer;
     }
   }
@@ -153,6 +156,26 @@
   }
 }
 
+@media (max-width: 1199px) {
+  .basket {
+    &-item {
+      &__info {
+        padding: 15px;
+      }
+
+      &__name {
+        font-size: 13px;
+      }
+
+      &__price {
+        font-size: 18px;
+        line-height: 20px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 @media (max-width: 991px) {
   .basket {
     margin-bottom: 100px;
@@ -162,6 +185,7 @@
 @media (max-width: 767px) {
   .basket {
     margin-bottom: 75px;
+
     &-item {
       flex-wrap: wrap;
 
@@ -191,21 +215,35 @@
     }
   }
 }
-@media (max-width: 575px){
-  .basket{
+
+@media (max-width: 575px) {
+  .basket {
     margin-bottom: 50px;
-    &-item{
-      &__info{
+
+    &-result {
+      &__item {
+        span {
+          &:first-of-type,&:last-of-type{
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    &-item {
+      &__info {
         flex-wrap: wrap;
         height: 100%;
         align-items: center;
       }
-      &__left{
+
+      &__left {
         width: 70%;
-        justify-content: center!important;
+        justify-content: center !important;
         margin-bottom: 20px;
       }
-      &__count{
+
+      &__count {
         width: 30%;
         height: 40px;
         margin-bottom: 20px;
@@ -213,16 +251,18 @@
         align-items: center;
         justify-content: center;
       }
-      &__name{
+
+      &__name {
         font-size: 12px;
         margin-bottom: 10px;
       }
-      &__ex{
-        flex-direction: row!important;
-        align-items: center!important;
+
+      &__ex {
+        flex-direction: row !important;
+        align-items: center !important;
         padding-left: 0;
         width: 30%;
-        justify-content: space-between!important;
+        justify-content: space-between !important;
       }
     }
   }

@@ -102,11 +102,11 @@
   }
 
   &::before {
-    left: 0;
+    left: -1px;
   }
 
   &::after {
-    right: 0;
+    right: -1px;
     transform: rotate(-180deg);
   }
 }

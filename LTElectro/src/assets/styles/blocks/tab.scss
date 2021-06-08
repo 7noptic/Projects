@@ -5,6 +5,10 @@
   opacity: 0;
   transition: $transition3;
   width: 100%;
+  &.row{
+    width: calc(100% + 20px);
+    max-width: 200%;
+  }
 
   &.active {
     animation: showTabs .5s;

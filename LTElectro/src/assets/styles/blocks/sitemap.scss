@@ -1,7 +1,34 @@
 .sitemap{
   margin-bottom: 60px;
-  &__nav{
+  &-nav{
     display: flex;
     flex-direction: column;
+    &__link{
+      display: block;
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        display: block;
+        height: 5px;
+        width: 100%;
+        max-width: 100px;
+        background-color: $orange;
+        transform: scale(0);
+        transition: $transition2;
+      }
+
+      &:hover {
+
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
   }
 }

@@ -572,13 +572,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         return function () {
                             if (heartColor) {
                                 if (trigger) {
-                                    heartColor.style.fill = "#fff";
+                                    heartColor.style.fill = "#000";
                                     trigger = false;
                                 } else {
-                                    heartColor.style.fill = "#467BB9";
+                                    heartColor.style.fill = "#FF5219";
                                     trigger = true;
                                 }
                             }
+                            return false;
 
                         }
                     }(i)
@@ -619,6 +620,53 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    /* product */
+    let product = document.querySelector('.product'),
+        productCount = document.querySelector('.js-product__num'),
+        productLikeOne = document.querySelector('.product__heart'),
+        productLikeTwo = document.querySelector('.product__heart-two');
+    if(product && productLikeOne && productLikeTwo){
+        productLikeOne.addEventListener('click', function (e){
+            e.preventDefault();
+            if(this.classList.contains('active')){
+                productLikeTwo.classList.remove('active');
+                productLikeOne.classList.remove('active');
+            }else{
+                productLikeTwo.classList.add('active');
+                productLikeOne.classList.add('active');
+            }
+        });
+        productLikeTwo.addEventListener('click', function (e){
+            e.preventDefault();
+            if(this.classList.contains('active')){
+                productLikeTwo.classList.remove('active');
+                productLikeOne.classList.remove('active');
+            }else{
+                productLikeTwo.classList.add('active');
+                productLikeOne.classList.add('active');
+            }
+        });
+
+
+    }
+    if(product && productCount){
+        product.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (e.target && e.target.classList.contains('js-product__minus')) {
+                e.preventDefault();
+                if (modalOneClickCount.value > 0) {
+                    modalOneClickCount.value = +modalOneClickCount.value - 1;
+                    productCount.value = +productCount.value - 1;
+                }
+            }
+            if (e.target && e.target.classList.contains('js-product__plus')) {
+                e.preventDefault();
+                modalOneClickCount.value = +modalOneClickCount.value + 1;
+                productCount.value = +productCount.value + 1;
+            }
+        });
+    }
+
     /* modal one click */
     let card = document.querySelectorAll('.card'),
         cardPrice = document.querySelectorAll('.card-price__new'),
@@ -649,11 +697,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (modalOneClickCount.value > 0) {
                     console.log()
                     modalOneClickCount.value = +modalOneClickCount.value - 1;
+                    if(product && productCount){
+                                    productCount.value = +productCount.value - 1;
+                    }
                 }
             }
             if (e.target && e.target.classList.contains('js-modal-one-click__plus')) {
                 e.preventDefault();
                 modalOneClickCount.value = +modalOneClickCount.value + 1;
+                if(product && productCount){
+                    productCount.value = +productCount.value + 1;
+                }
             }
         })
 
@@ -825,9 +879,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if(reviewParent){
         let reviewItem = reviewParent.querySelectorAll('.review-item');
-        if(reviewItem){
+        if(reviewItem.length > 0){
             reviewItem[reviewItem.length - 1].classList.add('noborder');
-
         }
     }
 
