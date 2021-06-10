@@ -43,10 +43,14 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-
+    font-size: 12px;
+    line-height: 21px;
+    font-weight: bold;
+    color: gray;
     & > span {
       display: inline-block;
       font-size: 12px;
+      line-height: 21px;
       font-weight: 500;
       opacity: 1;
       transition: $transition3;

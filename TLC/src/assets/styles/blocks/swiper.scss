@@ -11,6 +11,9 @@
 }
 .swiper-client{
   width:77%;
+  .swiper-wrapper{
+    align-items: center;
+  }
 }
 .swiper-tags, .swiper-tags-2{
   width: 95%;

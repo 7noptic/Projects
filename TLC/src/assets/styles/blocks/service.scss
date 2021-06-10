@@ -20,7 +20,7 @@
       font-weight: 300;
       display: flex;
       align-items: center;
-      padding-left: 20px;
+      padding: 0 20px;
       margin-left: -20px;
       position: relative;
       cursor: pointer;
@@ -29,7 +29,7 @@
         content: url("../img/mar.svg");
         display: block;
         position: absolute;
-        left: 0px;
+        left: 0;
         top: -2px;
         opacity: 0;
         transition: $transition2;

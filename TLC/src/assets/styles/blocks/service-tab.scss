@@ -1,5 +1,6 @@
 .service-tab{
   padding-left: 55px;
+  margin-bottom: 100px;
   &-nav{
     margin-bottom: 30px;
     display: flex;
@@ -56,6 +57,7 @@
 }
 @media (max-width: 767px) {
   .service-tab{
+    margin-bottom: 50px;
     &-nav{
       &__link{
         white-space: nowrap;

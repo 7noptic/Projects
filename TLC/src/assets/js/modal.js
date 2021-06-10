@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
-        if (target && target.classList.contains('sidebar-bg')) {
+        if (target && (target.classList.contains('sidebar-bg') || target.classList.contains('sidebar-bg'))) {
             e.preventDefault();
             document.querySelector('html').classList.toggle('lock');
             document.querySelector('body').classList.toggle('lock');

@@ -1,3 +1,8 @@
+body.blog{
+  margin-bottom: 0!important;
+  padding: 0!important;
+  display: block!important;
+}
 .blog {
   margin-bottom: 200px;
   padding-left: 55px;
@@ -31,7 +36,7 @@
     }
 
     &__img {
-      height: 300px;
+      max-height: 300px;
       width: 100%;
       overflow: hidden;
       margin-bottom: 25px;
@@ -98,7 +103,7 @@
       width: calc(33% - 15px);
 
       &__img {
-        height: 250px;
+        max-height: 250px;
         margin-bottom: 20px;
 
       }
@@ -131,7 +136,7 @@
       width: calc(50% - 15px);
 
       &__img {
-        height: 250px;
+        max-height: 250px;
         margin-bottom: 20px;
 
       }

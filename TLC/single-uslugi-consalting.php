@@ -18,7 +18,7 @@ get_header();
     </section>
 
     <section class="banner banner-post">
-        <div class="banner-slide" style="background-image: url('<?php the_post_thumbnail(); ?>')">
+        <div class="banner-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
             <h1 class="banner__title"><?php the_field('konsalting_-_banner_-_zagolovok'); ?></h1>
             <div class="banner__content">
 
@@ -45,46 +45,30 @@ get_header();
 
 
     <section class="description">
-        <h2 class="title">ЗАГОЛОВОК</h2>
+        <h2 class="title"><?php the_field('konsalting_-_zagolovok'); ?></h2>
         <div class="description__content">
-            <div class="description__text">
-                <p>Auctor neque vitae tempus quam pellentesque nec. Pretium quam vulputate dignissim suspendisse in est
-                    ante in nibh. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Ut tortor pretium
-                    viverra suspendisse potenti nullam ac tortor vitae. Id ornare arcu odio ut sem nulla pharetra.
-                    Tellus in metus vulputate eu scelerisque. Netus et malesuada fames ac turpis egestas integer eget.
-                    Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Enim praesent elementum facilisis
-                    leo vel fringilla. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Elit
-                    ullamcorper dignissim cras tincidunt. Mauris pellentesque pulvinar pellentesque habitant morbi.
-                    Laoreet non curabitur gravida arcu ac. Placerat duis ultricies lacus sed turpis tincidunt id aliquet
-                    risus. Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Elit scelerisque
-                    mauris pellentesque pulvinar. Pretium quam vulputate dignissim suspendisse in est ante in. Arcu
-                    vitae elementum curabitur vitae nunc.</p>
-                <p>Eget aliquet nibh praesent tristique magna sit amet. Bibendum arcu vitae elementum curabitur vitae
-                    nunc. Egestas dui id ornare arcu odio ut sem. Pulvinar proin gravida hendrerit lectus. Ut sem
-                    viverra aliquet eget sit amet tellus cras. Mattis aliquam faucibus purus in massa tempor nec
-                    feugiat. Maecenas ultricies mi eget mauris pharetra et ultrices. Facilisis leo vel fringilla est
-                    ullamcorper. Platea dictumst vestibulum rhoncus est. Leo duis ut diam quam nulla porttitor. Enim
-                    nunc faucibus a pellentesque sit amet porttitor eget. Cursus turpis massa tincidunt dui ut ornare
-                    lectus sit amet. Ipsum suspendisse ultrices gravida dictum. Ut sem viverra aliquet eget sit amet.
-                    Erat pellentesque adipiscing commodo elit. Amet consectetur adipiscing elit pellentesque habitant
-                    morbi tristique senectus et.</p>
-            </div>
-            <div class="description__list">
-                <a class="service-nav__link">Контейнерные перевозки</a>
-                <a class="service-nav__link">Сборные грузы</a>
-                <a class="service-nav__link">Авиаперевозки</a>
-                <a class="service-nav__link">Морские перевозки</a>
-                <a class="service-nav__link">Автоперевозки</a>
-                <a class="service-nav__link">Ж/Д перевозки</a>
-                <a class="service-nav__link">Таможенное оформление</a>
-                <a class="service-nav__link">Контейнерные перевозки</a>
-                <a class="service-nav__link">Сборные грузы</a>
-                <a class="service-nav__link">Авиаперевозки</a>
-                <a class="service-nav__link">Морские перевозки</a>
-                <a class="service-nav__link">Автоперевозки</a>
-                <a class="service-nav__link">Ж/Д перевозки</a>
-                <a class="service-nav__link">Таможенное оформление</a>
-            </div>
+            <div class="description__text"><?php the_field('konsalting_-_kontent'); ?></div>
+
+            <?php if (have_rows('konsalting_-_kontent_ssylki')): ?>
+
+                <div class="description__list">
+
+                    <?php while (have_rows('konsalting_-_kontent_ssylki')): the_row();
+
+                        // переменные
+                        $tekst = get_sub_field('tekst');
+                        $ssylka = get_sub_field('ssylka');
+
+                        ?>
+
+                        <a href="<?php echo $ssylka; ?>" class="service-nav__link"><?php echo $tekst; ?></a>
+
+                    <?php endwhile; ?>
+
+                </div>
+
+            <?php endif; ?>
+
         </div>
     </section>
 
@@ -92,59 +76,35 @@ get_header();
 <?php get_template_part('template-parts/sections/banner-delivery'); ?>
 
 
+<?php
+
+$images = get_field('konsalting_-_otgruzka_tovara');
+
+if ($images): ?>
     <section class="process">
         <h2 class="title">ПРОЦЕСС КОНТРОЛЯ ОТГРУЗКИ ТОВАРА</h2>
         <div class="process-slider">
             <div class="swiper-process">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
+                    <?php foreach ($images as $image): ?>
+
+                        <div class="swiper-slide">
+                            <div class="process__img">
+                                <img src="<?php echo $image['sizes']['thumbnail']; ?>"
+                                     alt="<?php echo $image['alt']; ?>"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="process__img">
-                            <img src="img/proc1.jpg" alt="">
-                            <a href="#" class="process__text">asdfasdf sf sdf </a>
-                        </div>
-                    </div>
+
+                    <?php endforeach; ?>
                 </div>
             </div>
-            <a href="#" class="process-prev"><img src="img/arr.svg" alt=""> </a><a href="#" class="process-next"><img
-                        src="img/arr.svg" alt=""></a>
+            <a href="#" class="process-prev">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/arr.svg" alt="arr"></a>
+            <a href="#" class="process-next">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/arr.svg" alt="arr"></a>
         </div>
     </section>
+<?php endif; ?>
 
 
 <?php if (have_rows('konsalting_-_argumenty')): ?>
@@ -170,7 +130,6 @@ get_header();
     </section>
 
 <?php endif; ?>
-
 
 
 <?php if (have_rows('konsalting_-_poryadok_raboty')): ?>
