@@ -2,27 +2,49 @@
   padding: 0 55px;
 
   margin-bottom: 200px;
+
   &__content {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
   }
-  &__text{
+
+  &__text {
     width: 50%;
     padding-right: 100px;
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
-    p,div{
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 15px;
+
+    }
+
+    h2 {
+      margin-top: 50px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    h3,h4,h5,h6 {
+      margin-top: 50px;
+
+    }
+
+    p, div {
       margin-bottom: 20px;
     }
   }
-  &__list{
+
+  &__list {
     width: 50%;
     max-width: 630px;
     display: flex;
     flex-wrap: wrap;
-    a.service-nav__link{
+
+    a.service-nav__link {
       width: 50%;
       padding-right: 30px;
       display: flex;
@@ -32,19 +54,22 @@
     }
   }
 }
+
 @media (max-height: 1399px) {
-  .description{
+  .description {
     padding: 0 15px;
     margin-bottom: 100px;
-    &__text{
+
+    &__text {
       padding-right: 50px;
     }
   }
 }
-@media (max-width: 1199px){
-  .description{
-    &__list{
-      a.service-nav__link{
+
+@media (max-width: 1199px) {
+  .description {
+    &__list {
+      a.service-nav__link {
         width: 50%;
         padding-right: 30px;
         display: flex;
@@ -55,23 +80,28 @@
     }
   }
 }
-@media (max-width: 991px){
-  .description{
+
+@media (max-width: 991px) {
+  .description {
     margin-bottom: 75px;
-    &__content{
+
+    &__content {
       flex-wrap: wrap;
     }
-    &__text{
+
+    &__text {
       width: 100%;
       font-size: 14px;
       line-height: 18px;
       padding-right: 0;
     }
-    &__list{
+
+    &__list {
       margin-top: 30px;
       width: 100%;
       max-width: 100%;
-      a.service-nav__link{
+
+      a.service-nav__link {
         padding-right: 30px;
         margin-right: 0;
         display: flex;
@@ -82,16 +112,20 @@
     }
   }
 }
+
 @media (max-width: 575px) {
-  .description{
+  .description {
     margin-bottom: 100px;
-    &__text{
+
+    &__text {
     }
-    &__list{
+
+    &__list {
       margin-top: 20px;
       width: 100%;
       max-width: 100%;
-      a.service-nav__link{
+
+      a.service-nav__link {
         width: 100%;
         margin-right: 0;
         margin-bottom: 10px;

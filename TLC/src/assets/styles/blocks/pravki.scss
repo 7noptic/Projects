@@ -1,0 +1,64 @@
+.page-template-sitemap {
+  #c5_sitemap_wrapper {
+    h2{
+      margin-bottom: 30px;
+    }
+    ul.sub.c5_col2 {
+      li.c5_child {
+        width: 100%;
+        &:last-of-type{
+          margin-bottom: 50px;
+        }
+        a {
+          font-size: 18px;
+          line-height: 20px;
+          margin-bottom: 15px;
+          letter-spacing: -0.01em;
+          font-weight: 300;
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+          margin-left: -20px;
+          position: relative;
+          cursor: pointer;
+
+          &::before {
+            content: url("../img/mar.svg");
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            opacity: 0;
+            transition: $transition2;
+          }
+
+          &:hover, &.active, &:focus {
+            transform: translateX(20px);
+
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px){
+  .page-template-sitemap {
+    #c5_sitemap_wrapper {
+      h2{
+        margin-bottom: 30px;
+      }
+      ul.sub.c5_col2 {
+        li.c5_child {
+          a {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -577,42 +577,12 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
     let headerBasket = document.querySelector('.header-basket__open'),
-        headerBasketItems = document.getElementsByClassName('.header-basket__product');
+        headerBasketItems = document.getElementsByClassName('header-basket__product');
 
-    if(cards && headerBasket){
-        let arr = [],
-            data;
-        for(let i = 0; i < cards.length; i++){
-            let img = cards[i].querySelector('.card__img > img');
-            cards[i].addEventListener('dragstart', function(evt){
 
-                this.style.outline = '1px solid #FF5219';
-                evt.dataTransfer.effectAllowed = 'copy';
-                evt.dataTransfer.setDragImage(img, 0, 0);
-                evt.dataTransfer.setData('Text', this.classList);
-                headerBasket.classList.add('active', 'drag');
-            }, false);
-
-            cards[i].addEventListener('dragend', function(evt) {
-                this.style.outline = 'none';
-                headerBasket.classList.remove('active', 'drag');
-            },false);
-            headerBasket.addEventListener('dragenter', function (evt){
-                headerBasket.classList.add('dragleave');
-            },false);
-            headerBasket.addEventListener('dragleave', function(evt){
-                headerBasket.classList.remove('dragleave');
-            },false);
-            headerBasket.addEventListener('dragover', function(e){
-                if(e.preventDefault) e.preventDefault();
-                return false;
-            },false);
-            headerBasket.addEventListener()
-        }
-
-    }
     if (headerBasket && headerBasketItems) {
         for (let i = 0; i < headerBasketItems.length; i++) {
+
             let minus = headerBasketItems[i].querySelector('.js-header-product__minus'),
                 plus = headerBasketItems[i].querySelector('.js-header-product__plus'),
                 count = headerBasketItems[i].querySelector('.js-header-product__num');

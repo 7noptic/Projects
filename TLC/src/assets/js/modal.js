@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
         modalCall = document.querySelector('.modal-call'),
+        modalquery = document.querySelector('.modal-query'),
         modalRegion = document.querySelector('.modal-region'),
         modalSubscribe = document.querySelector('.modal-subscribe'),
         modalDelivery = document.querySelector('.modal-delivery'),
@@ -24,6 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
+        }
+
+        if (target && (target.classList.contains('js-query') || target.classList.contains('modal-query__exit'))) {
+            openCloseModal(e, modalquery);
         }
 
         if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {
