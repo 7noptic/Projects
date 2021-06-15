@@ -5,6 +5,7 @@
     display: flex;
     width: 100%;
     margin-bottom: 50px;
+    justify-content: center;
 
     &__title {
       font-weight: 600;
@@ -142,25 +143,30 @@
     margin-left: 70px;
     white-space: nowrap;
   }
-  &-single{
-    &__img{
+
+  &-single {
+    &__img {
       display: flex;
       justify-content: center;
       margin-bottom: 30px;
-      img{
+
+      img {
         object-fit: contain;
         width: auto;
         height: auto;
       }
     }
-    &__text{
-      h1,h2,h3,h4,h5,h6{
+
+    &__text {
+      h1, h2, h3, h4, h5, h6 {
         margin-bottom: 25px;
       }
-      p{
+
+      p {
         margin-bottom: 20px;
       }
-      img{
+
+      img {
         object-fit: contain;
         margin-bottom: 30px;
         width: auto;
@@ -319,7 +325,8 @@
     &-slide {
       flex-wrap: wrap;
     }
-    &__img{
+
+    &__img {
       width: calc(100% + 38px);
       margin-left: -19px;
       margin-right: -19px;

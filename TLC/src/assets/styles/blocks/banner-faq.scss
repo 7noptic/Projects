@@ -44,12 +44,29 @@
       justify-content: space-between;
       align-items: center;
 
-      & > * {
-        width: 23%;
-        height: 60px;
+      & > p {
         display: flex;
+        justify-content: space-between;
         align-items: center;
+        margin-right: 15px;
+
+        & > * {
+          width: 30%;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+        }
+
+        & > span {
+          display: flex;
+          flex-direction: column;
+        }
+
+        & > br {
+          display: none;
+        }
       }
+
 
     }
   }
@@ -74,16 +91,19 @@
   }
 }
 
-@media (max-width: 1399px){
-  .banner-faq{
+@media (max-width: 1399px) {
+  .banner-faq {
     margin-bottom: 100px;
-    &__left{
+
+    &__left {
       width: auto;
       padding-right: 15px;
     }
-    &__form{
+
+    &__form {
       width: auto;
     }
+
     &__title {
       white-space: nowrap;
       font-size: 18px;
@@ -98,31 +118,66 @@
     }
   }
 }
+
 @media (max-width: 991px) {
-  .banner-faq{
+  .banner-faq {
     margin-bottom: 75px;
-    &__content{
+
+    &__content {
       flex-wrap: wrap;
     }
-    &__left{
+
+    &__left {
       margin-bottom: 20px;
       width: 100%;
       text-align: center;
     }
-    &__form{
-      form{
+
+    &__form {
+      form {
         flex-wrap: wrap;
 
-        &>*{
-          height: 50px;
-          width: 48%;
-          margin-bottom: 15px;
+        & > p {
+          width: 100%;
+          margin: 0;
+
+          & > * {
+            height: 50px;
+            margin-bottom: 15px;
+          }
+
+          &:last-of-type {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+          }
         }
       }
     }
-    &__agreement{
-      text-align: center;
-      font-size: 10px;
+
+
+  }
+}
+
+@media (max-width: 575px) {
+  .banner-faq {
+    margin-bottom: 60px;
+
+    &__form {
+      form {
+        flex-wrap: wrap;
+
+        & > p {
+          width: 100%;
+          margin: 0;
+          flex-wrap: wrap;
+
+          & > * {
+            width: 100%;
+          }
+
+        }
+      }
     }
   }
 }
