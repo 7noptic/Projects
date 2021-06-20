@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header" >
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex">
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="col-12 d-flex align-items-center justify-content-between">
+            <div class="col-12 d-flex align-items-center justify-content-between header-scroll">
                 <nav class="header-catalog" data-da=".adaptive-menu,767,2">
                     <ul class="header-catalog__list">
                         <li><a href="#">
@@ -1678,15 +1678,72 @@
                             5
                         </span>
                     </a>
-
-                    <a href="#" class="header-basket__item js-basket" data-da=".header__left,767,last">
-                        <div class="header-basket__img js-basket">
-                            <img src="img/bas.svg" alt="" class="js-basket">
-                        </div>
-                        <span class="js-basket">
+                    <div class="header-basket__count">
+                        <a href="#" class="header-basket__item" data-da=".header__left,767,last">
+                            <div class="header-basket__img">
+                                <img src="img/bas.svg" alt="">
+                            </div>
+                            <span>
                            2
                         </span>
-                    </a>
+
+                        </a>
+                        <div class="header-basket__open">
+                            <h3 class="modal__title header-basket__title">
+                                В корзине 3 товара
+                            </h3>
+                            <div class="header-basket__wrapper">
+                                <div class="header-basket__product">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="header-basket__img">
+                                                <img src="img/bskt.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <a href="#" class="header-basket__name">name</a>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-between align-items-center flex-wrap">
+                                                    <div class="modal-one-click__count">
+                                                        <div class="modal-one-click__minus js-header-product__minus">
+                                                            -
+                                                        </div>
+                                                        <input type="number" value="1"
+                                                               class="form-control modal-one-click__num js-header-product__num">
+                                                        <div class="modal-one-click__plus js-header-product__plus">
+                                                            +
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="modal-one-click__price">
+                                                        Цена <span>1050 ₽</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-8">
+
+                                        <div class="modal-basket__text">
+                                            ИТОГО
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="modal-basket__price">
+                                            3150 ₽
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn modal-form__btn">ОФОРМИТЬ ЗАКАЗ</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -5580,7 +5637,7 @@
 
                     <div class="col-4">
                         <div class="modal-one-click__img">
-                            <img src="img/ic1.jpg" alt="">
+                            <img src="img/bskt.jpg" alt="">
                         </div>
                     </div>
 
@@ -5829,154 +5886,6 @@
 
                         <span>
                             <button type="submit" class="form-control modal-form__btn btn">ВОСТАНОВИТЬ ПАРОЛЬ</button>
-                        </span>
-
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="modal modal-basket">
-        <div class="modal__wrapper modal-basket__wrapper">
-            <a href="#" class="modal__exit">
-                <img src="img/mex.svg" alt="" class="modal-basket__exit">
-            </a>
-            <h3 class="modal__title">
-                В корзине 3 товара
-            </h3>
-            <div class="modal-form">
-                <form action="POST">
-                    <div class="modal-form__wrapper">
-                        <div class="modal-one-click__item">
-                            <div class="row">
-
-                                <div class="col-4">
-                                    <div class="modal-one-click__img">
-                                        <img src="img/ic1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="col-8">
-                                    <a href="#" class="modal-one-click__name">
-                                        #
-                                    </a>
-                                    <div class="row">
-
-
-                                        <div class="col-12 d-flex justify-content-between align-items-center">
-                                            <div class="modal-one-click__count">
-                                                <div class="modal-one-click__minus js-basket-count-minus">
-                                                    -
-                                                </div>
-                                                <input type="number" value="1"
-                                                       class="form-control modal-one-click__num js-basket-count-num">
-                                                <div class="modal-one-click__plus js-basket-count-plus">
-                                                    +
-                                                </div>
-                                            </div>
-
-                                            <p class="modal-one-click__price">
-                                                Цена <span class="js-modal-one-click__price"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="modal-one-click__item">
-                            <div class="row">
-
-                                <div class="col-4">
-                                    <div class="modal-one-click__img">
-                                        <img src="img/ic1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="col-8">
-                                    <a href="#" class="modal-one-click__name">
-                                        #
-                                    </a>
-                                    <div class="row">
-
-
-                                        <div class="col-12 d-flex justify-content-between align-items-center">
-                                            <div class="modal-one-click__count">
-                                                <div class="modal-one-click__minus js-basket-count-minus">
-                                                    -
-                                                </div>
-                                                <input type="number" value="1"
-                                                       class="form-control modal-one-click__num js-basket-count-num">
-                                                <div class="modal-one-click__plus js-basket-count-plus">
-                                                    +
-                                                </div>
-                                            </div>
-
-                                            <p class="modal-one-click__price">
-                                                Цена <span class="js-modal-one-click__price"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="modal-one-click__item">
-                            <div class="row">
-
-                                <div class="col-4">
-                                    <div class="modal-one-click__img">
-                                        <img src="img/ic1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="col-8">
-                                    <a href="#" class="modal-one-click__name">
-                                        #
-                                    </a>
-                                    <div class="row">
-
-
-                                        <div class="col-12 d-flex justify-content-between align-items-center">
-                                            <div class="modal-one-click__count">
-                                                <div class="modal-one-click__minus js-basket-count-minus">
-                                                    -
-                                                </div>
-                                                <input type="number" value="1"
-                                                       class="form-control modal-one-click__num js-basket-count-num">
-                                                <div class="modal-one-click__plus js-basket-count-plus">
-                                                    +
-                                                </div>
-                                            </div>
-
-                                            <p class="modal-one-click__price">
-                                                Цена <span class="js-modal-one-click__price"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8">
-
-                                <div class="modal-basket__text">
-                                    ИТОГО
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="modal-basket__price">
-                                    3150 ₽
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <span>
-                            <button type="submit" class="btn modal-form__btn">ОФОРМИТЬ ЗАКАЗ</button>
                         </span>
 
                     </div>
