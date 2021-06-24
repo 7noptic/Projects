@@ -10,7 +10,7 @@
   }
 
   .logo {
-    margin: 30px 50px;
+    margin: 10px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
 
   &__btn {
     height: 100%;
-    padding: 45px;
+    padding: 30px;
     display: flex;
     max-width: 340px;
     position: relative;
@@ -119,6 +119,10 @@
           line-height: 19px;
           margin-right: 75px;
           display: block;
+          border-bottom: 3px solid transparent;
+          &:hover{
+            border-bottom: 3px solid $red;
+          }
         }
       }
     }
@@ -329,9 +333,7 @@
       padding-right: 35px;
     }
 
-    &__btn {
-      padding: 45px 40px;
-    }
+
   }
 }
 
@@ -342,7 +344,7 @@
     }
 
     .logo {
-      margin: 30px;
+      margin: 10px 30px;
     }
 
     &-menu {
@@ -370,9 +372,6 @@
       }
     }
 
-    &__btn {
-      padding: 45px 30px;
-    }
 
     &-submenu {
       & > li {

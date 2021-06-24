@@ -1,0 +1,32 @@
+.letter{
+  margin-bottom: 150px;
+  &__title{
+    margin-bottom: 0;
+    padding-right: 30px;
+  }
+  &__next{
+    margin-left: 30px;
+  }
+  &-header{
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-nav{
+    display: flex;
+    align-items: center;
+  }
+  &-slide{
+    padding: 60px 40px;
+
+    &__img{
+      transition: $tr3;
+      display: block;
+      box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.3);
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+}

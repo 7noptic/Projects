@@ -1,0 +1,47 @@
+.why {
+  margin-bottom: 100px;
+
+  &-item {
+    display: flex;
+    margin-bottom: 100px;
+
+    &__left {
+      width: 30%;
+
+      display: flex;
+      align-items: flex-start;
+
+    }
+
+    &__right {
+      width: 70%;
+      padding-left: 15px;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+
+    &__num {
+
+      color: #CED4DA;
+      font-size: 120px;
+      line-height: 122px;
+      font-weight: 700;
+      width: 120px;
+    }
+
+    &__img {
+      margin-left: -75px;
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

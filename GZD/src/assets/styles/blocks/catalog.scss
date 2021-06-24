@@ -1,0 +1,111 @@
+.catalog {
+  margin-bottom: 140px;
+  &-item {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    position: relative;
+
+
+    &:hover {
+      .catalog-item__img {
+        img {
+          &:first-child {
+            transform: translateX(0px);
+          }
+        }
+      }
+
+      .catalog-item__name {
+        opacity: 1;
+        color: #000;
+      }
+    }
+
+    &__img {
+      transition: $tr4;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      max-width: 300px;
+      min-width: 300px;
+      max-height: 300px;
+      min-height: 300px;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+
+      img {
+        transition: $tr4;
+
+        &:first-child {
+          margin-bottom: -4px;
+          transform: translateX(-100px);
+        }
+
+        &:last-child {
+          width: 100%;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+          position: absolute;
+          left: 0;
+          height: 100px;
+          width: 110px;
+        }
+
+        &:nth-child(3) {
+
+          bottom: 16px;
+
+        }
+
+        &:nth-child(4) {
+          bottom: 116px;
+        }
+      }
+    }
+
+    &__name {
+      position: absolute;
+      border-top: 6px solid $yellow;
+
+      top: 300px;
+      left: 300px;
+      transform-origin: 0 0;
+      transform: rotate(-90deg);
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      opacity: 0;
+      transition: $tr4;
+      padding-top: 4px;
+      width: 300px;
+    }
+    &-top{
+      .catalog-item__img {
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+          &:first-child {
+            width: 265px;
+            height: 281px;
+            margin-bottom: -4px;
+            transform: translateY(-300px);
+          }
+        }
+      }
+      &:hover {
+        .catalog-item__img {
+          img {
+            &:first-child {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

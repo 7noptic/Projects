@@ -1,0 +1,49 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: $tr3;
+  text-transform: uppercase;
+
+  &:hover, &.active {
+  }
+  &-white{
+    background-color: $white;
+    color: #000;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    &:hover, &.active {
+      background-color: #000;
+      color: $white;
+    }
+  }
+  &-transparent-border{
+    border: 3px solid #FFFFFF;
+    border-radius: $radBtn;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    &:hover,&.active{
+      border: 3px solid $yellow;
+      background-color: $yellow;
+      color: #FFFFFF;
+    }
+    &-black{
+      border: 3px solid #000;
+      color: #000;
+
+      &:hover,&.active{
+        border: 3px solid  #000;
+        background-color:  #000;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+
+}
