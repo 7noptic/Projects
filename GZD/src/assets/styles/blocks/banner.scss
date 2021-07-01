@@ -3,9 +3,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 875px;
+  min-height: 875px;
+  position: relative;
+
 
   &-slide {
+    z-index: 10;
     padding-top: 80px;
     color: #FFFFFF;
 
@@ -26,6 +29,37 @@
 
     &__btn {
       padding: 20px;
+      margin-bottom: 50px;
     }
   }
 }
+
+@media (max-width: 1399px) {
+  .banner {
+    min-height: 800px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .banner {
+    min-height: 700px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner {
+    margin-bottom: 75px;
+    min-height: 650px;
+
+
+    &-slide {
+      &__text {
+        max-width: 450px;
+        background-color: rgba(#000, .4);
+        border-radius: 8px;
+        padding: 15px;
+      }
+    }
+  }
+}
+

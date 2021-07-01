@@ -91,6 +91,27 @@
 
   &-form {
     width: 100%;
+    &-map{
+      input{
+        padding-left: 50px;
+      }
+      position: relative;
+      &-black{
+        &::before{
+          content: url("../img/mb.svg");
+        }
+      }
+      &-yellow{
+        &::before{
+          content: url("../img/my.svg");
+        }
+      }
+      &::before{
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 15px;
+      }
+    }
 
     &__wrapper {
 
@@ -109,10 +130,27 @@
         }
         &.dimension{
           display: flex;
+          position: relative;
+          &::before{
+            content: url("../img/x.svg");
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 30%;
+            z-index: 10000000;
+          }
+          &::after{
+            content: url("../img/x.svg");
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 64%;
+            z-index: 10000000;
+          }
           input{
             width: 33.3333%;
             &:first-child{
               border-radius: 4px 0 0 4px;
+              position: relative;
+
             }
             &:nth-child(2){
               border-radius: 0;

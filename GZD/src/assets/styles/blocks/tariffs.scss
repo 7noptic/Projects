@@ -93,3 +93,46 @@
     }
   }
 }
+
+@media (max-width: 1199px) {
+  .tariffs{
+    margin-bottom: 150px;
+    &-nav{
+      a{
+        margin-right: 50px;
+      }
+    }
+    &-table {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .tariffs{
+    margin-bottom: 150px;
+    &-nav{
+      a{
+        margin-right: 50px;
+      }
+    }
+    &-table {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 40px;
+  &::before{
+    content: 'Можно скроллить!';
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+    }
+  }
+}

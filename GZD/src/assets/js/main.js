@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function () {
             if (tableTariffsActive) {
                 let tableTariffsItems = tableTariffsActive.querySelectorAll('tbody > tr');
                 if(tableTariffsItems && tableTariffsItems.length > 9){
-                    for(let i = 9; i < tableTariffsItems.length; i++){
+                    for(let i = 10; i < tableTariffsItems.length; i++){
                         tableTariffsItems[i].classList.toggle('hidden');
                     }
                 }

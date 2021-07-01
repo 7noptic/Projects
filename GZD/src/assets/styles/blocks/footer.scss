@@ -124,3 +124,18 @@
     }
   }
 }
+
+@media (max-width: 1199px){
+  .footer{
+    &__tel{
+      font-size: 16px;
+      line-height: 20px;
+      &-bold{
+        font-size: 22px;
+      }
+    }
+    &__btn{
+      padding: 20px;
+    }
+  }
+}

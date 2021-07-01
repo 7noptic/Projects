@@ -13,3 +13,22 @@
     }
   }
 }
+@media (max-width: 1199px){
+  .solutions{
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 767px){
+  .solutions{
+    margin-bottom: 70px;
+    &-item{
+      &__img{
+        margin-bottom: 20px;
+      }
+      &__name{
+        margin-bottom: 35px;
+       }
+    }
+  }
+}

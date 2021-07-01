@@ -52,7 +52,23 @@
     opacity: 1;
     transform: scale(1);
   }
-
 }
-
+@media (max-width:1199px){
+  .tab{
+    &-nav{
+      &__link{
+        margin-right: 60px;
+      }
+    }
+  }
+}
+@media (max-width:991px){
+  .tab{
+    &-nav{
+      &__link{
+        margin-right: 50px;
+      }
+    }
+  }
+}
 

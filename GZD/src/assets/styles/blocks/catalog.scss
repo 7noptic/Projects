@@ -109,3 +109,25 @@
     }
   }
 }
+@media (max-width: 991px) {
+  .catalog{
+    margin-bottom: 80px;
+    &-item {
+      margin-bottom: 40px;
+
+      &__img {
+        max-width: 260px;
+        min-width: 260px;
+        max-height: 260px;
+        min-height: 260px;
+      }
+
+      &__name {
+        top: 260px;
+        left: 260px;
+        font-size: 14px;
+        width: 260px;
+      }
+    }
+  }
+}

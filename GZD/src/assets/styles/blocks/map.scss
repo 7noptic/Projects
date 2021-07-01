@@ -71,7 +71,42 @@
 @media screen and (max-width: 991px) {
   .map {
     margin-bottom: 100px;
+    &-modal {
+      height: auto;
+      margin-bottom: 40px;
 
+      &__wrapper {
+        position: relative;
+        right:auto;
+        top:auto;
+        width: 100%;
+        padding: 30px;
+        box-shadow: 10px 25px 80px rgba(0, 0, 0, 0.3);
+        &::before{
+          content: '';
+          display: none;
+        }
+        &::after{
+          content: '';
+          display: none;
+        }
+
+      }
+      &__title{
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 15px;
+      }
+    }
+    &-list{
+      columns: 2 100px;
+      &__link{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
     iframe {
       height: 400px;
     }

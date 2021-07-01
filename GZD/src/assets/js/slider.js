@@ -16,6 +16,20 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.letter__next',
             prevEl: '.letter__prev'
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            576: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4
+            }
+        }
     });
 
     let sliderArticle = new Swiper('.swiper-article', {
@@ -30,6 +44,14 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.article__next-1',
             prevEl: '.article__prev-1'
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            992: {
+                slidesPerView: 2,
+            }
+        }
     });
 
     let sliderArticle2 = new Swiper('.swiper-article-2', {
