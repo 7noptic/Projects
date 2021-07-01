@@ -823,9 +823,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (modalRatingParent) {
         modalRatingParent.addEventListener('click', (event) => {
-            event.preventDefault();
             const target = event.target;
             if (target && target.tagName == 'LI') {
+                event.preventDefault();
 
                 for (let i = 0; i < modalRatingStar.length; i++) {
                     modalRatingStar[i].classList.remove('active')

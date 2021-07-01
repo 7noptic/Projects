@@ -1,0 +1,39 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: $tr3;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  padding: 17px 30px;
+  background: #FCE8A3;
+  box-shadow: 0px 15px 18px rgba(97, 87, 71, 0.28);
+  border-radius: 100px;
+  color: #A88A51;
+  &:hover, &.active {
+    background: #9FEC9D;
+    color: #6B9458;
+  }
+  &:active{
+    transform: translateY(5px);
+  }
+  &-green{
+    background: #9FEC9D;
+    color: #6B9458;
+    &:hover{
+      background: #FCE8A3;
+      color: #A88A51;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .btn{
+    font-size: 14px;
+    padding: 17px;
+  }
+}

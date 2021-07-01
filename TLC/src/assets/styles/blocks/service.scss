@@ -87,6 +87,7 @@
 
     &__img {
       width: 50%;
+      padding-right: 55px;
 
       img {
         width: 100%;
@@ -118,6 +119,9 @@
 
     &-item {
       margin-bottom: 150px;
+      &__img{
+        padding-right: 15px;
+      }
 
       &__content {
         padding: 0 30px;
@@ -242,6 +246,7 @@
       &__img {
         width: calc(100% + 15px);
         margin-left: -15px;
+        padding: 0;
       }
     }
   }

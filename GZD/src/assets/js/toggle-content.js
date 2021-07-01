@@ -1,6 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
     /* SHOW HIDE CONTENT */
 
+    let faqParent = document.querySelector('.faq'),
+        faqLink = document.querySelectorAll('.faq-item__header'),
+        faqContent = document.querySelectorAll('.faq-item__text');
+
+    if(faqContent && faqLink && faqParent){
+        toggleContent(faqLink, faqContent, 'faq-item__header');
+    }
+
     function toggleContent(link, content, linkClass) {
 
         document.addEventListener('click', (e) => {

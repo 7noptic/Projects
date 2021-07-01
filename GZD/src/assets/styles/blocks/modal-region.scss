@@ -1,7 +1,11 @@
 .modal-region {
   left: -200%;
 
-  max-width: 360px;
+  max-width: 410px;
+  .modal__exit{
+    right: auto;
+    left: 5px;
+  }
 
   &.active {
     right: auto;
@@ -15,8 +19,6 @@
 
   &__wrapper {
     display: block;
-    overflow: hidden;
-
   }
 
   &__row {
@@ -39,7 +41,6 @@
 
   &__list {
     overflow-x: hidden;
-    overflow-y: scroll;
   }
 
 }

@@ -1,6 +1,6 @@
 'use script';
 import cookie from './cookie';
-import Readmore from "readmore-js";
+//import Readmore from "readmore-js";
 import sliderswiper from './slider';
 import tabs from './tabs';
 import modal from './modal';

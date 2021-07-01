@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 480px;
+  max-width: 410px;
   right: -200%;
   height: 100%;
   z-index: 1000;
@@ -27,7 +27,7 @@
   }
 
   &__wrapper {
-    padding: 70px 30px 30px;
+    padding: 70px 35px 35px;
 
     background: transparent;
     z-index: 1001;
@@ -74,12 +74,11 @@
   }
 
   &__title {
-    font-size: 24px;
-    line-height: 30px;
-    display: flex;
-    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   &__subtitle {
@@ -98,19 +97,43 @@
 
       span {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         display: block;
+        &.weight{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          input{
+            width: 48%;
+          }
+        }
+        &.dimension{
+          display: flex;
+          input{
+            width: 33.3333%;
+            &:first-child{
+              border-radius: 4px 0 0 4px;
+            }
+            &:nth-child(2){
+              border-radius: 0;
+              border-left: none;
+              border-right: none;
+            }
+            &:last-child{
+              border-radius: 0 4px 4px 0;
+            }
+          }
+        }
 
         label {
           width: 100%;
           display: flex;
           justify-content: center;
           text-align: center;
-          padding: 0 30px;
+          padding: 15px;
           font-weight: 300;
           font-size: 14px;
           line-height: 20px;
-          margin-bottom: -15px;
         }
 
         input {

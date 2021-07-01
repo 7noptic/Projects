@@ -1,19 +1,77 @@
 .map {
   position: relative;
-  margin-bottom: 150px;
+  margin-bottom: 190px;
+
+  &-modal {
+    position: relative;
+    height: 30px;
+    width: 100%;
+
+    &__wrapper {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 440px;
+      background: #FFFFFF;
+      padding: 30px;
+      border-radius: 4px;
+      z-index: 10;
+
+      &::before{
+        content: '';
+        position: absolute;
+        left: 440px;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: #fff;
+        z-index: -2;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+        box-shadow: 10px 25px 80px rgba(0, 0, 0, 0.3);
+        z-index: -1;
+        background: transparent;
+      }
+      select{
+        margin-bottom: 15px;
+      }
+    }
+    &__title{
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+  }
+  &-list{
+    columns: 2 100px;
+    &__link{
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
 
   iframe {
     width: 100%;
-    height: 440px;
+    height: 550px;
     border: none;
   }
 
-  
+
 }
 
 @media screen and (max-width: 991px) {
   .map {
     margin-bottom: 100px;
+
     iframe {
       height: 400px;
     }
@@ -23,14 +81,16 @@
 @media screen and (max-width: 767px) {
   .map {
     margin-bottom: 50px;
+
     iframe {
       height: 350px;
     }
   }
 }
-@media (max-width: 575px){
-  .map{
-    iframe{
+
+@media (max-width: 575px) {
+  .map {
+    iframe {
       width: calc(100% + 30px);
       margin-left: -15px;
       margin-right: -15px;

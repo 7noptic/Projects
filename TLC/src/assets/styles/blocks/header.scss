@@ -16,7 +16,7 @@
     align-items: center;
   }
 
-  &__top, &__bottom {
+  &__top,&__bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,6 +24,7 @@
 
   &__top {
     padding-bottom: 25px;
+    justify-content: flex-start;
   }
 
   &__btn {
@@ -32,7 +33,6 @@
     display: flex;
     max-width: 340px;
     position: relative;
-    font-weight: 800;
     font-size: 20px;
     line-height: 24px;
 
@@ -45,13 +45,24 @@
       height: 100%;
     }
 
-    img {
+    img,svg {
       margin-right: 30px;
+      path{
+        fill: $red;
+      }
+    }
+    &:hover{
+      svg{
+        path{
+          fill: #fff;
+        }
+      }
     }
   }
 
   &-currency {
     display: flex;
+    margin-right: 50px;
 
     &__item {
       display: flex;
@@ -78,7 +89,6 @@
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
-    margin-right: 100px;
 
     img {
       margin-right: 10px;
@@ -86,6 +96,7 @@
   }
 
   &__city {
+    min-width: 203px;
     display: flex;
     font-weight: 300;
     font-size: 14px;
@@ -325,6 +336,9 @@
 
 @media (max-width: 1799px) {
   .header {
+    &__city{
+      min-width: 185px;
+    }
     &-menu {
       padding: 0 40px;
     }
@@ -386,6 +400,9 @@
         }
       }
     }
+    &__city{
+      min-width: 173px;
+    }
   }
 }
 
@@ -427,7 +444,7 @@
     }
 
     &__btn {
-      img {
+      img,svg {
         display: none;
       }
 
@@ -460,6 +477,9 @@
         //padding: 45px 15px;
         // white-space: normal;
       }
+    }
+    &__city{
+      min-width: 165px;
     }
   }
 }
@@ -498,6 +518,9 @@
           width: 600px;
         }
       }
+    }
+    &__city{
+      min-width: 115px;
     }
   }
 }
@@ -587,7 +610,7 @@
         display: none;
       }
 
-      img {
+      img,svg {
         display: block;
         margin-right: 0;
       }

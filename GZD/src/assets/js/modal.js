@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
         allModal = document.querySelectorAll('.js-sidebars > section'),
         modalCall = document.querySelector('.modal-call'),
         modalRegion = document.querySelector('.modal-region'),
+        modalQuery = document.querySelector('.modal-query'),
         regionSelect = document.querySelectorAll('.modal-region__link'),
         regionBtn = document.querySelector('.js-region-city'),
         burgerMenu = document.querySelector('.adaptive-menu');
@@ -22,6 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
+        }
+        if (target && (target.classList.contains('js-query') || target.classList.contains('modal-query__exit'))) {
+            openCloseModal(e, modalQuery);
         }
 
         if (target && (target.classList.contains('js-modal-header') || target.classList.contains('adaptive-menu__exit'))) {

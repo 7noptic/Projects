@@ -1,0 +1,94 @@
+.reviews{
+  margin-bottom: 230px;
+  &__rating{
+    margin-bottom: 25px!important;
+  }
+  &-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__img{
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+    &__name{
+      font-size: 22px;
+      line-height: 32px;
+      margin-bottom: 5px;
+    }
+    &__city{
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 17px;
+   }
+    &__text{
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 35px;
+    }
+
+  }
+  &-pagination{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 35px;
+    .swiper-pagination-bullet{
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #C4C4C4;
+      margin-right: 18px;
+      transition: $tr2;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.swiper-pagination-bullet-active{
+        background: #FFB3B3;
+        transform: scale(2);
+      }
+    }
+  }
+  &-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__item{
+      margin-right: 30px;
+      margin-bottom: 20px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media (max-width: 991px){
+  .reviews{
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 575px){
+  .reviews{
+    margin-bottom: 75px;
+    &-item{
+      &__text{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &-btn{
+      display: flex;
+      flex-wrap: wrap;
+      &__item{
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

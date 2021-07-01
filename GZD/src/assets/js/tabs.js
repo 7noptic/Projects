@@ -3,10 +3,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let tariffsParent = document.querySelector('.tariffs'),
         tariffsLink = document.querySelectorAll('.js-tariffs-link'),
-        tariffsTab = document.querySelectorAll('.js-tariffs-tab');
+        tariffsTab = document.querySelectorAll('.js-tariffs-tab'),
+        articleParent = document.querySelector('.article-block'),
+        articleLink = document.querySelectorAll('.js-article-link'),
+        articleTab = document.querySelectorAll('.js-article-tab');
 
     if(tariffsLink && tariffsTab && tariffsParent){
         toggleTabs(tariffsLink, tariffsTab, tariffsParent, 'js-tariffs-link');
+    }
+    if(articleLink && articleTab && articleParent){
+        toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
     }
 
 

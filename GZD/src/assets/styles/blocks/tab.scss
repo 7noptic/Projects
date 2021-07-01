@@ -6,6 +6,44 @@
   transition: $tr3;
   width: 100%;
 
+  &-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+
+    &__link {
+      display: block;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 80px;
+      position: relative;
+      transition: $tr2;
+      margin-bottom: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        width: 100%;
+        max-width: 50px;
+        height: 3px;
+        background-color: $yellow;
+        transition: $tr2;
+        transform: scale(0);
+
+      }
+
+      &.active {
+        font-weight: 800;
+
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
 
   &.active {
     animation: showTabs .5s;

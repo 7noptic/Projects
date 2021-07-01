@@ -1,0 +1,65 @@
+.faq {
+  margin-bottom: 175px;
+
+  &-item {
+    margin-bottom: 15px;
+    transition: $tr2;
+
+    &__header {
+      width: 100%;
+      background-color: #F8F9FA;
+      border-radius: $radBtn;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 20px 35px 20px 15px;
+      transition: $tr2;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: url("../img/ar.svg");
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 12px);
+        transition: $tr2;
+      }
+
+      &:hover {
+        background-color: darken(#F8F9FA, 15%);
+
+        &::before {
+          transform: rotate(-90deg);
+          filter: invert(50%);
+        }
+      }
+
+      &.active {
+        color: #FFFFFF;
+        background-color: #000000;
+        border-radius: 4px 4px 0px 0px;
+
+        &::before {
+          transform: rotate(-180deg);
+          filter: invert(100%);
+        }
+      }
+    }
+
+    &__text {
+      padding: 15px 15px 0;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      border-bottom: 1px solid #CED4DA;
+      border-left: 1px solid #CED4DA;
+      border-right: 1px solid #CED4DA;
+      box-sizing: border-box;
+      border-radius: 0px 0px 4px 4px;
+
+      p {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}

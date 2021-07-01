@@ -18,6 +18,48 @@ window.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+    let sliderArticle = new Swiper('.swiper-article', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.article__next-1',
+            prevEl: '.article__prev-1'
+        },
+    });
+
+    let sliderArticle2 = new Swiper('.swiper-article-2', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.article__next-2',
+            prevEl: '.article__prev-2'
+        },
+    });
+
+    let sliderArticle3 = new Swiper('.swiper-article-3', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.article__next-3',
+            prevEl: '.article__prev-3'
+        },
+    });
+
     let sliderTags = new Swiper('.swiper-tags', {
         slidesPerView: 'auto',
         spaceBetween: 20,

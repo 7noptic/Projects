@@ -15,6 +15,7 @@
     font-weight: 800;
     font-size: 16px;
     line-height: 19px;
+    border-radius: $radBtn;
     &:hover, &.active {
       background-color: #000;
       color: $white;
