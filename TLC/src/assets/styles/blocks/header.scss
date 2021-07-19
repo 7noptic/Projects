@@ -16,7 +16,7 @@
     align-items: center;
   }
 
-  &__top,&__bottom {
+  &__top, &__bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,6 +35,7 @@
     position: relative;
     font-size: 20px;
     line-height: 24px;
+    font-weight: 700;
 
     &::before {
       content: '';
@@ -45,18 +46,8 @@
       height: 100%;
     }
 
-    img,svg {
+    img, svg {
       margin-right: 30px;
-      path{
-        fill: $red;
-      }
-    }
-    &:hover{
-      svg{
-        path{
-          fill: #fff;
-        }
-      }
     }
   }
 
@@ -131,7 +122,8 @@
           margin-right: 75px;
           display: block;
           border-bottom: 3px solid transparent;
-          &:hover{
+
+          &:hover {
             border-bottom: 3px solid $red;
           }
         }
@@ -150,6 +142,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .btn{
+        font-weight: 300;
+      }
     }
 
     &__tel {
@@ -185,29 +180,36 @@
       &:hover {
         & > div {
           z-index: 1000;
-          transform: scale(1);
           opacity: 1;
+          transform: rotateX(0deg);
+          visibility: visible;
         }
 
       }
 
       & > div {
-        width: 400px;
+        width: 300px;
         background-color: #fff;
         position: absolute;
         top: 21px;
         left: 0;
         display: flex;
         justify-content: space-between;
-        transition: $transition2;
+        transition: $transition3;
         z-index: -1;
-        transform: scale(0);
         opacity: 0;
+        visibility: hidden;
+        transform-origin: 0 0;
+        transform: rotateX(-90deg);
 
         & > ul {
           & > li {
             & > ul, & > div {
-              display: none;
+              z-index: -1;
+              opacity: 0;
+              visibility: hidden;
+              transform-origin: 0 0;
+              transform: rotateX(-90deg);
             }
           }
         }
@@ -235,7 +237,7 @@
 
             & > div {
               position: absolute;
-              left: 799px;
+              left: 699px;
               top: 0;
               width: 400px;
               height: 100%;
@@ -248,7 +250,7 @@
               margin: 0 !important;
               position: absolute;
               top: 0;
-              left: 399px;
+              left: 299px;
               width: 400px;
               background-color: #fff;
 
@@ -292,7 +294,10 @@
 
             &:hover {
               & > ul, & > div {
-                display: block;
+                z-index: 1000;
+                opacity: 1;
+                transform: rotateX(0deg);
+                visibility: visible;
               }
             }
 
@@ -300,7 +305,7 @@
               font-weight: 300;
               font-size: 14px;
               line-height: 18px;
-              margin-bottom: 15px;
+              padding-bottom: 15px;
               display: flex;
               align-items: center;
               padding-left: 20px;
@@ -336,9 +341,10 @@
 
 @media (max-width: 1799px) {
   .header {
-    &__city{
+    &__city {
       min-width: 185px;
     }
+
     &-menu {
       padding: 0 40px;
     }
@@ -400,7 +406,8 @@
         }
       }
     }
-    &__city{
+
+    &__city {
       min-width: 173px;
     }
   }
@@ -444,7 +451,7 @@
     }
 
     &__btn {
-      img,svg {
+      img, svg {
         display: none;
       }
 
@@ -478,7 +485,8 @@
         // white-space: normal;
       }
     }
-    &__city{
+
+    &__city {
       min-width: 165px;
     }
   }
@@ -515,11 +523,11 @@
     &-submenu {
       & > li {
         & > div {
-          width: 600px;
         }
       }
     }
-    &__city{
+
+    &__city {
       min-width: 115px;
     }
   }
@@ -570,13 +578,13 @@
 
         & > div {
           z-index: 1000;
-          transform: scale(1);
           opacity: 1;
+          transform: rotateX(0deg);
+          visibility: visible;
           position: relative;
           left: 0;
           top: auto;
           width: auto;
-          z-index: 1000;
           padding: 0;
           background-color: transparent;
 
@@ -610,7 +618,7 @@
         display: none;
       }
 
-      img,svg {
+      img, svg {
         display: block;
         margin-right: 0;
       }

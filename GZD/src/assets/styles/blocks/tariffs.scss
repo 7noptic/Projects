@@ -1,5 +1,5 @@
 .tariffs {
-  margin-bottom: 190px;
+  margin-bottom: 150px;
 
   &-table {
     font-weight: 300;
@@ -37,9 +37,13 @@
     td {
       width: 16.6666666666%;
       padding: 15px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
 
       &:first-child {
         font-weight: bold;
+        white-space: normal;
       }
     }
   }
@@ -78,30 +82,35 @@
       }
     }
   }
-  &-city{
+
+  &-city {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
     font-weight: 300;
     font-size: 16px;
     line-height: 24px;
-    p{
+
+    p {
       margin-right: 15px;
     }
-    select{
+
+    select {
       max-width: 210px;
     }
   }
 }
 
 @media (max-width: 1199px) {
-  .tariffs{
-    margin-bottom: 150px;
-    &-nav{
-      a{
+  .tariffs {
+    margin-bottom: 130px;
+
+    &-nav {
+      a {
         margin-right: 50px;
       }
     }
+
     &-table {
       font-size: 14px;
       line-height: 20px;
@@ -110,29 +119,48 @@
 }
 
 @media (max-width: 767px) {
-  .tariffs{
-    margin-bottom: 150px;
-    &-nav{
-      a{
+  .tariffs {
+    margin-bottom: 100px;
+
+    &-nav {
+      a {
         margin-right: 50px;
       }
     }
+
     &-table {
       display: inline-block;
       vertical-align: top;
       max-width: 100%;
-      overflow-x: auto;
+      overflow: auto;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       margin-bottom: 40px;
-  &::before{
-    content: 'Можно скроллить!';
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    font-size: 14px;
-    line-height: 20px;
+      table-layout: fixed;
+      border: none;
+
+      tbody {
+        tr {
+
+        }
+
+        th {
+
+          &:first-child {
+            white-space: normal;
+          }
+        }
+      }
+    }
   }
+}
+
+@media (max-width: 575px) {
+  .tariffs {
+    margin-bottom: 75px;
+    &__btn {
+      width: 100%;
+      margin-bottom: 20px;
     }
   }
 }

@@ -9,7 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         modalInputName = document.querySelector('#js-modal-one-click-name'),
         modalInputPrice = document.querySelector('#js-modal-one-click-price'),
-        modalInputUrl = document.querySelector('#js-modal-one-click-url');
+        modalInputCount = document.querySelector('#js-modal-one-click-count'),
+        modalInputColor = document.querySelector('#js-modal-one-click-color' +
+            '');
 
 
     document.addEventListener('click', (e) => {
@@ -69,6 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 if (modalOneClickCount.value > 0) {
                     modalOneClickCount.value = +modalOneClickCount.value - 1;
+                    modalInputCount.value = modalOneClickCount.value;
 
 
                 }
@@ -76,6 +79,8 @@ window.addEventListener('DOMContentLoaded', () => {
             if (e.target && e.target.classList.contains('js-modal-one-click__plus')) {
                 e.preventDefault();
                 modalOneClickCount.value = +modalOneClickCount.value + 1;
+                modalInputCount.value = modalOneClickCount.value;
+
             }
 
         });
@@ -92,11 +97,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 cardCountPlus = card[i].querySelector('.card-count__plus'),
                 cardImg = card[i].querySelector('.card__img img'),
                 cardColor = card[i].querySelectorAll('.card-color__item');
-
+            cardColor[0].classList.add('active');
 
             for (let j = 0; j < cardColor.length; j++) {
+
                 if (cardColor[j].classList.contains('active')) {
-                    modalOneClickColor.style.backgroundColor = cardColor[j].style.backgroundColor;
+                    modalOneClickColor.style.background = cardColor[j].style.backgroundColor;
+                }
+                if(cardColor[j].style.background == 'rgb(255, 255, 255)'){
+                    cardColor[j].style.border = '1px solid #CECECE';
                 }
                 cardColor[j].onclick = function (x) {
                     return function () {
@@ -115,7 +124,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     return function () {
                         for (let j = 0; j < cardColor.length; j++) {
                             if (cardColor[j].classList.contains('active')) {
-                                modalOneClickColor.style.backgroundColor = cardColor[j].style.backgroundColor;
+                                modalOneClickColor.style.background = cardColor[j].style.backgroundColor;
                                 modalOneClickColor.classList.add('active');
                             }
                         }
@@ -128,7 +137,10 @@ window.addEventListener('DOMContentLoaded', () => {
                         modalInputPrice.value = cardPrice.innerHTML;
 
                         modalOneClickImg.src = cardImg.src;
-                        modalInputUrl.value = cardName.href;
+
+                        modalInputCount.value = modalOneClickCount.value;
+                        modalInputColor.value = modalOneClickColor.style.background;
+
                     }
                 }(i)
                 cardCountMinus.onclick = function (x) {
@@ -143,11 +155,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 cardCountPlus.onclick = function (x) {
                     return function () {
                         cardCount.innerHTML = +cardCount.innerHTML + 1;
-
                     }
                 }(i)
 
             }
         }
     }
+
+
 });

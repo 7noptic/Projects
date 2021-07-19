@@ -24,14 +24,18 @@
 @import "blocks/sitemap";
 @import "blocks/tab";
 @import "blocks/title";
+@import "blocks/navigation";
 
 /* А */
 @import "blocks/article";
 /* В */
 @import "blocks/banner";
 @import "blocks/banner-form";
+@import "blocks/blog";
 /* C */
 @import "blocks/catalog";
+@import "blocks/content";
+@import "blocks/contacts";
 /* D */
 
 /* E */
@@ -47,27 +51,34 @@
 /* I */
 
 /* J */
-
+@import "blocks/job";
 /* K */
 
 /* L */
 @import "blocks/letter";
 /* M */
+@import "blocks/mail";
+@import "blocks/more";
 
 /* N */
 
 /* O */
 
 /* P */
-
+@import "blocks/partners";
+@import "blocks/page404";
 /* Q */
 
 /* R */
-
+@import "blocks/rec";
 /* S */
 @import "blocks/solutions";
+@import "blocks/stocks";
+@import "blocks/search";
 /* T */
 @import "blocks/tariffs";
+@import "blocks/tags";
+@import "blocks/top";
 
 /* U */
 

@@ -1,10 +1,10 @@
 .tab {
-  display: none;
+  z-index: -1;
+  position: absolute;
   transform: scale(0);
   visibility: hidden;
   opacity: 0;
   transition: $tr3;
-  width: 100%;
 
   &-nav {
     display: flex;
@@ -46,26 +46,29 @@
   }
 
   &.active {
+    position: relative;
+    z-index: 1;
     animation: showTabs .5s;
-    display: block;
     visibility: visible;
     opacity: 1;
     transform: scale(1);
   }
 }
-@media (max-width:1199px){
-  .tab{
-    &-nav{
-      &__link{
+
+@media (max-width: 1199px) {
+  .tab {
+    &-nav {
+      &__link {
         margin-right: 60px;
       }
     }
   }
 }
-@media (max-width:991px){
-  .tab{
-    &-nav{
-      &__link{
+
+@media (max-width: 991px) {
+  .tab {
+    &-nav {
+      &__link {
         margin-right: 50px;
       }
     }

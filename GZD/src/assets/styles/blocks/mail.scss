@@ -1,0 +1,179 @@
+.mail {
+  margin-bottom: 150px;
+
+  &__content {
+    margin-bottom: 50px;
+
+    h2 {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    h3, h4, h5, h6, {
+      margin-bottom: 25px;
+    }
+
+    p, div, ul, ol {
+      margin-bottom: 20px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &-link {
+    display: flex;
+
+    &__btn {
+      padding: 14px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      margin-right: 1px;
+    }
+  }
+
+  &-form {
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.18);
+    border-radius: 4px;
+    position: relative;
+
+    &__agreement {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      height: 53px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 24px;
+      width: 29%;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      span {
+        margin-right: 10px;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: nowrap;
+
+        li {
+          cursor: pointer;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+
+      textarea {
+        height: 100px;
+        margin-bottom: 15px;
+      }
+
+      input {
+        margin-bottom: 15px;
+
+        &:nth-child(3) {
+          width: 49%;
+          margin-right: 1%;
+        }
+
+        &:nth-child(4) {
+          width: 49%;
+          margin-left: 1%;
+        }
+      }
+
+      label {
+        display: flex;
+        width: 69%;
+        margin-right: 1%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 53px;
+
+      }
+
+      button {
+        margin-left: 1%;
+        width: 29%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 53px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-reviews {
+      form {
+        label {
+          width: 37%;
+          margin-left: 3%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1399px) {
+  .mail {
+    &-link {
+      &__btn {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media(max-width: 575px) {
+  .mail {
+    &-link {
+      flex-wrap: wrap;
+
+      &__btn {
+        width: 100%;
+        margin: 0 0 1px;
+      }
+    }
+
+    &-form {
+      &__rating {
+        width: 100%;
+      }
+
+      form {
+        input {
+          &:nth-child(3), &:nth-child(4) {
+            width: 100%;
+            margin: 0 0 20px;
+          }
+        }
+
+        label {
+          width: 100%;
+          margin: 0 0 20px;
+        }
+
+        button {
+          width: 100%;
+
+        }
+
+      }
+    }
+  }
+}

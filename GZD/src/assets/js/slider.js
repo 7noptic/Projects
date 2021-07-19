@@ -32,6 +32,38 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    let sliderPartners = new Swiper('.swiper-partners', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        observeParents: true,
+        observer: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+
+        navigation: {
+            nextEl: '.partners__next',
+            prevEl: '.partners__prev'
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            480: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+        }
+    });
+
+
     let sliderArticle = new Swiper('.swiper-article', {
         slidesPerView: 2,
         spaceBetween: 30,
@@ -66,6 +98,14 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.article__next-2',
             prevEl: '.article__prev-2'
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            992: {
+                slidesPerView: 2,
+            }
+        }
     });
 
     let sliderArticle3 = new Swiper('.swiper-article-3', {
@@ -80,6 +120,14 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.article__next-3',
             prevEl: '.article__prev-3'
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            992: {
+                slidesPerView: 2,
+            }
+        }
     });
 
     let sliderTags = new Swiper('.swiper-tags', {

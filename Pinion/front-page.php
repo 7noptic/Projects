@@ -231,10 +231,11 @@ Template Name: Главная
                                                         <div class="reviews-card__name">
                                                         <?= $name  ?>
                                                         </div>
+                                                        <!--
                                                         <div class="reviews-card__num">
                                                             Договор: <?= $num  ?>
                                                         </div>
-                                                        
+                                                        -->
                                                         <div class="reviews-card__rating">
                                                         <input type='hidden' value='<?= $rating ?>'
                                                             class="reviews-card__rating-input">

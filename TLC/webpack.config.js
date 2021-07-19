@@ -165,12 +165,16 @@ module.exports = {
                 use: cssLoaders('sass-loader')
             },
             {
-                test: /\.(png|svg|gif|jpg|jpeg|webp)$/,
+                test: /\.(png|svg|gif|jpg|jpeg|webp|mp4|webm|ogv|swf)$/,
                 loader: 'file-loader?name=./img/[name].[ext]'
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 loader: 'file-loader?name=./fonts/[name].[ext]'
+            },
+            {
+                test: /\.(mp4|webm|ogv|swf)$/,
+                loader: 'file-loader?name=./video/[name].[ext]'
             },
             {
                 test: /\.js$/,

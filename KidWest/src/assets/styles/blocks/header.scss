@@ -1,5 +1,11 @@
 .header{
-  padding: 25px 0 50px;
+  padding: 25px 0;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: linear-gradient(180deg, #F8F8F9 0%, rgba(255, 255, 255, 0) 89.14%);
   &__burger{
     display: none;
   }

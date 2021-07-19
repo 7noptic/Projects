@@ -1,16 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
     /* TABS */
-    let faqParent = document.querySelector('.faq'),
+    let faqParent = document.querySelector('.faq-item__wrapper'),
         faqLink = document.querySelectorAll('.faq-item__quest'),
         faqTab = document.querySelectorAll('.faq-item__answ');
 
-    if(faqParent && faqLink && faqTab){
+    if (faqParent && faqLink && faqTab) {
         toggleTabs(faqLink, faqTab, faqParent, 'faq-item__quest');
     }
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
         hideTabs(link, tabs);
-        showTabs(0, link, tabs);
+        showTabs(0, link, tabs, parent);
 
         let subIndex = 0;
         let trigger = false;
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let subLinks = tabs[subIndex].querySelectorAll(`.${subLink}`),
                 subTabs = tabs[subIndex].querySelectorAll(`.${subContent}`);
             hideTabs(subLinks, subTabs);
-            showTabs(0, subLinks, subTabs);
+            showTabs(0, subLinks, subTabs, parent);
             trigger = true;
         }
         ;
@@ -34,12 +34,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < link.length; i++) {
                     if (link[i] === e.target) {
                         hideTabs(link, tabs);
-                        showTabs(i, link, tabs);
+                        showTabs(i, link, tabs,parent);
                         if (subTabs) {
                             let subLinks = tabs[i].querySelectorAll(`.${subLink}`),
                                 subTabs = tabs[i].querySelectorAll(`.${subContent}`);
                             hideTabs(subLinks, subTabs);
-                            showTabs(0, subLinks, subTabs);
+                            showTabs(0, subLinks, subTabs, parent);
                             subIndex = i;
                         }
                     }
@@ -59,9 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function showTabs(i = 0, link, content) {
+    function showTabs(i = 0, link, content, parent) {
         link[i].classList.add('active');
         content[i].classList.add('active');
+
+        parent.style.minHeight = content[i].offsetHeight + 'px';
     }
 
     function hideTabs(link, content) {

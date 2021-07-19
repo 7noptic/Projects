@@ -22,7 +22,7 @@
     background-image: url('../img/certbg.jpg');
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 64px;
+    padding: 62px 64px;
     -webkit-box-shadow: 0px 0px 15px 7px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 0px 15px 7px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 15px 7px rgba(0, 0, 0, 0.2);
@@ -31,6 +31,9 @@
     align-items: center;
 
     img {
+      min-width: 195px;
+      min-height: 279px;
+      object-fit: cover;
       transition: $tr3;
     }
 
@@ -77,7 +80,7 @@
 @media (max-width: 1399px) {
   .cert {
     &__img {
-      padding: 50px;
+      padding: 46px 50px;
     }
   }
 }
@@ -102,7 +105,7 @@
     }
 
     &__img {
-      padding: 44px;
+      padding: 44px 49px;
     }
   }
 }
@@ -110,7 +113,7 @@
 @media (max-width: 767px) {
   .cert {
     &__img {
-      padding: 60px;
+      padding: 58px 60px;
     }
   }
 }

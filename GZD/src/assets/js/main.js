@@ -45,5 +45,32 @@ window.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
-    })
+    });
+
+    let ratingParent = document.querySelector('.js-rating'),
+        ratingInput = document.querySelector('#js-rating'),
+        ratingStar = document.querySelectorAll('.js-rating > li');
+
+    if (ratingParent) {
+        ratingParent.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = event.target;
+            if (target && target.tagName == 'LI') {
+                for (let i = 0; i < ratingStar.length; i++) {
+                    ratingStar[i].classList.remove('active')
+                }
+                for (let i = 0; i => ratingStar.length; i++) {
+                    if (ratingStar[i] == target) {
+                        ratingStar[i].classList.add('active');
+                        ratingInput.value = ++i;
+                        return
+                    } else {
+                        ratingStar[i].classList.add('active');
+                    }
+                }
+            }
+
+        });
+    }
+
 }, false);

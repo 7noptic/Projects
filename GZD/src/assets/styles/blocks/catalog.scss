@@ -131,3 +131,26 @@
     }
   }
 }
+
+@media (max-width: 575px) {
+  .catalog{
+    margin-bottom: 60px;
+    &-item {
+      margin-bottom: 40px;
+
+      &__img {
+        max-width: 220px;
+        min-width: 220px;
+        max-height: 220px;
+        min-height: 220px;
+      }
+
+      &__name {
+        top: 220px;
+        left: 220px;
+        font-size: 14px;
+        width: 220px;
+      }
+    }
+  }
+}

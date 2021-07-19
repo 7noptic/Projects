@@ -4,6 +4,9 @@
   &-item {
     margin-bottom: 15px;
     transition: $tr2;
+    &:last-child{
+      margin-bottom: 50px;
+    }
 
     &__header {
       width: 100%;
@@ -21,8 +24,17 @@
         content: url("../img/ar.svg");
         position: absolute;
         right: 10px;
-        top: calc(50% - 12px);
+        top: calc(50% - 14px);
         transition: $tr2;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
       }
 
       &:hover {
@@ -40,7 +52,7 @@
         border-radius: 4px 4px 0px 0px;
 
         &::before {
-          transform: rotate(-180deg);
+          transform: rotate(-180deg) translateY(-4px);
           filter: invert(100%);
         }
       }
@@ -62,6 +74,50 @@
       }
     }
   }
+  &-form{
+    display: flex;
+    justify-content: center;
+    &__wrapper{
+      max-width: 420px;
+      padding: 40px;
+      background: #FFFFFF;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.18);
+      border-radius: 4px;
+      text-align: center;
+    }
+    &__title{
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+    &__subtitle{
+      font-size: 12px;
+      line-height: 15px;
+      margin-bottom: 40px;
+    }
+    form{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      input{
+        margin-bottom: 15px;
+      }
+      textarea{
+        height: 180px;
+        margin-bottom: 15px;
+      }
+      p{
+        max-width: 260px;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+
+    }
+  }
 }
 
 @media (max-width: 1199px){
@@ -72,5 +128,16 @@
 @media (max-width: 991px){
   .faq{
     margin-bottom: 80px;
+  }
+}
+@media (max-width: 575px){
+  .faq{
+    &-form{
+      &__wrapper{
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
   }
 }

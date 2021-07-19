@@ -1,0 +1,13 @@
+.rec{
+  margin-bottom: 20px;
+  &-item{
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 767px){
+  .rec{
+    &-item{
+      margin-bottom: 75px;
+    }
+  }
+}

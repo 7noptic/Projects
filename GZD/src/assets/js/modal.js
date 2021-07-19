@@ -3,6 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
         modalCall = document.querySelector('.modal-call'),
+        modalCalc = document.querySelector('.modal-calc'),
+        modalJob = document.querySelector('.modal-job'),
         modalRegion = document.querySelector('.modal-region'),
         modalQuery = document.querySelector('.modal-query'),
         regionSelect = document.querySelectorAll('.modal-region__link'),
@@ -23,6 +25,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
+        }
+        if (target && (target.classList.contains('js-job') || target.classList.contains('modal-job__exit'))) {
+            openCloseModal(e, modalJob);
+        }
+        if (target && (target.classList.contains('js-calc') || target.classList.contains('modal-calc__exit'))) {
+            openCloseModal(e, modalCalc);
         }
         if (target && (target.classList.contains('js-query') || target.classList.contains('modal-query__exit'))) {
             openCloseModal(e, modalQuery);

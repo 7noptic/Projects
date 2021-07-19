@@ -26,7 +26,8 @@
 
     }
   }
-  &__textarea{
+
+  &__textarea {
     height: 120px;
   }
 
@@ -55,3 +56,19 @@
   }
 }
 
+.wpmtst-form {
+  .strong-form-inner {
+    padding: 0;
+  }
+}
+.form-field.field-star_rating{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  fieldset{
+    padding: 0!important;
+  }
+  label{
+    margin-bottom: 7px;
+  }
+}

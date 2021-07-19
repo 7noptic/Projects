@@ -6,13 +6,27 @@ window.addEventListener('DOMContentLoaded', () => {
         tariffsTab = document.querySelectorAll('.js-tariffs-tab'),
         articleParent = document.querySelector('.article-block'),
         articleLink = document.querySelectorAll('.js-article-link'),
-        articleTab = document.querySelectorAll('.js-article-tab');
+        articleTab = document.querySelectorAll('.js-article-tab'),
+        sitemapParent = document.querySelector('.sitemap'),
+        sitemapLink = document.querySelectorAll('.js-sitemap-link'),
+        sitemapTab = document.querySelectorAll('.js-sitemap-tab'),
+        mailParent = document.querySelector('.mail'),
+        mailLink = document.querySelectorAll('.js-mail-link'),
+        mailTab = document.querySelectorAll('.js-mail-tab');
 
-    if(tariffsLink && tariffsTab && tariffsParent){
+    if(tariffsLink.length > 0 && tariffsTab.length > 0 && tariffsParent){
         toggleTabs(tariffsLink, tariffsTab, tariffsParent, 'js-tariffs-link');
     }
-    if(articleLink && articleTab && articleParent){
+
+    if(articleLink.length > 0 && articleTab.length > 0 && articleParent){
         toggleTabs(articleLink, articleTab, articleParent, 'js-article-link');
+    }
+
+    if(sitemapLink.length > 0 && sitemapTab.length > 0 && sitemapParent){
+        toggleTabs(sitemapLink, sitemapTab, sitemapParent, 'js-sitemap-link');
+    }
+    if(mailLink.length > 0 && mailTab.length > 0 && mailParent){
+        toggleTabs(mailLink, mailTab, mailParent, 'js-mail-link');
     }
 
 

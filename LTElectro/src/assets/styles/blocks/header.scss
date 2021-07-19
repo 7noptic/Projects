@@ -470,7 +470,7 @@
       &::after {
         content: url('../img/trr.svg');
         position: absolute;
-        top: 0;
+        top: -12px;
         right: -10px;
 
       }
@@ -483,6 +483,7 @@
       line-height: 21px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       &:hover {
         color: #000;

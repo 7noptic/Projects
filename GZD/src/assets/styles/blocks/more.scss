@@ -1,0 +1,13 @@
+.more {
+  &-item {
+    &:hover {
+      .catalog-item__name {
+        color: $yellow;
+      }
+    }
+
+    &__name {
+      opacity: 1;
+    }
+  }
+}

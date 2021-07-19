@@ -127,6 +127,14 @@
     height: 315px;
   }
 }
+@media (max-width: 991px){
+  .swiper-cert{
+    .swiper-slide{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
 .gallery-thumbs .swiper-slide-thumb-active {
   opacity: 1;
 }

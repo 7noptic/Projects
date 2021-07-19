@@ -1,0 +1,58 @@
+.contacts{
+  margin-bottom: 50px;
+  &__text{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 40px;
+    display: block;
+    margin-bottom: 25px;
+    &-bold{
+      font-weight: 600;
+      margin-bottom: 10px;
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 2px;
+        left: 0;
+      }
+      &-address{
+        &::before{
+          content: url("../img/addr.svg");
+        }
+      }
+
+      &-time{
+        &::before{
+          content: url("../img/time.svg");
+        }
+      }
+
+      &-tel{
+        &::before{
+          content: url("../img/tel.svg");
+        }
+      }
+
+      &-email{
+        &::before{
+          content: url("../img/email.svg");
+        }
+      }
+      &-bank{
+        &::before{
+          content: url("../img/bank.svg");
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px){
+  .contacts{
+    &__text{
+      font-size: 14px;
+      line-height: 20px;
+      padding-left: 30px;
+    }
+  }
+}

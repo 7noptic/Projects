@@ -92,7 +92,7 @@ Template Name: Страница отзывов по типу ремонта
                       <div class="reviews-card__name"><?= $review['reviews-name']?></div>
                       <div class="reviews-card__pzdc reviews-card__pzdc-1"><?= $review['reviews-city']?></div>
                       <div class="reviews-card__pzdc reviews-card__pzdc-2"><?= $review['reviews-type']?></div>
-                      <div class="reviews-card__pzdc reviews-card__pzdc-3">Договор: <?= $review['reviews-contract-num']?></div>
+
                       <div class="reviews-card__rating">
                           <input type='hidden' value='<?= $review['reviews-rating']?>' class="reviews-card__rating-input">
                             <ul class="rating-star">

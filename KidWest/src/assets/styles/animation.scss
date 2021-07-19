@@ -6,6 +6,11 @@
   animation: hideTabs .6s;
 }
 
+.sectionAnimation{
+  animation:bot-to-top .7s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes showTabs {
   0% {
     opacity: 0;
@@ -27,7 +32,7 @@
 @keyframes bot-to-top {
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(300px);
   }
   100% {
     opacity: 1;
@@ -64,5 +69,68 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes kid {
+  0% {
+    transform: translate(-50%, 900px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes niz {
+  0% {
+    transform: translate(-50%, 400px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes subtitle {
+  0% {
+    transform: translate(-50%, 1100px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes title {
+  0% {
+    transform: translate(-50%, 1100px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: translate(-50%, 300px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes subtext {
+  0% {
+    transform: translate(-50%, 350px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes btn {
+  0% {
+    transform: translate(-50%, 200px);
+  }
+  100% {
+    transform: translate(-50%, 0);
   }
 }

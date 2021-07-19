@@ -1,6 +1,9 @@
 .map {
   position: relative;
   margin-bottom: 190px;
+  &.nomb{
+    margin-bottom: 0;
+  }
 
   &-modal {
     position: relative;

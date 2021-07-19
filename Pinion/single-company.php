@@ -88,7 +88,7 @@ Template Name: Страница компании
                       <div class="reviews-card__name"><?= $review['reviews-name']?></div>
                       <div class="reviews-card__biginfo">
                         <div class="reviews-card__biginfo-l">
-                          <div class="reviews-card__num">Договор: <?= $review['reviews-contract-num']?></div>
+
                           <div class="reviews-card__rating">
                           <input type='hidden' value='<?= $review['reviews-rating']?>' class="reviews-card__rating-input">
                             <ul class="rating-star">
@@ -152,7 +152,7 @@ Template Name: Страница компании
                       <div class="reviews-card__name"><?= $review['reviews-name']?></div>
                       <div class="reviews-card__biginfo">
                         <div class="reviews-card__biginfo-l">
-                          <div class="reviews-card__num">Договор: <?= $review['reviews-contract-num']?></div>
+
                           <div class="reviews-card__rating">
                           <input type='hidden' value='<?= $review['reviews-rating']?>' class="reviews-card__rating-input">
                             <ul class="rating-star">
@@ -214,7 +214,7 @@ Template Name: Страница компании
                       <div class="reviews-card__name"><?= $review['reviews-name']?></div>
                       <div class="reviews-card__biginfo">
                         <div class="reviews-card__biginfo-l">
-                          <div class="reviews-card__num">Договор: <?= $review['reviews-contract-num']?></div>
+
                           <div class="reviews-card__rating">
                           <input type='hidden' value='<?= $review['reviews-rating']?>' class="reviews-card__rating-input">
                             <ul class="rating-star">

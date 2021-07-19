@@ -30,6 +30,9 @@
   &-slider {
     width: calc(100% - 120px);
     margin-bottom: 30px;
+    .card__img{
+      height: 100%;
+    }
 
     &-thumb {
       margin-bottom: 30px;
@@ -56,6 +59,8 @@
   &-plus {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &__item {
       display: flex;

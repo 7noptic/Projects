@@ -1,0 +1,45 @@
+.page404 {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-weight: bold;
+    max-width: 270px;
+    padding-right: 50px;
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 77px;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__img {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 479px) {
+  .page404{
+    &__wrapper{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__img{
+      order: 1;
+    }
+    &__text{
+      order: 2;
+      text-align: center;
+      padding: 0;
+    }
+  }
+}

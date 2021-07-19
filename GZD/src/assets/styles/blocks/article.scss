@@ -1,16 +1,20 @@
 .article {
-  &__prev,&__next{
+  &__prev, &__next {
     position: absolute;
     top: calc(50% - 24px);
   }
-  &__prev{
+
+  &__prev {
     left: 0;
   }
-  &__next{
+
+  &__next {
     right: 0;
   }
+
   &-block {
     margin-bottom: 150px;
+    position: relative;
   }
 
   &-slider {
@@ -58,11 +62,54 @@
   &__btn {
     padding: 10px 16px;
   }
+
+  &-item {
+    display: block;
+
+    &:hover {
+      color: #000;
+
+      .article__btn {
+        background-color: #000;
+        color: $white;
+      }
+    }
+  }
+  &__text{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 60px;
+
+    p, h1, h2, h3, h4, h5, h6, ul, ol, div {
+      margin: 0 0 20px 0 !important;
+    }
+
+    ul, ol {
+      padding-left: 20px !important;
+    }
+  }
 }
-@media (max-width: 991px){
-  .article{
-    &-block{
+
+@media (max-width: 991px) {
+  .article {
+    &-block {
       margin-bottom: 100px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .article {
+
+    &__prev, &__next {
+      position: absolute;
+      top: auto;
+      bottom: -60px;
     }
   }
 }

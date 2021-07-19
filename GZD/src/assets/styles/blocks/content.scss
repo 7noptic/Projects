@@ -1,0 +1,149 @@
+.content {
+  margin-bottom: 150px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 60px;
+    max-width: 600px;
+
+    p, h1, h2, h3, h4, h5, h6, ul, ol, div {
+      margin: 0 0 20px 0 !important;
+    }
+
+    ul, ol {
+      padding-left: 20px !important;
+    }
+
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+  }
+
+  &-link {
+    padding: 0 20px;
+    display: inline-flex;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 50px;
+
+    img {
+      margin-bottom: 25px;
+    }
+  }
+  &-list{
+    &__documents{
+      li{
+        display: flex;
+        align-items: center;
+        padding-left: 65px;
+        position: relative;
+        min-height: 48px;
+        margin-bottom: 35px;
+        max-width: 415px;
+        &::before{
+          content: url("../img/doc.svg");
+          position: absolute;
+          top: calc(50% - 24px);
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1399px) {
+  .content {
+    &-link {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+}
+
+@media (max-width: 1199px) {
+  .content {
+    &-link {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 40px;
+
+      img {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 40px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .content {
+    margin-bottom: 100px;
+    &-link {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    margin-bottom: 75px;
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    &__text, &__img {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .content {
+    &-link{
+      padding: 0;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &__text, &__img {
+      margin-bottom: 35px;
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 25px;
+    }
+  }
+}

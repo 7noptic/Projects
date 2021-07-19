@@ -36,6 +36,7 @@
     width: 100%;
     height: 720px;
     border: none;
+    margin-bottom: -6px;
   }
 
   
@@ -93,8 +94,7 @@
     iframe{
       height: 400px;
       width: calc(100% + 30px);
-      margin-left: -15px;
-      margin-right: -15px;
+      margin: 0 -15px -6px;
     }
   }
 }

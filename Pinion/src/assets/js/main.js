@@ -16,14 +16,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let tablink = document.querySelectorAll('.reviews-company .tab-nav .js-reviews-company-link');
 
-    if(tablink){
+    if (tablink) {
         let tabContent = document.querySelectorAll('.reviews-company .js-reviews-company-tab');
 
-        for(let i = 0; i < tablink.length; i++){
+        for (let i = 0; i < tablink.length; i++) {
             let item = tabContent[i].querySelector('.reviews-card');
-            if(item){
+            if (item) {
                 console.log(item);
-            }else {
+            } else {
                 tablink[i].remove();
                 tabContent[i].remove();
             }
@@ -39,17 +39,17 @@ window.addEventListener('DOMContentLoaded', () => {
         reviewMoreItem = document.querySelectorAll('.js-all-company .reviews-card'),
         reviewMoreItemActive = document.getElementsByClassName('.js-all-company .reviews-card.active');
 
-    if(reviewMoreParent){
-        for(let i = 0; i < reviewMoreItem.length; i++){
-            if(i > 9){
+    if (reviewMoreParent) {
+        for (let i = 0; i < reviewMoreItem.length; i++) {
+            if (i > 9) {
                 reviewMoreItem[i].classList.add('hidden');
             }
         }
         document.querySelector('.reviews__more').addEventListener('click', (e) => {
             let trigger = 1;
-            for(let i = 0; i < reviewMoreItem.length; i++){
+            for (let i = 0; i < reviewMoreItem.length; i++) {
 
-                if(reviewMoreItem[i].classList.contains('hidden') && trigger < 10){
+                if (reviewMoreItem[i].classList.contains('hidden') && trigger < 10) {
                     reviewMoreItem[i].classList.remove('hidden');
                     trigger++;
                 }
@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
             ratingOnPageStar[i].classList.remove('active');
         }
         for (let i = 0; i < rating; i++) {
-            if(rating == 0){
+            if (rating == 0) {
                 break;
             }
             ratingOnPageStar[i].classList.add('active');
@@ -132,6 +132,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (ratingBlockParent) {
 
         if (ratingBlockItem) {
+            let trigger = false;
             for (let i = 0; i < ratingBlockItem.length; i++) {
                 if (i < 4) {
                     ratingBlockItem[i].classList.add('active');
@@ -139,19 +140,31 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             ratingBlockMore.addEventListener('click', (e) => {
                 e.preventDefault();
-                for (let i = 0; i < ratingBlockItem.length; i++) {
+                if (trigger) {
+                    ratingBlockMore.innerHTML = 'ПОКАЗАТЬ ЕЩЁ';
+                    for (let i = 0; i < ratingBlockItem.length; i++) {
+                        if (i > 4) {
+                            ratingBlockItem[i].classList.remove('active');
+                        }
+                    }
+                    trigger = false;
 
-                    ratingBlockItem[i].classList.add('active');
-
+                } else {
+                    ratingBlockMore.innerHTML = 'СКРЫТЬ';
+                    for (let i = 0; i < ratingBlockItem.length; i++) {
+                        ratingBlockItem[i].classList.add('active');
+                    }
+                    trigger = true;
                 }
+
 
             });
 
         }
-    }else{
+    } else {
         if (ratingBlockItem) {
             for (let i = 0; i < ratingBlockItem.length; i++) {
-                    ratingBlockItem[i].classList.add('active');
+                ratingBlockItem[i].classList.add('active');
             }
 
 
@@ -207,7 +220,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
 
-
         if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
             openCloseModal(e, modalRegion);
         }
@@ -243,7 +255,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
-        function closeAllModal(){
+        function closeAllModal() {
             if (target && target.classList.contains('sidebar-bg')) {
                 e.preventDefault();
                 html.classList.toggle('lock');
@@ -260,6 +272,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             }
         }
+
         closeAllModal();
 
     });
@@ -274,11 +287,12 @@ window.addEventListener('DOMContentLoaded', () => {
         main.classList.toggle('blur');
         footer.classList.toggle('blur');
     }
+
     /* fix modal */
     let push = document.querySelector('.push-item');
     document.addEventListener('click', (e) => {
 
-        if(e.target && e.target.classList.contains('js-push')){
+        if (e.target && e.target.classList.contains('js-push')) {
             e.preventDefault();
             push.classList.add('active');
             html.classList.toggle('lock');
@@ -292,6 +306,7 @@ window.addEventListener('DOMContentLoaded', () => {
             header.classList.toggle('blur');
             main.classList.toggle('blur');
             footer.classList.toggle('blur');
+
             function showPush() {
                 push.classList.remove('active');
             }
@@ -398,7 +413,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
     function toggleContent(link, content, linkClass) {
 
         document.addEventListener('click', (e) => {
@@ -455,9 +469,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        autoplay: {
-            delay: 5000,
-        },
+
 
         navigation: {
             nextEl: '.card__next',

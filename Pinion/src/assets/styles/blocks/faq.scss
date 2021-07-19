@@ -31,7 +31,7 @@
             background: #fff;            
             box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
             border-radius: 14px;
-            padding: 20px;
+            padding: 20px 30px 20px 20px;
             font-weight: 300;
             font-size: 16px;
             line-height: 19px;
@@ -39,14 +39,33 @@
             width: 100%;
             cursor: pointer;
             transition: $transition3;
+            position: relative;
+            &::before{
+                content: url("../img/faqar.svg");
+                position: absolute;
+                right: 15px;
+                top: calc(50% - 13px);
+                filter: contrast(0);
+                transform: rotate(180deg);
+                transition: $transition2;
+
+            }
             &:hover{
                 transform: translateY(-10px);
+                &:before{
+                    transform: rotate(90deg);
+
+                }
             }
             &.active{
                 color: #fff;
                 background: #0063F8;
                 background: linear-gradient(323.56deg, #0B0175 -4.25%, #0063F8 91.89%);
                 font-weight: 700;
+                &:before{
+                    transform: rotate(0);
+                    filter: contrast(1);
+                }
                 &:hover{
                     transform: translateY(0px);   
                 }

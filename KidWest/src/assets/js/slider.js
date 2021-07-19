@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', function () {
     let card = document.querySelectorAll('.card');
     if(card){
         for(let i = 0; i < card.length; i++){
+
             let galleryThumbs = new Swiper(`.gallery-thumbs-${[i]}`, {
                 spaceBetween: 10,
                 direction: "vertical",
@@ -54,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function () {
             0:{
                 slidesPerView: 1,
             },
-            768:{
+            992:{
                 slidesPerView: 2,
             },
             1200:{

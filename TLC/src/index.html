@@ -126,13 +126,15 @@
 
 <main>
 
+
     <section class="banner">
         <div class="banner-slider">
             <div class="swiper-banner">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <div class="banner-slide" style="background-image: url('img/ban.jpg')">
+                        <div class="banner-slide">
+
                             <h2 class="banner__title">
                                 ДОСТАВКА ГРУЗОВ <br> ИЗ КИТАЯ
                             </h2>
@@ -146,9 +148,15 @@
                                 </div>
                             </div>
                             <a href="#" class="btn btn-border-white banner__btn js-call">ОСТАВИТЬ ЗАЯВКУ</a>
+                            <div class="banner__img">
+                                <video preload="auto" autoplay="true" loop="true" muted="muted">
+                                    <source src="img/video.MP4" type="video/mp4">
+                                    <source src="img/video.webm" type="video/webm">
+                                </video>
+                            </div>
                         </div>
                     </div>
-
+                    <!--
                     <div class="swiper-slide">
                         <div class="banner-slide" style="background-image: url('img/ban1.jpg')">
                             <h2 class="banner__title">
@@ -186,14 +194,21 @@
                             <a href="#" class="btn btn-border-white banner__btn js-call">ОСТАВИТЬ ЗАЯВКУ</a>
                         </div>
                     </div>
-
+ -->
 
                 </div>
             </div>
             <nav class="banner-pagination"></nav>
         </div>
     </section>
+    <section class="video-block">
+        <div class="board-video">
+            <video controls autoplay>
+                <source src="img/video.MP4" type="video/mp4">
+            </video>
+        </div>
 
+    </section>
     <section class="catalog">
         <h1 class="title title-pl catalog__title">
             НАШИ УСЛУГИ
