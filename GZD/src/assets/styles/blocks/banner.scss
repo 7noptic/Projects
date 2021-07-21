@@ -1,3 +1,65 @@
+#index-banner-front{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  &.gotop2{
+    animation-name: gotop2;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes gotop {
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-700px);
+  }
+}
+@keyframes gotop2 {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    //transform: translateY(-864px);
+    margin-top: -864px;
+    //margin-bottom: -164px;
+  }
+}
+@keyframes gotop3 {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-400px);
+  }
+}
+@keyframes gobot {
+  0%{
+    opacity: 0;
+    transform: translateY(-1000px);
+
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+@keyframes gobot2 {
+  0%{
+    transform: translateY(-1000px);
+  }
+  100%{
+
+    transform: translateY(0);
+  }
+}
 .banner {
   margin-bottom: 100px;
   background-repeat: no-repeat;
@@ -5,6 +67,42 @@
   background-position: center center;
   min-height: 875px;
   position: relative;
+  &.gotop{
+    animation-name: gotop3;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+  }
+  &.gotop2{
+    animation-name: hideTabs;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+  }
+  &.gobot{
+    animation-name: gobot;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+  }
+  &.gobot2{
+    animation-name: gotop3;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+  }
+  &__link{
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    transition: $tr2;
+    &:hover{
+      background-color: $yellow;
+    }
+  }
   &-center{
     min-height: 440px;
   }
@@ -170,7 +268,7 @@
               position: absolute;
               top: calc(50% - 10px);
               left: -13px;
-              z-index: 10000000;
+              z-index: 10;
             }
 
             &::after {
@@ -178,7 +276,7 @@
               position: absolute;
               top: calc(50% - 10px);
               right: -13px;
-              z-index: 10000000;
+              z-index: 10;
             }
 
             input {

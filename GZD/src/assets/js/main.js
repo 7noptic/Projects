@@ -12,12 +12,50 @@ import adaptive from './adaptive-move-block';
 
 
 window.addEventListener('DOMContentLoaded', function () {
+    let indexBanner = document.querySelector('#index-banner'),
+        indexBannerFront = document.querySelector('#index-banner-front'),
+        header = document.querySelector('.header'),
+        main = document.querySelector('main');
+        
+    if (indexBanner && indexBannerFront) {
+        header.classList.add('active');
+        let trigger = true;
+        document.addEventListener('scroll', function (e) {
+            if (scrollY > 100 && trigger) {
+                trigger = false;
+                main.classList.add('gotop2');
+                header.classList.add('scroll');
+                //setTimeout(indexBannerFront.style.opacity = '0', 600);
+                //setTimeout(indexBannerFront.style.zIndex = '-1000', 600);
+
+                 //indexBannerFront.classList.remove('gobot');
+                 //indexBanner.classList.remove('gobot2');
+                 indexBannerFront.classList.add('gotop2');
+                 //indexBanner.classList.add('gotop2');
+
+
+            }
+            if(scrollY <= 10 && !trigger){
+                trigger = true;
+                /*
+                indexBannerFront.classList.remove('gotop');
+                indexBanner.classList.remove('gotop2');
+                indexBannerFront.style.display = 'block';
+
+                indexBannerFront.classList.add('gobot');
+                indexBanner.classList.add('gobot2');
+                header.classList.add('active');
+
+                 */
+            }
+        }, false);
+    }
     let tableTariffs = document.querySelectorAll('.js-tariffs-tab > table');
-    if(tableTariffs){
+    if (tableTariffs) {
         for (let i = 0; i < tableTariffs.length; i++) {
             let items = tableTariffs[i].querySelectorAll('tbody > tr');
             for (let j = 0; j < items.length; j++) {
-                if(j > 9){
+                if (j > 9) {
                     items[j].classList.add('hidden');
                 }
             }
@@ -25,8 +63,8 @@ window.addEventListener('DOMContentLoaded', function () {
     }
     let whyParent = document.querySelector('.why'),
         whyItem = document.querySelectorAll('.why-item__num');
-    if (whyParent && whyItem){
-        for(let i = 0; i < whyItem.length; i++){
+    if (whyParent && whyItem) {
+        for (let i = 0; i < whyItem.length; i++) {
             whyItem[i].innerHTML = i + 1;
         }
     }
@@ -38,8 +76,8 @@ window.addEventListener('DOMContentLoaded', function () {
             let tableTariffsActive = document.querySelector('.js-tariffs-tab.active > table')
             if (tableTariffsActive) {
                 let tableTariffsItems = tableTariffsActive.querySelectorAll('tbody > tr');
-                if(tableTariffsItems && tableTariffsItems.length > 9){
-                    for(let i = 10; i < tableTariffsItems.length; i++){
+                if (tableTariffsItems && tableTariffsItems.length > 9) {
+                    for (let i = 10; i < tableTariffsItems.length; i++) {
                         tableTariffsItems[i].classList.toggle('hidden');
                     }
                 }

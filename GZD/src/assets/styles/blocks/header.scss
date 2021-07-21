@@ -1,4 +1,12 @@
 .header {
+  &.active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+  }
   &__burger {
     display: none;
   }
@@ -101,13 +109,15 @@
         & > ul {
           z-index: 1000;
           opacity: 1;
+          display: block;
         }
       }
 
       & ul, & ol {
         border: 1px solid #cbcbcb;
-        z-index: -1;
+        z-index: -10;
         opacity: 0;
+        display: none;
         width: 300px;
 
         position: absolute;
@@ -165,6 +175,7 @@
             & > ul, & > ol {
               z-index: 1000;
               opacity: 1;
+              display: block;
             }
 
           }
