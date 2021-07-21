@@ -7,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    position: relative;
   }
 
   &__text {
@@ -28,7 +29,8 @@
         margin-top: 0;
       }
     }
-    h3,h4,h5,h6 {
+
+    h3, h4, h5, h6 {
       margin-top: 50px;
 
     }
@@ -43,6 +45,12 @@
     max-width: 630px;
     display: flex;
     flex-wrap: wrap;
+
+    &.absolute {
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
 
     a.service-nav__link {
       width: 50%;
@@ -101,6 +109,11 @@
       margin-top: 30px;
       width: 100%;
       max-width: 100%;
+      &.absolute {
+        position: relative;
+        top: auto;
+        left: auto;
+      }
 
       a.service-nav__link {
         padding-right: 30px;

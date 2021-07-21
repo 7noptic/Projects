@@ -21,6 +21,16 @@
       font-size: 16px;
       line-height: 20px;
       margin-bottom: 40px;
+      ol,ul{
+        margin-top: 0!important;
+        margin-left: 0!important;
+      }
+      p, ol li, ul li{
+        margin-bottom: 10px!important;
+      }
+      h2,h3,h4,h5,h6,ol,ul{
+        margin-bottom: 15px!important;
+      }
     }
 
     &__btn {
@@ -357,11 +367,12 @@
     &-slide {
       flex-wrap: wrap;
     }
-
+/*
     &__img {
       width: calc(100% + 38px);
       margin-left: -19px;
       margin-right: -19px;
     }
+    */
   }
 }

@@ -18,4 +18,39 @@ window.addEventListener('DOMContentLoaded', function (e) {
         }
     }
 
+    let navAboutParent = document.querySelector('.page-template.page-template-about.page-template-about-php'),
+        navAboutMenu = document.querySelector('.description__list'),
+        aboutItem = document.querySelector('.description__content'),
+        descr = document.querySelector('.description'),
+        header = document.querySelector('.header'),
+        banner = document.querySelector('.banner'),
+        title = descr.querySelector('.title'),
+        breadcrumbs = document.querySelector('.breadcrumbs');
+    if (navAboutParent && navAboutMenu && aboutItem && header && banner && descr && title && breadcrumbs) {
+        let height = Dimension(header) + Dimension(banner) + Dimension(title) + Dimension(breadcrumbs);
+        moveHeaderMenuToTop2(descr);
+        document.addEventListener('scroll', (e) => {
+            moveHeaderMenuToTop2(descr);
+        });
+
+
+        function moveHeaderMenuToTop2(elem) {
+            if (pageYOffset >= height && pageYOffset <= (elem.clientHeight + height - navAboutMenu.offsetHeight)) {
+
+                navAboutMenu.classList.add('absolute');
+                navAboutMenu.style.top = pageYOffset - height + 'px';
+            }
+        }
+    }
+    function Dimension(el) {
+        // Get the DOM Node if you pass in a string
+        el = (typeof el === 'string') ? document.querySelector(el) : el;
+
+        var styles = window.getComputedStyle(el);
+        var margin = parseFloat(styles['marginTop']) +
+            parseFloat(styles['marginBottom']);
+
+        return Math.ceil(el.offsetHeight + margin);
+    }
+
 }, false);
