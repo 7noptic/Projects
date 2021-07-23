@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < tablink.length; i++) {
             let item = tabContent[i].querySelector('.reviews-card');
             if (item) {
-                console.log(item);
             } else {
                 tablink[i].remove();
                 tabContent[i].remove();
@@ -112,12 +111,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 ratingReview = reviewOnMore[i].querySelectorAll('ul.rating-star li');
 
             for (let i = 0; i < ratingReview.length; i++) {
-                console.log(ratingReview);
                 ratingReview[i].classList.remove('active');
             }
             if (ratingValue) {
                 ratingValue = Math.round(ratingValue.value);
-                console.log(ratingValue);
                 for (let i = 0; i < ratingValue; i++) {
                     ratingReview[i].classList.add('active');
                 }

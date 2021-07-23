@@ -598,6 +598,9 @@
 
             & > li {
               padding-right: 0;
+              &>div,&>ul{
+                display: none;
+              }
 
               & > a {
                 margin-bottom: 8px;

@@ -111,7 +111,7 @@
       max-width: 100%;
       &.absolute {
         position: relative;
-        top: auto;
+        top: auto!important;
         left: auto;
       }
 

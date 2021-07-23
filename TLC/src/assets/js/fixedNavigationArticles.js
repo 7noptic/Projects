@@ -24,25 +24,29 @@ window.addEventListener('DOMContentLoaded', function (e) {
         descr = document.querySelector('.description'),
         header = document.querySelector('.header'),
         banner = document.querySelector('.banner'),
-        title = descr.querySelector('.title'),
         breadcrumbs = document.querySelector('.breadcrumbs');
-    if (navAboutParent && navAboutMenu && aboutItem && header && banner && descr && title && breadcrumbs) {
-        let height = Dimension(header) + Dimension(banner) + Dimension(title) + Dimension(breadcrumbs);
-        moveHeaderMenuToTop2(descr);
-        document.addEventListener('scroll', (e) => {
+    if (descr) {
+        let title = descr.querySelector('.title');
+
+        if (navAboutParent && navAboutMenu && aboutItem && header && banner && descr && title && breadcrumbs) {
+            let height = getHeightElement(header) + getHeightElement(banner) + getHeightElement(title) + getHeightElement(breadcrumbs);
             moveHeaderMenuToTop2(descr);
-        });
+            document.addEventListener('scroll', (e) => {
+                moveHeaderMenuToTop2(descr);
+            });
 
 
-        function moveHeaderMenuToTop2(elem) {
-            if (pageYOffset >= height && pageYOffset <= (elem.clientHeight + height - navAboutMenu.offsetHeight)) {
+            function moveHeaderMenuToTop2(elem) {
+                if (pageYOffset >= height && pageYOffset <= (elem.clientHeight + height - navAboutMenu.offsetHeight)) {
 
-                navAboutMenu.classList.add('absolute');
-                navAboutMenu.style.top = pageYOffset - height + 'px';
+                    navAboutMenu.classList.add('absolute');
+                    navAboutMenu.style.top = pageYOffset - height + 'px';
+                }
             }
         }
     }
-    function Dimension(el) {
+
+    function getHeightElement(el) {
         // Get the DOM Node if you pass in a string
         el = (typeof el === 'string') ? document.querySelector(el) : el;
 

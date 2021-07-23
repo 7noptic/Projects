@@ -16,37 +16,25 @@ window.addEventListener('DOMContentLoaded', function () {
         indexBannerFront = document.querySelector('#index-banner-front'),
         header = document.querySelector('.header'),
         main = document.querySelector('main');
-        
+
     if (indexBanner && indexBannerFront) {
         header.classList.add('active');
         let trigger = true;
         document.addEventListener('scroll', function (e) {
             if (scrollY > 100 && trigger) {
                 trigger = false;
+                main.classList.remove('gobot2');
+                indexBannerFront.classList.remove('gobot2');
                 main.classList.add('gotop2');
                 header.classList.add('scroll');
-                //setTimeout(indexBannerFront.style.opacity = '0', 600);
-                //setTimeout(indexBannerFront.style.zIndex = '-1000', 600);
-
-                 //indexBannerFront.classList.remove('gobot');
-                 //indexBanner.classList.remove('gobot2');
-                 indexBannerFront.classList.add('gotop2');
-                 //indexBanner.classList.add('gotop2');
-
-
+                indexBannerFront.classList.add('gotop2');
             }
-            if(scrollY <= 10 && !trigger){
+            if (scrollY <= 10 && !trigger) {
                 trigger = true;
-                /*
-                indexBannerFront.classList.remove('gotop');
-                indexBanner.classList.remove('gotop2');
-                indexBannerFront.style.display = 'block';
-
-                indexBannerFront.classList.add('gobot');
-                indexBanner.classList.add('gobot2');
-                header.classList.add('active');
-
-                 */
+                main.classList.remove('gotop2');
+                main.classList.add('gobot2');
+                indexBannerFront.classList.remove('gotop2');
+                indexBannerFront.classList.add('gobot2');
             }
         }, false);
     }

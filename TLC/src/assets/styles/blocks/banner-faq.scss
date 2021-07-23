@@ -50,6 +50,25 @@
         align-items: center;
         margin-right: 15px;
 
+        &.banner-faq__agreement {
+          justify-content: center !important;
+          flex-wrap: wrap;
+
+          a {
+            width: 100%;
+            justify-content: center!important;
+            text-align: center;
+            margin-bottom: 0;
+            color: $red !important;
+            height: auto!important;
+            min-height: 1px!important;
+
+            &:hover {
+              color: $redLight !important;
+            }
+          }
+        }
+
         & > * {
           width: 30%;
           min-height: 60px;
@@ -141,6 +160,21 @@
           width: 100%;
           margin: 0;
 
+          &.banner-faq__agreement {
+            justify-content: center !important;
+
+            a {
+              width: 100%;
+              justify-content: center;
+              text-align: center;
+              margin-bottom: 0;
+              color: $red !important;
+              height: auto;
+              min-height: 1px;
+              margin-bottom: 0;
+            }
+          }
+
           & > * {
             height: 50px;
             margin-bottom: 15px;
@@ -171,6 +205,19 @@
           width: 100%;
           margin: 0;
           flex-wrap: wrap;
+
+          &.banner-faq__agreement {
+            justify-content: center !important;
+
+            a {
+              width: 100%;
+              justify-content: center;
+              text-align: center;
+              margin-bottom: 0;
+              height: auto;
+              min-height: 1px
+            }
+          }
 
           & > * {
             width: 100%;

@@ -10,54 +10,30 @@ main{
     animation-duration: .7s;
     animation-fill-mode: forwards;
   }
-}
-@keyframes gotop {
-  0%{
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100%{
-    opacity: 0;
-    transform: translateY(-700px);
+  &.gobot2{
+    animation-name: gobot2;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
   }
 }
+
 @keyframes gotop2 {
   0%{
-    transform: translateY(0);
+    margin-top: 0;
   }
   100%{
-    //transform: translateY(-864px);
     margin-top: -864px;
-    //margin-bottom: -164px;
   }
 }
-@keyframes gotop3 {
-  0%{
-    transform: translateY(0);
-  }
-  100%{
-    transform: translateY(-400px);
-  }
-}
-@keyframes gobot {
-  0%{
-    opacity: 0;
-    transform: translateY(-1000px);
 
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(0);
 
-  }
-}
 @keyframes gobot2 {
   0%{
-    transform: translateY(-1000px);
+    margin-top: -864px;
+
   }
   100%{
-
-    transform: translateY(0);
+    margin-top: 0;
   }
 }
 .banner {
@@ -67,23 +43,14 @@ main{
   background-position: center center;
   min-height: 875px;
   position: relative;
-  &.gotop{
-    animation-name: gotop3;
-    animation-duration: .7s;
-    animation-fill-mode: forwards;
-    z-index: -1;
-  }
+
   &.gotop2{
     animation-name: hideTabs;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 
   }
-  &.gobot{
-    animation-name: gobot;
-    animation-duration: .6s;
-    animation-fill-mode: forwards;
-  }
+
   &.gobot2{
     animation-name: gotop3;
     animation-duration: .7s;
@@ -352,6 +319,38 @@ main{
 }
 
 @media (max-width: 1399px) {
+  main{
+    &.gotop2{
+      animation-name: gotop21;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+    &.gobot2{
+      animation-name: gobot21;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes gotop21 {
+    0%{
+      margin-top: 0;
+    }
+    100%{
+      margin-top: -794px;
+    }
+  }
+
+
+  @keyframes gobot21 {
+    0%{
+      margin-top: -794px;
+
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
   .banner {
     min-height: 800px;
     &-center{
@@ -377,6 +376,38 @@ main{
 }
 
 @media (max-width: 1199px) {
+  main{
+    &.gotop2{
+      animation-name: gotop22;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+    &.gobot2{
+      animation-name: gobot22;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes gotop22 {
+    0%{
+      margin-top: 0;
+    }
+    100%{
+      margin-top: -694px;
+    }
+  }
+
+
+  @keyframes gobot22 {
+    0%{
+      margin-top: -694px;
+
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
   .banner {
     min-height: 700px;
     &-center{
@@ -400,6 +431,38 @@ main{
 }
 
 @media (max-width: 991px) {
+  main{
+    &.gotop2{
+      animation-name: gotop23;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+    &.gobot2{
+      animation-name: gobot23;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes gotop23 {
+    0%{
+      margin-top: 0;
+    }
+    100%{
+      margin-top: -683px;
+    }
+  }
+
+
+  @keyframes gobot23 {
+    0%{
+      margin-top: -683px;
+
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
   .banner {
     margin-bottom: 75px;
 
@@ -437,6 +500,38 @@ main{
 }
 
 @media (max-width: 767px) {
+  main{
+    &.gotop2{
+      animation-name: gotop24;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+    &.gobot2{
+      animation-name: gobot24;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes gotop24 {
+    0%{
+      margin-top: 0;
+    }
+    100%{
+      margin-top: -796px;
+    }
+  }
+
+
+  @keyframes gobot24 {
+    0%{
+      margin-top: -796px;
+
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
   .banner {
     &-center{
       min-height: 350px;
@@ -496,6 +591,41 @@ main{
 }
 
 @media (max-width: 575px) {
+  #index-banner-front{
+    margin-top: 0;
+  }
+  main{
+    &.gotop2{
+      animation-name: gotop24;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+    &.gobot2{
+      animation-name: gobot24;
+      animation-duration: .7s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes gotop24 {
+    0%{
+      margin-top: 0;
+    }
+    100%{
+      margin-top: -1196px;
+    }
+  }
+
+
+  @keyframes gobot24 {
+    0%{
+      margin-top: -1196px;
+
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
   .banner {
       &-center{
       min-height: 300px;

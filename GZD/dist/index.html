@@ -63,7 +63,7 @@
 
       </div>
       <div class="row">
-        <div class="d-none col-md-10 col-lg-8 col-xxl-6 d-md-flex align-items-center">
+        <div class="d-none col-md-12 col-lg-8 col-xxl-6 d-md-flex align-items-center">
           <ul data-da=".adaptive-menu,767,2" class="header-menu">
             <li><a href="#">Услуги</a>
               <ul>
@@ -312,7 +312,7 @@
           </ul>
         </div>
 
-        <div class="d-none col-2 col-lg-4 col-xxl-6 d-md-flex align-items-center">
+        <div class="d-none col-2 col-lg-4 col-xxl-6 d-lg-flex align-items-center">
           <div class="header__search-img js-search">
             <img src="img/srch.svg" class="js-search" alt="">
           </div>
@@ -330,6 +330,80 @@
   </header>
 
   <main>
+
+    <section class="banner" id="index-banner-front" style="background-image: url('img/ban8.jpg')">
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="banner-slide d-flex justify-content-center align-items-center flex-column">
+
+              <div class="banner-slide__form">
+                <form action="post">
+                  <span>
+                    <input type="text" class="form-control form__input" placeholder="От куда">
+                  </span>
+                  <span>
+                    <input type="text" class="form-control form__input" placeholder="Куда">
+                  </span>
+
+                  <span>
+                    <input type="number" class="form-control form__input" placeholder="Вес, кг">
+                  </span>
+                  <span>
+                    <input type="number" class="form-control form__input" placeholder="Объём, m3">
+                  </span>
+
+
+                  <span>
+                    <input type="number" class="form-control form__input" placeholder="Длинна, см">
+                  </span>
+                  <span>
+                    <input type="number" class="form-control form__input" placeholder="Ширина, см">
+                  </span>
+                  <span>
+                    <input type="number" class="form-control form__input" placeholder="Ширина, см">
+                  </span>
+
+                  <span>
+                    <select class="form-control form__input">
+                      <option value="Тип груза" selected="selected" disabled="disabled">Тип груза</option>
+                      <option value="Тип груза">Тип груза</option>
+                      <option value="Тип груза">Тип груза</option>
+                      <option value="Тип груза">Тип груза</option>
+                      <option value="Тип груза">Тип груза</option>
+                      <option value="Тип груза">Тип груза</option>
+                    </select>
+                  </span>
+
+                  <span>
+                    <input type="text" class="form-control form__input" placeholder="Фамилия Имя Отчество">
+                  </span>
+                  <span>
+                    <input type="tel" class="form-control form__input" placeholder="+ 999 444 77 22">
+                  </span>
+
+                  <span>
+                    <label for="your-select-file-banner" class="form__upload">Прикрепить файлы</label>
+                    <input type="file" id="your-select-file-banner" class="form-control d-none">
+                  </span>
+
+                  <span>
+                    <button type="submit" class="btn btn-transparent-border btn-transparent-border-black">РАСЧИТАТЬ СТОИМОСТЬ</button>
+                  </span>
+
+                </form>
+              </div>
+
+              <a href="#" class="btn banner__link"><img src="img/bar.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
     <section class="breadcrumbs breadcrumbs-gray">
       <div class="headcrumbs kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
         <div class="container">
@@ -344,7 +418,7 @@
       </div>
     </section>
 
-    <section class="banner" style="background-image: url('img/ban1.jpg')">
+    <section class="banner" id="index-banner" style="background-image: url('img/ban1.jpg')">
 
       <div class="container">
         <div class="row">
@@ -470,7 +544,7 @@
               <button type="submit" class="btn btn-transparent-border btn-transparent-border-black">задать
                 вопрос
               </button>
-              <p>Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a></p>
             </form>
           </div>
         </div>
@@ -2654,7 +2728,6 @@
         </div>
       </div>
     </section>
-
 
   </main>
 

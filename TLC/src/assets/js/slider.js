@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 0,
         observeParents: true,
         observer: true,
+        autoHeight: true,
         allowSlidePrev: true,
         allowSlideNext: true,
 
