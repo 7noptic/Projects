@@ -50,7 +50,14 @@
         transform: scale(0);
         transition: $transition2;
       }
+      &:hover {
+        opacity: .7;
+        color: #000;
 
+        &::before {
+          transform: scale(1);
+        }
+      }
       &.active {
         font-weight: bold;
         opacity: 1;

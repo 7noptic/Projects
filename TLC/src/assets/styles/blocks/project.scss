@@ -142,7 +142,7 @@
   }
 
   &__img {
-    width: 50%;
+   // width: 50%;
     padding: 0 55px;
 
     img {
@@ -201,7 +201,7 @@
 @media (min-width: 1300px) and (max-width: 1919px){
   .project{
     &-item{
-      max-width: calc(352.94992px + 50.08078vw);
+      //max-width: calc(352.94992px + 50.08078vw);
       margin-left: auto;
       margin-right: auto;
     }

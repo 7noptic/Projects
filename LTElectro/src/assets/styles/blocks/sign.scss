@@ -1,8 +1,11 @@
 .sign {
   margin-bottom: 200px;
-&__reset{
-  background-color: #fff;
-}
+
+  &__reset {
+    background-color: #fff;
+    margin-bottom: 30px;
+  }
+
   &__title {
     font-weight: bold;
     font-size: 16px;
@@ -29,6 +32,7 @@
 @media screen and (max-width: 991px) {
   .sign {
     margin-bottom: 75px;
+
     &__title {
       font-size: 14px;
       line-height: 20px;

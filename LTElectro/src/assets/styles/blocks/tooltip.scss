@@ -4,11 +4,11 @@
   border: 1px solid #C9BBAE;
   padding: 3px 8px;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 10;
 }
 [data-tooltip] {
   position: relative; /* Относительное позиционирование */
-  z-index: 10000;
+  z-index: 10;
 }
 [data-tooltip]::after {
   display: block;

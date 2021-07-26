@@ -27,13 +27,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
             }
 
-            if (imgBlock && text) {
-                let title = text.querySelector('.project-item__title');
-                if(title){
-                    let height = title.offsetHeight + 3;
-                    imgBlock.style.marginTop = height + 'px';
-                }
-            }
         }
     }
 

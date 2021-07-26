@@ -6,6 +6,10 @@ Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
+
+
+
+
     const lightbox = GLightbox({
         touchNavigation: true,
         loop: true,
@@ -15,12 +19,13 @@ window.addEventListener('DOMContentLoaded', () => {
     let headerMenuFixed = document.querySelector('.header-scroll');
 
     if (headerMenuFixed) {
-        moveHeaderMenuToTop ()
+        moveHeaderMenuToTop()
         document.addEventListener('scroll', (e) => {
-            moveHeaderMenuToTop ()
+            moveHeaderMenuToTop()
         });
     }
-    function moveHeaderMenuToTop (){
+
+    function moveHeaderMenuToTop() {
         if (pageYOffset >= 150) {
             headerMenuFixed.classList.add('fixed');
         } else {
@@ -592,7 +597,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     count.value = +count.value + 1;
                 });
                 minus.addEventListener('click', function (e) {
-                    if(count.value > 0){
+                    if (count.value > 0) {
                         count.value = +count.value - 1;
 
                     }
@@ -862,22 +867,39 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
     if (btnFilterHidden) {
-        btnFilterHidden.addEventListener('click', (e) => {
+        let trigger2 = true;
+        btnFilterHidden.addEventListener('click', function (e) {
             e.preventDefault();
-            if (filterContent) {
-                for (let i = 0; i < filterContent.length; i++) {
-                    let trigger = true;
 
-                    let link = filterContent[i].querySelectorAll('.category-filter__link');
-                    for (let j = 0; j < link.length; j++) {
-                        if (link[j].classList.contains('active')) {
-                            trigger = false;
+            if (filterContent) {
+                this.innerHTML = 'Показать фильтры';
+                if (trigger2) {
+                    trigger2 = false;
+                    for (let i = 0; i < filterContent.length; i++) {
+
+                        let trigger = true;
+
+                        let link = filterContent[i].querySelectorAll('.category-filter__link');
+                        for (let j = 0; j < link.length; j++) {
+                            if (link[j].classList.contains('active')) {
+                                trigger = false;
+                            }
+                        }
+                        if (trigger) {
+                            filterItem[i].style.display = 'none';
                         }
                     }
-                    if (trigger) {
-                        filterItem[i].style.display = 'none';
+                } else {
+                    trigger2 = true;
+                    this.innerHTML = 'скрыть часть фильтров';
+
+                    for (let i = 0; i < filterContent.length; i++) {
+
+
+                        filterItem[i].style.display = 'block';
                     }
                 }
+
             }
         });
     }

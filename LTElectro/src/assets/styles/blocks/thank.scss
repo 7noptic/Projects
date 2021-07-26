@@ -65,7 +65,15 @@
                 }
             }
         }
+        &__text{
+            &-red{
+                color: $red;
+                font-weight: bold;
+            }
+        }
     }
+
+
 
     &__btn{
         display: inline-block;

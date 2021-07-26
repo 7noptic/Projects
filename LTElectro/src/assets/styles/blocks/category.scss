@@ -200,8 +200,12 @@
     }
 
     &__input {
-      max-width: 90px;
+      max-width: 110px;
       margin-right: 10px;
+      text-align: center;
+      &::placeholder{
+        text-align: center;
+      }
     }
 
     &__link {
@@ -216,7 +220,6 @@
       &:hover {
         &:before {
           border: 1px solid rgba(#000, .3);
-          border-radius: 50%;
         }
       }
 
@@ -248,6 +251,21 @@
           border-radius: 50%;
         }
       }
+    }
+    &__check{
+      &::before{
+        content: '';
+        border-radius: 0;
+      }
+      &.active{
+        &::after{
+          content: url("../img/gal3.svg");
+          background: transparent;
+          top: 0;
+          left: 3px;
+        }
+      }
+
     }
   }
 
@@ -297,7 +315,6 @@
     }
 
     a {
-      margin-bottom: 10px;
       font-size: 14px;
       line-height: 17px;
       margin-right: 20px;
@@ -305,7 +322,7 @@
       align-items: center;
 
       img {
-        margin-right: 12px;
+        margin-right: 10px;
       }
 
       &.active {
@@ -436,6 +453,10 @@
         }
 
         text-align: center;
+      }
+
+      a {
+        margin-bottom: 10px;
       }
 
       span {
