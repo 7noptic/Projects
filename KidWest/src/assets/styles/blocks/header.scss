@@ -1,11 +1,11 @@
 .header{
   padding: 25px 0;
   z-index: 10;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  background: linear-gradient(180deg, #F8F8F9 0%, rgba(255, 255, 255, 0) 89.14%);
+  background: linear-gradient(180deg, #FFFFFF 62.37%, rgba(255, 255, 255, 0) 100%);
   &__burger{
     display: none;
   }
@@ -88,6 +88,7 @@
 }
 @media (max-width: 767px){
   .header{
+    padding: 15px 0;
     &-social{
       &__tel{
         font-size: 16px;
