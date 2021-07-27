@@ -66,6 +66,8 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
+        autoplay:true,
+        centeredSlides: true,
 
         navigation: {
             nextEl: '.process-next',

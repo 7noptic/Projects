@@ -9,6 +9,11 @@
   width: 100%;
   height: 100%;
 }
+.swiper-letter{
+  .project-slide{
+    align-items: flex-start;
+  }
+}
 .swiper-client{
   width:77%;
   .swiper-wrapper{

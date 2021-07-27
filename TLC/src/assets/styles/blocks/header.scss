@@ -142,9 +142,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .btn{
-        font-weight: 300;
-      }
     }
 
     &__tel {
@@ -565,6 +562,12 @@
         li {
           a {
             margin-right: 0;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
           }
         }
       }
@@ -618,11 +621,11 @@
   .header {
     &__btn {
       span {
-        display: none;
+        //display: none;
       }
 
       img, svg {
-        display: block;
+        display: none;
         margin-right: 0;
       }
     }
@@ -633,6 +636,12 @@
   .header {
     &-currency {
       display: none;
+    }
+    &__btn{
+      padding: 45px 0px;
+      font-size: 10px;
+      line-height: 17px;
+      max-width: 100px;
     }
 
     &-submenu {

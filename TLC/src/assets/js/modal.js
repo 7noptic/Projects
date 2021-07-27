@@ -75,17 +75,14 @@ window.addEventListener('DOMContentLoaded', () => {
         /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && (target.classList.contains('sidebar-bg') || target.classList.contains('sidebar-bg'))) {
             e.preventDefault();
-            document.querySelector('html').classList.toggle('lock');
-            document.querySelector('body').classList.toggle('lock');
+            toggleLock();
             modalBlock.classList.toggle('sidebar-bg');
             for (let i = 0; i < allModal.length; i++) {
                 if (allModal[i].classList.toggle('active')) {
                     allModal[i].classList.remove('active');
                 }
             }
-            document.querySelector('.header').classList.toggle('blur');
-            document.querySelector('main').classList.toggle('blur');
-            document.querySelector('.footer').classList.toggle('blur');
+            toggleBlur();
 
         }
 
@@ -93,12 +90,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function openCloseModal(e, modal) {
         e.preventDefault();
-        document.querySelector('html').classList.toggle('lock');
-        document.querySelector('body').classList.toggle('lock');
+        toggleLock();
         modalBlock.classList.toggle('sidebar-bg');
         modal.classList.toggle('active');
+        toggleBlur();
+    }
+    function toggleBlur(){
         document.querySelector('.header').classList.toggle('blur');
         document.querySelector('main').classList.toggle('blur');
         document.querySelector('.footer').classList.toggle('blur');
+    }
+    function toggleLock(){
+        document.querySelector('html').classList.toggle('lock');
+        document.querySelector('body').classList.toggle('lock');
     }
 });

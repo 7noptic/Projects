@@ -329,6 +329,9 @@
 @media (max-width: 575px) {
   .banner {
     margin-bottom: 50px;
+    &__btn{
+      margin-bottom: 20px;
+    }
 
     &__content {
       flex-wrap: wrap;
