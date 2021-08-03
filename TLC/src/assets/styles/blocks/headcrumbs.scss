@@ -115,3 +115,8 @@
     padding: 27px 0 35px 15px !important;
   }
 }
+@media (max-width: 767px) {
+  .kama_breadcrumbs {
+    padding: 0 15px !important;
+  }
+}

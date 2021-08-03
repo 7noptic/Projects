@@ -109,19 +109,19 @@
       margin-top: 30px;
       width: 100%;
       max-width: 100%;
+
       &.absolute {
         position: relative;
-        top: auto!important;
+        top: auto !important;
         left: auto;
       }
 
       a.service-nav__link {
-        padding-right: 30px;
-        margin-right: 0;
-        display: flex;
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: 20px;
+        color: $red;
+
+        &:hover {
+          color: $redLight;
+        }
       }
     }
   }

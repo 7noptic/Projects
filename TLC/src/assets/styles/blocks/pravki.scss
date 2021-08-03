@@ -50,6 +50,14 @@
   }
 }
 @media (max-width: 767px){
+  main{
+    position: relative;
+  }
+  .kama_breadcrumbs{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   .page-template-sitemap {
     #c5_sitemap_wrapper {
       h2{

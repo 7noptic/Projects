@@ -1,6 +1,7 @@
 .banner {
   margin-bottom: 100px;
-  &__img{
+
+  &__img {
     position: absolute;
     top: 0;
     left: 0;
@@ -8,11 +9,13 @@
     height: 100%;
     object-fit: cover;
     z-index: -2;
-    img,video{
+
+    img, video {
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -60,14 +63,14 @@
     position: relative;
 
 
-
     a {
       color: #FFFFFF;
     }
   }
-  &-nobef{
-    .banner-slide{
-      &::before{
+
+  &-nobef {
+    .banner-slide {
+      &::before {
         content: '';
         display: none;
       }
@@ -304,6 +307,10 @@
   .banner {
     margin-bottom: 75px;
 
+    &-post {
+      margin-top: 0;
+    }
+
     &__title {
       font-size: 30px;
       line-height: 30px;
@@ -329,7 +336,8 @@
 @media (max-width: 575px) {
   .banner {
     margin-bottom: 50px;
-    &__btn{
+
+    &__btn {
       margin-bottom: 20px;
     }
 

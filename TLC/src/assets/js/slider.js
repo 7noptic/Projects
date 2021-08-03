@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
+        loop: true,
         autoplay:{
             delay:4000,
         },
@@ -27,10 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 0,
         observeParents: true,
         observer: true,
-        autoHeight: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
+        loop: true,
         pagination: {
             el: '.project-pagination',
             type: 'fraction',
@@ -66,9 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        autoplay:true,
-        centeredSlides: true,
-
+        loop: true,
         navigation: {
             nextEl: '.process-next',
             prevEl: '.process-prev',
@@ -104,7 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
+        loop: true,
         pagination: {
             el: '.letter-pagination',
             type: 'fraction',
@@ -140,7 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
+        loop: true,
         pagination: {
             el: '.client-pagination',
             type: 'fraction',
@@ -177,6 +175,7 @@ window.addEventListener('DOMContentLoaded', () => {
             el: '.article-nav-2',
             clickable: true,
         },
+        loop: true,
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -196,6 +195,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
+        loop: true,
         pagination: {
             el: '.article-nav-3',
             clickable: true,
@@ -219,6 +219,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
+        loop: true,
         pagination: {
             el: '.article-nav-4',
             clickable: true,
@@ -244,7 +245,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
+        loop: true,
         navigation: {
             nextEl: '.tags__next',
             prevEl: '.tags__prev'
@@ -270,7 +271,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-
+        loop: true,
         navigation: {
             nextEl: '.tags__next-2',
             prevEl: '.tags__prev-2'
@@ -294,6 +295,7 @@ window.addEventListener('DOMContentLoaded', () => {
         autoplay: true,
         slidesPerView: 4,
         freeMode: true,
+        loop: true,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         breakpoints: {
@@ -308,6 +310,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let galleryTop = new Swiper('.gallery-top', {
         spaceBetween: 0,
         autoplay: true,
+        loop: true,
         navigation: {
             nextEl: '.product__next',
             prevEl: '.product__prev',

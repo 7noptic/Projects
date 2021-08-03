@@ -29,8 +29,9 @@
     top: 280px;
     letter-spacing: .5em;
     z-index: 10;
-    animation: subtitle .5s;
+    animation: subtitle .7s;
     white-space: nowrap;
+    width: 100%;
   }
 
   &__title {
@@ -42,12 +43,14 @@
     text-transform: uppercase;
     color: #FFFFFF;
     white-space: nowrap;
-    animation: title .5s;
+    animation: title .7s;
     text-shadow: 0px 15px 18px rgba(97, 87, 71, 0.28);
+    width: 100%;
   }
 
   &__subtext {
-    bottom: 375px;
+    width: 100%;
+    top: 600px;
     font-weight: 600;
     font-size: 30px;
     line-height: 38px;
@@ -55,11 +58,12 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     text-shadow: 0px 15px 18px rgba(97, 87, 71, 0.28);
-    animation: subtext .5s;
+    animation: subtext .7s;
     margin-bottom: 20px;
   }
 
   &__text {
+    top: 660px;
     font-size: 18px;
     line-height: 23px;
     text-align: center;
@@ -72,7 +76,7 @@
 
     &__kid {
       top: 180px;
-      animation: kid .6s;
+      animation: kid .8s;
 
       img {
         min-width: 980px;
@@ -81,7 +85,7 @@
     }
 
     &__niz {
-      animation: niz .5s;
+      animation: niz .7s;
 
       bottom: 0;
       width: 100%;
@@ -94,10 +98,12 @@
   }
 
   &-btn {
-    animation: btn .5s;
+    top: 770px;
+    animation: btn .7s;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 
   &__block {
@@ -140,15 +146,17 @@
     }
 
     &__subtext {
+      top: 520px;
       font-size: 24px;
     }
 
     &__text {
+      top: 560px;
       font-size: 16px;
     }
 
-    &__block {
-      top: 520px;
+    &-btn{
+      top: 670px;
     }
 
   }
@@ -157,6 +165,10 @@
 @media (max-width: 767px) {
   .banner {
     margin-bottom: 100px;
+    &-btn{
+      top: auto;
+      bottom: 50px;
+    }
 
     &-img {
       &__kid {
@@ -177,17 +189,18 @@
       top: 270px;
     }
 
-    &__block {
 
-      top: 320px;
-    }
 
     &__subtext {
+      top: 320px;
+
+
       font-size: 20px;
       line-height: 24px;
     }
 
     &__text {
+      top: 360px;
       width: 570px;
       margin-bottom: 230px;
     }
@@ -200,7 +213,42 @@
 
     &__subtitle {
       letter-spacing: normal;
-      top: 200px;
+      top: 220px;
+      font-size: 16px;
+      line-height: 20px;
+
+    }
+
+    &__title {
+      white-space: normal;
+      top: 245px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    &__subtext{
+      font-size: 16px;
+      line-height: 20px;
+      top: 280px;
+
+    }
+    &__text{
+      top: 310px;
+      width: 400px;
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 180px;
+    }
+    &-btn{
+      padding: 0 15px;
+      flex-wrap: wrap;
+    }
+  }
+}
+@media (max-width: 479px){
+  .banner {
+
+    &__subtitle {
+      top: 190px;
       font-size: 16px;
       line-height: 20px;
 
@@ -209,22 +257,25 @@
     &__title {
       white-space: normal;
       top: 220px;
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 22px;
+      line-height: 26px;
     }
     &__subtext{
       font-size: 16px;
       line-height: 20px;
+      top: 280px;
 
     }
     &__text{
-      width: 320px;
+      top: 310px;
+      width: 100%;
+      max-width: 320px;
       font-size: 14px;
       line-height: 17px;
       margin-bottom: 180px;
     }
     &-btn{
-      flex-wrap: wrap;
+      bottom: 20px;
     }
   }
 }
